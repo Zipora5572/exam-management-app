@@ -1,15 +1,21 @@
 import { Box, IconButton, Tooltip, Avatar } from '@mui/material';
-import React, { useContext, useState } from 'react';
+import React, {  useState } from 'react';
 // import { UserContext } from '../../contexts/UserReducer';
 // import UserMenu from '../UserMenu';
 import { useNavigate } from "react-router-dom";
-import { UserContext } from '../contexts/UserReducer';
 import authService from "../services/AuthService";
 import UserMenu from './UserMenu';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, StoreType } from '../store/store';
+import { logout } from '../store/userSlice';
 const UserProfile = () => {
-    const { user, userDispatch } = useContext(UserContext);
+    // const { user, userDispatch } = useContext(UserContext);
+  const user = useSelector((state: StoreType) => state.auth.user);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-//   const { isOpen, openModal, closeModal } = useModal();
+  const dispatch = useDispatch<AppDispatch>();
+
+  
+  
 const navigate = useNavigate();
   const open = Boolean(anchorEl);
 
@@ -22,8 +28,9 @@ const navigate = useNavigate();
   };
 
   const handleLogout = () => {
-authService.logout();
-     userDispatch({ type: 'LOG_OUT' });
+    authService.logout();
+    dispatch(logout());
+    //  userDispatch({ type: 'LOG_OUT' });
   };
 
   const handleEdit = () => {
@@ -33,7 +40,7 @@ authService.logout();
   return (
     <>
       <Box>
-        <Tooltip title={`Hello ${user.firstName}` }>
+        <Tooltip title={`Hello ${user?.firstName ? user.firstName: "guest"}` }>
           <IconButton
             onClick={handleClick}
             size="small"
@@ -55,7 +62,7 @@ authService.logout();
                 height: 40, 
               }}
             >
-              {user.firstName.charAt(0).toUpperCase()}
+      {user?.firstName ? user.firstName.charAt(0).toUpperCase() : "?"}
             </Avatar>
           </IconButton>
         </Tooltip>
@@ -67,8 +74,8 @@ authService.logout();
         handleClose={handleClose}
         handleEdit={handleEdit}
         handleLogout={handleLogout}
-        username={user.firstName}
-        email={user.email}
+        username={user?.firstName}
+        email={user?.email}
       />
 
       {/* <EditProfile open={isOpen} handleClose={closeModal} /> */}

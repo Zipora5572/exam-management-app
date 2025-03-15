@@ -1,33 +1,36 @@
-import  { FormEvent, useContext, useState } from 'react';
+import  { FormEvent, useState } from 'react';
 import { TextField, Button, Container, Typography } from '@mui/material';
-import authService from "../../services/AuthService";
 import { useNavigate } from "react-router-dom";
-
+// import  login  from "../../store/authSlice";
 import { UserType } from '../../models/User';
-import { UserContext } from '../../contexts/UserReducer';
+
+import { useDispatch } from 'react-redux';
+
+import { AppDispatch } from '../../store/store';
+import { login, register } from '../../store/userSlice';
 function AuthForm() {
-    const { user, userDispatch } = useContext(UserContext);
+    // const { user, userDispatch } = useContext(UserContext);
     const [isLogin, setIsLogin] = useState(true);
-    const [firstName, setFirstName] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const dispatch = useDispatch<AppDispatch>();
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>, data: Partial<UserType>) => {
         e.preventDefault();
         let result
         if (!isLogin) {
-            result = await authService.register(data);
-            
-            
-            if (result)
-                userDispatch({ type: 'REGISTER', data: { ...data, id: result.user.id } });
+            // result = await authService.register(data);        
+            // if (result)
+            //     userDispatch({ type: 'REGISTER', data: { ...data, id: result.user.id } });
+            dispatch(register(data));
         }
         else {
-            result = await authService.login(data);
+            // result = await authService.login(data);
          
-            if (result)
-                userDispatch({ type: 'LOGIN', data: result.user });
-            
+            // if (result)
+            //     userDispatch({ type: 'LOGIN', data: result.user });
+            dispatch(login(data));           
         }
         navigate('/home');
     };
@@ -35,14 +38,14 @@ function AuthForm() {
     return (
         <Container maxWidth="sm">
             <Typography variant="h4">{isLogin ? 'Sign in' : 'Sign Up'}</Typography>
-            <form onSubmit={(e) => handleSubmit(e, { firstName, password })}>
+            <form onSubmit={(e) => handleSubmit(e, { email, password })}>
                 <TextField
-                    label="username"
+                    label="email"
                     variant="outlined"
                     fullWidth
                     margin="normal"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                 />
                 <TextField

@@ -12,5 +12,6 @@ namespace Server.Core.IServices
     {
         bool VerifyPassword(string enteredPassword, string storedPasswordHash);
         string GenerateJwtToken(string username, List<Role> roles);
+        string? GetEmailFromToken(string token);
     }
 }

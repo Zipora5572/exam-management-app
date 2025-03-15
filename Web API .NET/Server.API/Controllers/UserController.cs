@@ -73,14 +73,31 @@ namespace Server.API.Controllers
             {
                 return BadRequest("User cannot be null");
             }
-            var userDto = _mapper.Map<UserDto>(userPostModel);
-            userDto = await _userService.UpdateUserAsync(id, userDto);
-            if (userDto == null)
+
+            var existingUserDto = await _userService.GetByIdAsync(id);
+            if (existingUserDto == null)
             {
                 return NotFound();
             }
-            return Ok(userDto);
+
+            // אם הלקוח שלח סיסמה חדשה, נבצע hashing על הסיסמה החדשה
+            if (!string.IsNullOrEmpty(userPostModel.Password))
+            {
+                existingUserDto.PasswordHash = BCrypt.Net.BCrypt.HashPassword(userPostModel.Password);
+            }
+
+            // עכשיו נעדכן את כל יתר השדות (למשל שם, טלפון, כתובת) אם יש שינויים
+            existingUserDto.firstName = userPostModel.FirstName;
+            existingUserDto.lastName = userPostModel.LastName;
+            existingUserDto.PhoneNumber = userPostModel.PhoneNumber;
+            existingUserDto.Address = userPostModel.Address;
+
+            // עדכון המשתמש ב-DB
+            var updatedUserDto = await _userService.UpdateUserAsync(id, existingUserDto);
+
+            return Ok(updatedUserDto);
         }
+
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]

@@ -1,51 +1,51 @@
 import { UserType } from "../models/User";
-import axios from "axios";
+import axios from "../utils/axiosConfig";
+import Cookies from "js-cookie";
 
-function saveAccessToken(authResult: { token: string }) {
-    localStorage.setItem("token", authResult.token);
-    setAuthorizationBearer();
-}
-
+// פונקציה לאתחול של Authorization Header, אם יש cookie עם ה-token
 function setAuthorizationBearer() {
-    const token = localStorage.getItem("token")
-    if (token) {
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
-    }
+  const token = Cookies.get("jwt"); 
+  if (token) {
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`; // מכניסים את ה-token לכותרת ה-Authorization
+  }
 }
 
-setAuthorizationBearer()
+// אתחול של Authorization Header בכל פעם שהקוד נטען
+setAuthorizationBearer();
 
 axios.interceptors.response.use(
-    function(response) {
-      return response;
-    },
-    function(error) {
-      if (error.response.status === 401) {
-        return (window.location.href = "/login");
-      }
-      return Promise.reject(error);
-    }
-  );
-
-
+  function (response) {
+    return response;
+  },
+  function (error) {
+    // if (error.response.status === 401) {
+    //   window.location.href = "/authForm"; 
   
+    // }
+    return Promise.reject(error);
+  }
+);
+
 export default {
-    
-    logout:()=>{
-      localStorage.setItem("token", "");
-    },
-  
-    register: async (userData:Partial<UserType>) => {
-      const res = await axios.post("/auth/register",{ UserName: userData.firstName, Password: userData.password });
-      saveAccessToken(res.data);
-      return res.data;
-    },
-  
-    login: async (userData:Partial<UserType>) => {
-      const res = await axios.post("/auth/login", { UserName: userData.firstName, Password: userData.password});
-      saveAccessToken(res.data);
-      return res.data;
-    },  
-  };
-  
+  logout:async () => {
+ await axios.post("/auth/logout", { withCredentials: true });
+},
 
+  register: async (userData: Partial<UserType>) => {
+    const res = await axios.post("/auth/register", { Email: userData.email, Password: userData.password }, { withCredentials: true });
+    return res.data;
+  },
+
+  login: async (userData: Partial<UserType>) => {
+    const res = await axios.post("/auth/login", { Email: userData.email, Password: userData.password }, { withCredentials: true });
+    return res.data;
+  },
+
+  checkAuth: async () => {
+    const response = await axios.get(`/auth/checkAuth`, {
+      withCredentials: true, 
+    });
+   
+    return response.data;
+  },
+};

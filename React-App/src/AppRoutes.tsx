@@ -10,15 +10,18 @@ import Profile from './pages/Profile';
 
 
 export const router = createBrowserRouter([
+    // { path: '/authForm', element: <AuthForm /> },
     {
+
         path: '/',
         element: <AppLayout />,
-        errorElement: <h1>Error</h1>,
+        // errorElement:
+        
         children: [
+            { path: '/authForm', element: <AuthForm /> },
             { path: '/', element: <Home /> },
             { path: '/home', element: <Home /> },
             { path: '/about', element: <About /> },
-            { path: '/authForm', element: <AuthForm /> },
             {
                 path: '/exams',
                 element: <Exams />,

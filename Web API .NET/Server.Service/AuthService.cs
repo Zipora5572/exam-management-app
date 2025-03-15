@@ -21,14 +21,14 @@ public class AuthService:IAuthService
         return BCrypt.Net.BCrypt.Verify(enteredPassword, storedPasswordHash);
     }
 
-    public string GenerateJwtToken(string username, List<Role>roles)
+    public string GenerateJwtToken(string email, List<Role>roles)
     {
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
         var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Name, username)
+            new Claim(ClaimTypes.Email, email)
         };
 
       
@@ -46,6 +46,15 @@ public class AuthService:IAuthService
         );
 
         return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+    public string? GetEmailFromToken(string token)
+    {
+        var handler = new JwtSecurityTokenHandler();
+        var jwtToken = handler.ReadJwtToken(token);
+
+        var emailClaim = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email);
+
+        return emailClaim?.Value;
     }
 
 }

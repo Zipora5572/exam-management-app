@@ -2707,11 +2707,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\פרויקט\\server\\Server\\Server.Service\\Server.Service.csproj",
+      "projectUniqueName": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\Fullstack Project\\Web API .NET\\Server.Service\\Server.Service.csproj",
       "projectName": "Server.Service",
-      "projectPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\פרויקט\\server\\Server\\Server.Service\\Server.Service.csproj",
+      "projectPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\Fullstack Project\\Web API .NET\\Server.Service\\Server.Service.csproj",
       "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\פרויקט\\server\\Server\\Server.Service\\obj\\",
+      "outputPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\Fullstack Project\\Web API .NET\\Server.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2728,11 +2728,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\פרויקט\\server\\Server\\Server.Core\\Server.Core.csproj": {
-              "projectPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\פרויקט\\server\\Server\\Server.Core\\Server.Core.csproj"
+            "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\Fullstack Project\\Web API .NET\\Server.Core\\Server.Core.csproj": {
+              "projectPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\Fullstack Project\\Web API .NET\\Server.Core\\Server.Core.csproj"
             },
-            "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\פרויקט\\server\\Server\\Server.Data\\Server.Data.csproj": {
-              "projectPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\פרויקט\\server\\Server\\Server.Data\\Server.Data.csproj"
+            "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\Fullstack Project\\Web API .NET\\Server.Data\\Server.Data.csproj": {
+              "projectPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\Fullstack Project\\Web API .NET\\Server.Data\\Server.Data.csproj"
             }
           }
         }

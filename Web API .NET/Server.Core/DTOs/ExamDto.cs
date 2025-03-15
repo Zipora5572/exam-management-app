@@ -12,9 +12,12 @@ namespace Server.Core.DTOs
     {
         public int Id { get; set; }
         public int UserId { get; set; }
+        public string examName { get; set; } 
         public int TopicId { get; set; }
         public int GradeId { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public int? TeacherId { get; set; }
+        public string examPath { get; set; }
+        public List<Tag> Tags { get; set; }
     }
 }

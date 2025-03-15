@@ -15,6 +15,8 @@ namespace Server.Core.Entities
         public int UserId { get; set; }
         public User User { get; set; }
 
+        public string examName { get; set; }
+
         [ForeignKey(nameof(Topic))]
         public int TopicId { get; set; }
 
@@ -23,6 +25,8 @@ namespace Server.Core.Entities
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public int? TeacherId { get; set; }
 
+
+        public string examPath { get; set; }
         public List<Tag> Tags { get; set; }
        
     }

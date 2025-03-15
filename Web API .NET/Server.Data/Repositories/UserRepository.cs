@@ -22,9 +22,9 @@ namespace Server.Data.Repositories
             _mapper = mapper;
         }
 
-        public async Task<UserDto> GetByUserNameAsync(string username)
+        public async Task<UserDto> GetByEmailAsync(string email)
         {          
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
 
             if (user == null)
             {

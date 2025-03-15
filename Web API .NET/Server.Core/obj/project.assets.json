@@ -517,11 +517,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\פרויקט\\server\\Server\\Server.Core\\Server.Core.csproj",
+      "projectUniqueName": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\Fullstack Project\\Web API .NET\\Server.Core\\Server.Core.csproj",
       "projectName": "Server.Core",
-      "projectPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\פרויקט\\server\\Server\\Server.Core\\Server.Core.csproj",
+      "projectPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\Fullstack Project\\Web API .NET\\Server.Core\\Server.Core.csproj",
       "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\פרויקט\\server\\Server\\Server.Core\\obj\\",
+      "outputPath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\Fullstack Project\\Web API .NET\\Server.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user1\\AppData\\Roaming\\NuGet\\NuGet.Config",

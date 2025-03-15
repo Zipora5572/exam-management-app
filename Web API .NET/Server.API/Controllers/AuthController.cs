@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.API.PostModel;
@@ -9,6 +10,8 @@ using Server.Service;
 
 namespace Server.API.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
@@ -26,25 +29,35 @@ namespace Server.API.Controllers
             _mapper = mapper;
         }
 
-
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
-            var user = await _userService.GetByUserNameAsync(model.Username);
+            var user = await _userService.GetByEmailAsync(model.Email);
             if (user != null && _authService.VerifyPassword(model.Password, user.PasswordHash))
             {
-                var token = _authService.GenerateJwtToken(user.Username, user.Roles);
-                var userDto = _mapper.Map<UserDto>(user); 
-                return Ok(new { Token = token, User = userDto });
+                var token = _authService.GenerateJwtToken(user.Email, user.Roles);
+                var userDto = _mapper.Map<UserDto>(user);
+
+                var cookieOptions = new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = false,
+                    SameSite = SameSiteMode.Lax,
+                    Expires = DateTime.UtcNow.AddDays(7),
+                    Path = "/"
+                };
+
+                Response.Cookies.Append("jwt", token, cookieOptions);
+
+                return Ok(new { User = userDto });
             }
             return Unauthorized();
         }
 
-
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UserPostModel model)
         {
-            var existingUser = await _userService.GetByUserNameAsync(model.Username);
+            var existingUser = await _userService.GetByEmailAsync(model.Email);
             if (existingUser != null)
             {
                 return Conflict("User already exists.");
@@ -54,10 +67,69 @@ namespace Server.API.Controllers
             userDto.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.Password);
             await _userService.AddUserAsync(userDto);
 
-            var token = _authService.GenerateJwtToken(userDto.Username, userDto.Roles);
+            var token = _authService.GenerateJwtToken(userDto.Email, userDto.Roles);
 
-            return CreatedAtAction(nameof(Login), new { Token = token, User = userDto });
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = false,
+                SameSite = SameSiteMode.Lax,
+                Expires = DateTime.UtcNow.AddDays(7),
+                Path = "/"
+            };
+
+            Response.Cookies.Append("jwt", token, cookieOptions);
+
+            return Ok(new { User = userDto });
         }
+
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = false,
+                SameSite = SameSiteMode.Lax,
+                Expires = DateTime.UtcNow.AddDays(-1),
+                Path = "/",
+                Domain = Request.Host.Host
+            };
+
+            Response.Cookies.Delete("jwt", cookieOptions);
+            return Ok();
+        }
+
+
+
+
+        [HttpGet("checkAuth")]
+        public async Task<IActionResult> CheckAuth()
+        {
+            try
+            {
+                // שליפת ה-Cookie
+                if (!Request.Cookies.TryGetValue("jwt", out var token))
+                    return Unauthorized(new { message = "No token found" });
+
+                var userEmail = _authService.GetEmailFromToken(token);
+                if (string.IsNullOrEmpty(userEmail))
+                    return Unauthorized(new { message = "Invalid token" });
+
+                var user = await _userService.GetByEmailAsync(userEmail);
+                if (user == null)
+                    return Unauthorized(new { message = "User not found" });
+
+                var userDto = _mapper.Map<UserDto>(user);
+                return Ok(new { user = userDto });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Internal server error", error = ex.Message });
+            }
+        }
+
 
     }
 }
+

@@ -33,9 +33,9 @@ namespace Server.Service
             return userDto;
         }
 
-        public async Task<UserDto> GetByUserNameAsync(string username)
+        public async Task<UserDto> GetByEmailAsync(string email)
         {
-            var userDto = await _repositoryManager.Users.GetByUserNameAsync(username);
+            var userDto = await _repositoryManager.Users.GetByEmailAsync(email);
             return userDto;
         }
 

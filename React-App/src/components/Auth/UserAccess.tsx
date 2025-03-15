@@ -5,17 +5,22 @@ import { Button } from "@mui/material";
 import AuthForm from "./AuthForm";
 import { initialUserState, UserContext } from "../../contexts/UserReducer";
 import UserProfile from "../UserProfile";
+import { useSelector } from "react-redux";
+import { StoreType } from "../../store/store";
 
 
 const UserAccess = () => {
-    const { user, userDispatch } = useContext(UserContext);
+  const user = useSelector((state: StoreType) => state.auth.user)
+
+    // const { user, userDispatch } = useContext(UserContext);
     const token = localStorage.getItem('token');
     // const [isLoggedIn, setIsLoggedIn] = useState(token !== null);
+    console.log(user);
     
     const navigate = useNavigate();
 
     const handleOpen = () => {
-        navigate('/authForm');
+         navigate('/authForm');
     };
 
     const handleClose = () => {
@@ -24,7 +29,7 @@ const UserAccess = () => {
     };
     return (
         <>
-            {user==initialUserState ? (
+            {user==null ? (
                 <>
                     <Button 
                         style={{

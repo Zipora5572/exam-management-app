@@ -7,8 +7,8 @@ interface UserMenuProps {
     handleClose: () => void;
     handleEdit: () => void;
     handleLogout: () => void;
-    username: string; 
-    email: string; 
+    username: string|undefined; 
+    email: string|undefined;  
 }
 
 const UserMenu = ({ anchorEl, open, handleClose, handleEdit, handleLogout, username, email }: UserMenuProps) => {
@@ -43,7 +43,7 @@ const UserMenu = ({ anchorEl, open, handleClose, handleEdit, handleLogout, usern
                             marginBottom:1 // הוספת מרווח בין ה-Avatar לטקסט
                         }}
                     >
-                        {username.charAt(0).toUpperCase()}
+                        {username?.charAt(0).toUpperCase()}
                     </Avatar>
                     <div style={{marginRight:'30px'}}> {/* הוספת מרווח נוסף */}
                         <Typography variant="body2" sx={{ fontWeight: 'bold' }}>{username}</Typography>

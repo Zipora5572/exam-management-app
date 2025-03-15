@@ -54,9 +54,7 @@ export default (state: UserType, action: Action): UserType => {
                 ...action.data, 
             };
         case 'LOGIN':
-            {
-                console.log('login', action.data);
-                
+            { 
                 return {
                     ...state,
                     ...action.data 

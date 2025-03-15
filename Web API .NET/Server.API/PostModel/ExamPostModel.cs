@@ -5,7 +5,11 @@ namespace Server.API.PostModel
 {
     public class ExamPostModel
     {
-        
+
+        public string examName { get; set; }
+
+        public string examPath { get; set; }
+
         public int UsertId { get; set; }
         
         public int TopicId { get; set; }

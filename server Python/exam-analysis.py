@@ -1,17 +1,17 @@
 import os
 from dotenv import load_dotenv
 from flask import Flask, request, jsonify
-from flask_cors import CORS 
-import json
-from openai import OpenAI 
+from flask_cors import CORS
+import pytesseract
+from PIL import Image
+import io
+from openai import OpenAI
 
 app = Flask(__name__)
 CORS(app)
 
 load_dotenv()
 my_api_key = os.getenv("OPENAI_API_KEY")
-
-
 os.environ['OPENAI_API_KEY'] = my_api_key
 
 client = OpenAI()
@@ -52,19 +52,17 @@ def options():
 @app.route('/grade', methods=['POST'])
 def grade():
     data = request.json
-    student_exam_path = data.get('student_exam_path')
-    teacher_exam_path = data.get('teacher_exam_path')
-    
-    if not student_exam_path or not teacher_exam_path:
-        return jsonify({"error": "Both student_exam_path and teacher_exam_path are required."}), 400
-    
-    # קריאת תוכן הקבצים
-    try:
-        with open(student_exam_path, 'r', encoding='utf-8') as student_file:
-            student_exam = student_file.read()
+    student_exam_image = data.get('student_exam_image')
+    teacher_exam_image = data.get('teacher_exam_image')
+    language = request.args.get('language', 'eng')  
 
-        with open(teacher_exam_path, 'r', encoding='utf-8') as teacher_file:
-            teacher_exam = teacher_file.read()
+    if not student_exam_image or not teacher_exam_image:
+        return jsonify({"error": "Both student_exam_image and teacher_exam_image are required."}), 400
+
+    
+    try:
+        student_exam = pytesseract.image_to_string(Image.open(io.BytesIO(student_exam_image)), lang=language)
+        teacher_exam = pytesseract.image_to_string(Image.open(io.BytesIO(teacher_exam_image)), lang=language)
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 

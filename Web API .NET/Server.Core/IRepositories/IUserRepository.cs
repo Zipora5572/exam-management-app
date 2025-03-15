@@ -10,6 +10,6 @@ namespace Server.Core.IRepositories
 {
     public interface IUserRepository : IRepository<User>
     {
-        Task<UserDto> GetByUserNameAsync(string username);
+        Task<UserDto> GetByEmailAsync(string email);
     }
 }

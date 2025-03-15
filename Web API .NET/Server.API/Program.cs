@@ -111,7 +111,10 @@ builder.Services.AddDbContext<IDataContext, DataContext>(
 
 builder.Services.AddCors(opt => opt.AddPolicy("MyPolicy", policy =>
 {
-    policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    policy.WithOrigins("http://localhost:5173")
+          .AllowAnyHeader()
+          .AllowAnyMethod()
+      .AllowCredentials();
 }));
 
 var app = builder.Build();
