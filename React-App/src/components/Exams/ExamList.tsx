@@ -128,8 +128,9 @@ const ExamList: React.FC = () => {
                                         />
                                     )}
                                 </TableCell>
-                                <TableCell sx={{ color: 'rgb(75, 75, 75)', display: 'flex', alignItems: 'center' }}>
-                                    {row.examName}
+                                <TableCell sx={{ color: 'rgb(75, 75, 75)', alignItems: 'center' }}>
+                                    {/* {row.examName} */}
+                                    
                                 </TableCell>
                                 <TableCell sx={{ color: 'rgb(75, 75, 75)' }}>{row.sharing}</TableCell>
                                 <TableCell sx={{ color: 'rgb(75, 75, 75)' }}>{row.modified}</TableCell>
