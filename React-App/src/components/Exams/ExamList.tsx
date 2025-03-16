@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Table,
     TableBody,
@@ -9,25 +9,79 @@ import {
     Paper,
     Typography,
     Button,
-    Menu,
-    MenuItem,
 } from '@mui/material';
-import UploadIcon from '@mui/icons-material/Upload';
-import FolderIcon from '@mui/icons-material/Folder';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import FolderIcon from '@mui/icons-material/Folder';
+import { ExamFileType, ExamFolderType, ExamType } from '../../models/Exam';
+import { useSelector } from 'react-redux';
+import { StoreType } from '../../store/store';
+import { useNavigate } from 'react-router-dom';
+import useModal from '../../hooks/useModal';
+import ModalWrapper from '../ModalWrapper';
+import FileMenu from '../FileMenu';
+import ActionButtons from '../ActionButtons';
 
-const data = [
-    { name: 'תשובון 89-ocr.pdf', type: 'PDF', sharing: 'Shared', modified: '2025-03-10' },
-    { name: 'תשובון 90-ocr.pdf', type: 'PDF', sharing: 'Shared', modified: '2025-03-11' },
-    { name: 'תשובון 91-ocr.pdf', type: 'PDF', sharing: 'Shared', modified: '2025-03-12' },
-    // Add more document data here
+const initialData: (ExamFileType | ExamFolderType)[] = [
+    {
+        id: 1,
+        folderName: "Folder 1",
+        type: 'folder',
+        children: [
+            {
+                id: 2,
+                userId: 1,
+                examName: "Math Exam",
+                topicName: "Algebra",
+                sharing: true,
+                modified: "2023-10-01",
+                teacherId: 1,
+                examPath: "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\מבחנים לניסוי\\a.png",
+                parentId: 1,
+                type: 'file',
+            },
+            {
+                id: 3,
+                folderName: "Subfolder 1",
+                type: 'folder',
+                parentId: 1,
+                children: [],
+            },
+        ],
+    },
+    {
+        id: 4,
+        folderName: "Folder 2",
+        type: 'folder',
+        children: [],
+    },
+    {
+        id: 5,
+        userId: 1,
+        examName: "Math Exam",
+        topicName: "Algebra",
+        sharing: true,
+        modified: "2023-10-01",
+        teacherId: 1,
+        examPath: "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\מבחנים לניסוי\\a.png",
+        parentId: 1,
+        type: 'file',
+    },
 ];
 
-const ExamList = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [selectedRow, setSelectedRow] = React.useState(null);
+const ExamList: React.FC = () => {
+    const [data, setData] = useState(initialData); // מצב לאחסון הנתונים
+    const [openFolderId, setOpenFolderId] = useState<number | null>(null);
+    const user = useSelector((state: StoreType) => state.auth.user);
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const [selectedRow, setSelectedRow] = React.useState<number | null>(null);
+    const { isOpen, openModal, closeModal, modalData } = useModal();
+    const navigate = useNavigate();
 
-    const handleMenuClick = (event, index) => {
+    const handleFolderClick = (folderId: number) => {
+        setOpenFolderId(openFolderId === folderId ? null : folderId);
+    };
+
+    const handleMenuClick = (event: React.MouseEvent<HTMLElement>, index: number) => {
         setAnchorEl(event.currentTarget);
         setSelectedRow(index);
     };
@@ -37,71 +91,21 @@ const ExamList = () => {
         setSelectedRow(null);
     };
 
-    const handleDelete = () => {
-        console.log(`Deleting row ${selectedRow}`);
-        handleMenuClose();
-    };
-    const handleDownload = (fileName:string) => {
-        const fileId = "1yqsVCieVhfw9ibYc-U9orUIMaVhiK2YN"; 
-        const fileUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-        
-        const link = document.createElement('a');
-        link.href = fileUrl;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        console.log(`Downloading ${fileName}`);
-    };
-    
-
     return (
         <>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                 <Typography variant="h6" gutterBottom>
                     Your Exams
                 </Typography>
-                <div>
-                    <Button
-                        variant="contained"
-                        style={{
-                            marginLeft: 'auto',
-                            borderRadius: '20px',
-                            border: '2px solid black',
-                            fontWeight: 'bold',
-                            color: 'black',
-                            backgroundColor: 'transparent',
-                            boxShadow: 'none',
-                            marginRight: '8px',
-                        }}
-                        startIcon={<FolderIcon />}
-                    >
-                        Create Folder
-                    </Button>
-                    <Button
-                        variant="contained"
-                        style={{
-                            marginLeft: 'auto',
-                            borderRadius: '20px',
-                            border: '2px solid black',
-                            fontWeight: 'bold',
-                            color: 'black',
-                            backgroundColor: 'transparent',
-                            boxShadow: 'none',
-                        }}
-                        startIcon={<UploadIcon />}
-                    >
-                        Upload File
-                    </Button>
-                </div>
+                <ActionButtons data={data} setData={setData} openModal={openModal} modalData={modalData} />
             </div>
             <TableContainer component={Paper} style={{ boxShadow: 'none' }}>
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell style={{ border: 'none', color: 'rgb(110, 110, 110)', fontWeight: "bold" }}>Document Name</TableCell>
-                            <TableCell style={{ border: 'none', color: 'rgb(110, 110, 110)', fontWeight: "bold" }}>Type</TableCell>
-                            <TableCell style={{ border: 'none', color: 'rgb(110, 110, 110)', fontWeight: "bold" }}>Sharing</TableCell>
+                            <TableCell style={{ border: 'none', color: 'rgb(110, 110, 110)', fontWeight: "bold" }}></TableCell>
+                            <TableCell style={{ border: 'none', color: 'rgb(110, 110, 110)', fontWeight: "bold" }}>Exam Name</TableCell>
+                            <TableCell style={{ border: 'none', color: 'rgb(110, 110, 110)', fontWeight: "bold" }}></TableCell>
                             <TableCell style={{ border: 'none', color: 'rgb(110, 110, 110)', fontWeight: "bold" }}>Modified</TableCell>
                             <TableCell style={{ border: 'none', color: 'rgb(110, 110, 110)', fontWeight: "bold" }}>Actions</TableCell>
                         </TableRow>
@@ -109,33 +113,73 @@ const ExamList = () => {
                     <TableBody style={{ border: '1px solid #e0e0e0' }}>
                         {data.map((row, index) => (
                             <TableRow key={index} sx={{ '&:hover': { backgroundColor: '#f0f0f0' } }}>
-                                <TableCell sx={{ color: 'rgb(75, 75, 75)' }}>{row.name}</TableCell>
-                                <TableCell sx={{ color: 'rgb(75, 75, 75)' }}>{row.type}</TableCell>
+                                <TableCell sx={{ color: 'rgb(75, 75, 75)' }}>
+                                    {row.type === 'folder' ? (
+                                        <FolderIcon
+                                            style={{ color: 'rgb(144, 144, 144)', fontSize: '24px', cursor: 'pointer' }}
+                                            onClick={() => handleFolderClick(row.id)}
+                                        />
+                                    ) : (
+                                        <img
+                                            src="/a.png"
+                                            alt={row.examName}
+                                            style={{ width: '50px', height: 'auto', marginRight: '8px', cursor: 'pointer' }}
+                                            onClick={() => window.open("/a.png", "_blank")}
+                                        />
+                                    )}
+                                </TableCell>
+                                <TableCell sx={{ color: 'rgb(75, 75, 75)', display: 'flex', alignItems: 'center' }}>
+                                    {row.examName}
+                                </TableCell>
                                 <TableCell sx={{ color: 'rgb(75, 75, 75)' }}>{row.sharing}</TableCell>
                                 <TableCell sx={{ color: 'rgb(75, 75, 75)' }}>{row.modified}</TableCell>
                                 <TableCell>
-                                    <Button variant="outlined" onClick={() => console.log(`Checking exam ${row.name}`)}>Check Exam</Button>
+                                    <Button
+                                        variant="outlined"
+                                        onClick={() => navigate('/exams/students-exams', { state:"C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\מבחנים לניסוי\\a.png" })}
+                                    >
+                                        view students exams
+                                    </Button>
                                     <Button
                                         onClick={(event) => handleMenuClick(event, index)}
                                         sx={{ marginLeft: 1 }}
                                     >
                                         <MoreVertIcon />
                                     </Button>
-                                    <Menu
+                                    <FileMenu
                                         anchorEl={anchorEl}
-                                        open={Boolean(anchorEl) && selectedRow === index}
-                                        onClose={handleMenuClose}
-                                    >
-                                        <MenuItem onClick={() => handleDownload(row.name)}>Download</MenuItem>
-
-                                        <MenuItem onClick={handleDelete}>Delete</MenuItem>
-                                    </Menu>
+                                        selectedRow={selectedRow}
+                                        handleMenuClose={handleMenuClose}
+                                        examPath={row.examPath}
+                                        examName={row.examName}
+                                        openModal={openModal}
+                                    />
                                 </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
+            <ModalWrapper
+                open={isOpen}
+                handleClose={closeModal}
+                title={modalData?.title || ''}
+                onConfirm={modalData?.onConfirm}
+                confirmText={modalData?.confirmText}
+                initialName={modalData?.initialName}
+                setNewName={modalData?.setNewName || (() => {})}
+            >
+                {modalData?.children}
+            </ModalWrapper>
+            {openFolderId !== null && (
+                <div>
+                    {data.find(item => item.id === openFolderId)?.children.map((file, index) => (
+                        <div key={index}>
+                            <Typography>{file.examName || file.folderName}</Typography>
+                        </div>
+                    ))}
+                </div>
+            )}
         </>
     );
 };

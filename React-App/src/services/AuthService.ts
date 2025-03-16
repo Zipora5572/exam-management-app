@@ -32,7 +32,7 @@ export default {
 },
 
   register: async (userData: Partial<UserType>) => {
-    const res = await axios.post("/auth/register", { Email: userData.email, Password: userData.password }, { withCredentials: true });
+    const res = await axios.post("/auth/register", { Email: userData.email, Password: userData.password  }, { withCredentials: true });
     return res.data;
   },
 

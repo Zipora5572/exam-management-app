@@ -45,7 +45,7 @@ const Exams = () => {
                 >
                     <ListItemButton onClick={() => {
                         handleClick('exams');
-                        handleComponentChange(null); // Reset component when opening section
+                        handleComponentChange(null); 
                     }}>
                         <ListItemText primary="Exams" />
                         {openSections['exams'] ? <ExpandLess /> : <ExpandMore />}

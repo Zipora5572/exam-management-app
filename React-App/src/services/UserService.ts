@@ -34,6 +34,15 @@ export default {
             throw error.response?.data || "Update failed";
         }
     },
+
+    getUserById: async (userId: Number  ) => { 
+        try {
+            const response = await axios.get(`User/${userId}`);
+            return response.data;
+        } catch (error) {
+            throw error.response?.data || "Get User failed";
+        }
+    }
 };
 
 

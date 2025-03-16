@@ -15,7 +15,7 @@ const UserAccess = () => {
     // const { user, userDispatch } = useContext(UserContext);
     const token = localStorage.getItem('token');
     // const [isLoggedIn, setIsLoggedIn] = useState(token !== null);
-    console.log(user);
+    
     
     const navigate = useNavigate();
 

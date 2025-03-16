@@ -7,6 +7,7 @@ import AuthForm from './components/Auth/AuthForm';
 import Exams from './pages/Exams';
 import Home from './pages/home';
 import Profile from './pages/Profile';
+import StudentsExams from './components/StudentsExams';
 
 
 export const router = createBrowserRouter([
@@ -26,7 +27,8 @@ export const router = createBrowserRouter([
                 path: '/exams',
                 element: <Exams />,
                 children: [
-                    { path: '', element: <ExamList /> }, // רשימת הבחינות
+                    { path: '', element: <ExamList /> },
+                    { path: 'students-exams', element: <StudentsExams /> } 
                     
                 ],
             },
