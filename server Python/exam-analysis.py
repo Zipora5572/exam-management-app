@@ -141,32 +141,6 @@ def grade():
 
     return response
 
-    # data = request.json
-    # student_exam_url = data.get('student_exam_url')
-    # teacher_exam_url = data.get('teacher_exam_url')
-    # print(f"Student Exam URL: {student_exam_url}")
-    # print(f"Teacher Exam URL: {teacher_exam_url}")
-    # if not student_exam_url or not teacher_exam_url:
-    #     return jsonify({"error": "Both student_exam_url and teacher_exam_url are required."}), 400
-
-    # try:
-
-    #     # student_exam_image = Image.open(requests.get(student_exam_url, stream=True).raw)
-    #     student_exam_image = Image.open(student_exam_url)
-    #     student_exam = pytesseract.image_to_string(student_exam_image)
-    #     print("Student Exam Text:", student_exam)
-
-    #     # teacher_exam_image = Image.open(requests.get(teacher_exam_url, stream=True).raw)
-    #     teacher_exam_image = Image.open(teacher_exam_url)
-    #     teacher_exam = pytesseract.image_to_string(teacher_exam_image)
-    #     print("Teacher Exam Text:", teacher_exam)
-        
-    # except Exception as e:
-    #     return jsonify({"error": str(e)}), 400
-
-    # grade_result = grade_exam(student_exam, teacher_exam)
-    # response = jsonify({"grade": grade_result})
-    # return response
 
 if __name__ == '__main__':
     app.run(debug=True)
