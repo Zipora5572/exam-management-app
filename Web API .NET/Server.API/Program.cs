@@ -14,6 +14,9 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// קונפיגורציה עבור GoogleServiceAccount
+//builder.Services.Configure<GoogleServiceAccount>(builder.Configuration.GetSection("GoogleServiceAccount"));
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -84,6 +87,7 @@ builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
 builder.Services.AddScoped<IExamRepository, ExamRepository>();
 builder.Services.AddScoped<ITopicRepository, TopicRepository>();
 
+builder.Services.AddSingleton<IGoogleStorageService, GoogleStorageService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService, RoleService>();

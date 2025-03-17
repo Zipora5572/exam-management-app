@@ -23,6 +23,11 @@ public class AuthService:IAuthService
 
     public string GenerateJwtToken(string email, List<Role>roles)
     {
+
+        if (roles == null )
+        {
+            roles = new List<Role>();
+        }
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
@@ -30,7 +35,7 @@ public class AuthService:IAuthService
         {
             new Claim(ClaimTypes.Email, email)
         };
-
+       
       
         foreach (var role in roles)
         {

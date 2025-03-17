@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IzmJfpmItNI=",
+  "dgSpecHash": "tyYwhMpsK3E=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\פרויקט\\server\\Server\\Server.API\\Server.API.csproj",
+  "projectFilePath": "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\Fullstack Project\\Web API .NET\\Server\\Server.API\\Server.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user1\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\user1\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

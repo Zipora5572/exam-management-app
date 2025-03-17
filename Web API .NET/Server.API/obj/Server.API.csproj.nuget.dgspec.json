@@ -69,6 +69,10 @@
               "target": "Package",
               "version": "[8.0.13, )"
             },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.14, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
@@ -230,7 +234,7 @@
               "target": "Package",
               "version": "[8.0.11, )"
             },
-            "Pomelo.EntityFrameworkCore.MySql": {
+            "Pomelo.EntityFrameworkCore.MySql.NetTopologySuite": {
               "target": "Package",
               "version": "[8.0.3, )"
             }
@@ -307,9 +311,17 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "Google.Cloud.Storage.V1": {
+              "target": "Package",
+              "version": "[4.11.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.13, )"
+            },
+            "MimeTypesMap": {
+              "target": "Package",
+              "version": "[1.0.9, )"
             }
           },
           "imports": [

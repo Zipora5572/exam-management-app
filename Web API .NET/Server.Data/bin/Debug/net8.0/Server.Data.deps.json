@@ -12,7 +12,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.13",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.13",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.11",
-          "Pomelo.EntityFrameworkCore.MySql": "8.0.3",
+          "Pomelo.EntityFrameworkCore.MySql.NetTopologySuite": "8.0.3",
           "Server.Core": "1.0.0"
         },
         "runtime": {
@@ -666,6 +666,17 @@
           }
         }
       },
+      "NetTopologySuite/2.5.0": {
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
       "Npgsql/8.0.6": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "8.0.2"
@@ -698,6 +709,21 @@
         },
         "runtime": {
           "lib/net8.0/Pomelo.EntityFrameworkCore.MySql.dll": {
+            "assemblyVersion": "8.0.3.0",
+            "fileVersion": "8.0.3.0"
+          }
+        }
+      },
+      "Pomelo.EntityFrameworkCore.MySql.NetTopologySuite/8.0.3": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.13",
+          "Microsoft.Extensions.DependencyInjection": "8.0.1",
+          "MySqlConnector": "2.3.5",
+          "NetTopologySuite": "2.5.0",
+          "Pomelo.EntityFrameworkCore.MySql": "8.0.3"
+        },
+        "runtime": {
+          "lib/net8.0/Pomelo.EntityFrameworkCore.MySql.NetTopologySuite.dll": {
             "assemblyVersion": "8.0.3.0",
             "fileVersion": "8.0.3.0"
           }
@@ -1264,6 +1290,13 @@
       "path": "mysqlconnector/2.3.5",
       "hashPath": "mysqlconnector.2.3.5.nupkg.sha512"
     },
+    "NetTopologySuite/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5/+2O2ADomEdUn09mlSigACdqvAf0m/pVPGtIPEPQWnyrVykYY0NlfXLIdkMgi41kvH9kNrPqYaFBTZtHYH7Xw==",
+      "path": "nettopologysuite/2.5.0",
+      "hashPath": "nettopologysuite.2.5.0.nupkg.sha512"
+    },
     "Npgsql/8.0.6": {
       "type": "package",
       "serviceable": true,
@@ -1284,6 +1317,13 @@
       "sha512": "sha512-gOHP6v/nFp5V/FgHqv9mZocGqCLGofihEX9dTbLhiXX3H7SJHmGX70GIPUpiqLT+1jIfDxg1PZh9MTUKuk7Kig==",
       "path": "pomelo.entityframeworkcore.mysql/8.0.3",
       "hashPath": "pomelo.entityframeworkcore.mysql.8.0.3.nupkg.sha512"
+    },
+    "Pomelo.EntityFrameworkCore.MySql.NetTopologySuite/8.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Pxe9ncYWJ4I+Q97gpCQncCAI0Vj0BYGlc2ts9ZGU+ZgpJ8TnsQjooZTEm1Xe3WzkT4PRqE5jGKPOkdjoSNPtSQ==",
+      "path": "pomelo.entityframeworkcore.mysql.nettopologysuite/8.0.3",
+      "hashPath": "pomelo.entityframeworkcore.mysql.nettopologysuite.8.0.3.nupkg.sha512"
     },
     "System.ClientModel/1.0.0": {
       "type": "package",
