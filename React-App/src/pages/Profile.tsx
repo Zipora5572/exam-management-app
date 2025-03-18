@@ -1,5 +1,4 @@
-import { useContext, useState } from 'react';
-import { UserContext } from '../contexts/UserReducer';
+import { useState } from 'react';
 import { Box, TextField, Button, Grid, Paper, Typography } from '@mui/material';
 import { UserType } from '../models/User';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +6,7 @@ import { AppDispatch, StoreType } from '../store/store';
 import { updateUser } from '../store/userSlice';
 
 const Profile = () => {
-    // const { user, userDispatch } = useContext(UserContext);
+
     const user = useSelector((state: StoreType) => state.auth.user)
     const dispatch = useDispatch<AppDispatch>();
     const [formData, setFormData] = useState<Partial<UserType>>({

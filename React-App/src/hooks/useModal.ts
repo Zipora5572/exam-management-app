@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 interface ModalData {
     title: string;
-    children?: React.ReactNode; // הוספת שדה children
+    children?: React.ReactNode;
     confirmText?: string;
     onConfirm?: () => void;
 }

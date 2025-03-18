@@ -1,5 +1,5 @@
-import { initialUserState } from "../contexts/UserReducer";
-import { UserType } from "./User";
+
+import { initialUserState, UserType } from "./User";
 
 
 export type AuthUser = {

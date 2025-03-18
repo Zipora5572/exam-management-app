@@ -1,13 +1,8 @@
-import { useContext, useState } from "react";
-
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
-import AuthForm from "./AuthForm";
-import { initialUserState, UserContext } from "../../contexts/UserReducer";
 import UserProfile from "../UserProfile";
 import { useSelector } from "react-redux";
 import { StoreType } from "../../store/store";
-
 
 const UserAccess = () => {
   const user = useSelector((state: StoreType) => state.auth.user)

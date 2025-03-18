@@ -43,7 +43,6 @@ const useGradeExam = (): UseGradeExamResult => {
             setLoading(false);
         }
     };
-    
     return { gradeExam, loading, error, grade, evaluation };
 };
 
