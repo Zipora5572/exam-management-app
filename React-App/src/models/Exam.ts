@@ -1,17 +1,20 @@
+import { TopicType } from "./Topic";
 import { UserType } from "./User"
+
+ 
+
 
 export type ExamType = {
     id: number,
-    userId: number | undefined,
+    userId: number |undefined,
     examName: string,
+    examType: string,
     topicName: string,
-    // gradeId: number,
+    folderId: number|null,
+    topic:TopicType,
     sharing: boolean,
     modified: string,
-    teacherId: number | undefined,
     examPath: string,
-
-
 }
 export type ExamFolderType={
     id: number,

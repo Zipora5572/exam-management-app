@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
-import { Button, TextField, Box, Typography, Modal } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import UploadIcon from '@mui/icons-material/Upload';
 import useModal from '../hooks/useModal';
 import examService from "../services/ExamService";
-
+import { ExamType } from "../models/Exam";
+import { useSelector } from 'react-redux';
+import { StoreType } from '../store/store';
+import ModalWrapper from './ModalWrapper';
 
 const ExamUpload = () => {
+    const user = useSelector((state: StoreType) => state.auth.user);
     const [file, setFile] = useState<File | null>(null);
-    const [examDetails, setExamDetails] = useState({ name: '', description: '' });
-    const { isOpen, openModal, closeModal } = useModal();
+    const [examDetails, setExamDetails] = useState<Partial<ExamType>>({
+        userId:1,
+        examName: ' ',
+        topic: { Name: 'name', Description: 'desc' },
+    });
+    const { isOpen, openModal, closeModal, modalData } = useModal();
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files && event.target.files.length > 0) {
@@ -17,21 +25,21 @@ const ExamUpload = () => {
             console.log('Selected file:', selectedFile.name);
             openModal({
                 title: 'Enter Exam Details',
-                onConfirm: handleUpload,
+                onConfirm: () => handleUpload(selectedFile),
                 confirmText: 'Upload',
                 children: (
                     <>
                         <TextField
-                            label="Exam Name"
-                            value={examDetails.name}
-                            onChange={(e) => setExamDetails({ ...examDetails, name: e.target.value })}
+                            label="Topic Name"
+                            value={examDetails.topic?.name}
+                            onChange={(e) => setExamDetails({ ...examDetails, topic: { name: e.target.value, description: examDetails.topic?.description } })}
                             fullWidth
                             margin="normal"
                         />
                         <TextField
-                            label="Exam Description"
-                            value={examDetails.description}
-                            onChange={(e) => setExamDetails({ ...examDetails, description: e.target.value })}
+                            label="Topic Description"
+                            value={examDetails.topic?.description}
+                            onChange={(e) => setExamDetails({ ...examDetails, topic: { name: examDetails.topic?.name, description: e.target.value } })}
                             fullWidth
                             margin="normal"
                         />
@@ -41,11 +49,15 @@ const ExamUpload = () => {
         }
     };
 
-    const handleUpload = async () => {
-        if (file) {
+    const handleUpload = async (selectedFile: File) => {
+        console.log('Uploading file:', selectedFile?.name);
+
+        if (selectedFile) {
             try {
-                const result = await examService.uploadExamFile(file, examDetails);
-                onUploadSuccess(`File uploaded successfully: ${result.message}`);
+                console.log('Uploading file:', selectedFile.name);
+
+                const result = await examService.uploadExamFile(selectedFile, examDetails);
+                console.log(`File uploaded successfully: ${result.message}`);
             } catch (error) {
                 console.error('Error uploading file:', error);
             } finally {
@@ -82,73 +94,15 @@ const ExamUpload = () => {
                 </Button>
             </label>
 
-            <Modal open={isOpen} onClose={closeModal}>
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        width: 500,
-                        bgcolor: 'background.paper',
-                        boxShadow: 24,
-                        p: 4,
-                        maxHeight: '80vh',
-                        overflowY: 'auto',
-                    }}
-                >
-                    <Typography variant="h6" component="h2" gutterBottom>
-                        Enter Exam Details
-                    </Typography>
-                    <Box sx={{ borderBottom: '1px solid lightgray', mb: 2 }} />
-                    <Box sx={{ mb: 2 }}>
-                        <TextField
-                            label="Exam Name"
-                            value={examDetails.name}
-                            onChange={(e) => setExamDetails({ ...examDetails, name: e.target.value })}
-                            fullWidth
-                            margin="normal"
-                        />
-                        <TextField
-                            label="Exam Description"
-                            value={examDetails.description}
-                            onChange={(e) => setExamDetails({ ...examDetails, description: e.target.value })}
-                            fullWidth
-                            margin="normal"
-                        />
-                    </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1, marginTop: "30px" }}>
-                        <Button
-                            variant="outlined"
-                            onClick={closeModal}
-                            sx={{
-                                bgcolor: 'white',
-                                border: '1px solid lightgray',
-                                borderRadius: '5px',
-                                '&:hover': {
-                                    bgcolor: 'lightgray',
-                                    color: 'white',
-                                },
-                            }}
-                        >
-                            Cancel
-                        </Button>
-                        <Button
-                            variant="outlined"
-                            onClick={handleUpload}
-                            sx={{
-                                bgcolor: 'primary.main',
-                                color: 'white',
-                                '&:hover': {
-                                    bgcolor: 'primary.dark',
-                                },
-                            }}
-                        >
-                            Upload
-                        </Button>
-                    </Box>
-                </Box>
-            </Modal>
+            <ModalWrapper
+                open={isOpen}
+                handleClose={closeModal}
+                title={modalData?.title || ''}
+                onConfirm={modalData?.onConfirm}
+                confirmText={modalData?.confirmText}
+            >
+                {modalData?.children}
+            </ModalWrapper>
         </div>
     );
 };
