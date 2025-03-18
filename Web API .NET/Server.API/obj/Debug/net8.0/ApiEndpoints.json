@@ -410,6 +410,22 @@
   },
   {
     "ContainingType": "Server.Controllers.StorageController",
+    "Method": "DeleteFile",
+    "RelativePath": "api/Storage/{fileName}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.StorageController",
     "Method": "UploadFile",
     "RelativePath": "api/Storage/upload",
     "HttpMethod": "POST",

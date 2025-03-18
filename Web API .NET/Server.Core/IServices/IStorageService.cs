@@ -6,6 +6,7 @@ namespace Server.Core.IServices
     public interface IStorageService
     {
         Task UploadFileAsync(string filePath, string objectName);
-        //Task<ExamDto> UploadAndSaveExamAsync(ExamPostModel examPostModel);
+        Task<bool> DeleteFileAsync(string fileName);
+
     }
 }

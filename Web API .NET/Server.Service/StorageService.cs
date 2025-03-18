@@ -45,5 +45,28 @@ namespace Server.Service
                 throw; 
             }
         }
+
+        public async Task<bool> DeleteFileAsync(string fileName)
+        {
+            try
+            {
+                await _storageClient.DeleteObjectAsync(_bucketName, fileName);
+                return true; 
+            }
+            catch (Google.GoogleApiException ex)
+            {
+                
+                if (ex.HttpStatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    return false; 
+                }
+                throw;
+            }
+            catch (Exception)
+            {
+                
+                return false; 
+            }
+        }
     }
 }

@@ -61,6 +61,7 @@ namespace Server.Controllers
 
             var examDto = _mapper.Map<ExamDto>(examPostModel);
             examDto.TopicId = addedTopic.Id;
+            examDto.UniqueFileName = uniqueFileName;
             examDto.ExamName = Path.GetFileNameWithoutExtension(objectName);
             examDto.ExamPath = $"https://storage.cloud.google.com/exams-bucket/{uniqueFileName}";
             examDto.Size = examPostModel.File.Length;
@@ -73,7 +74,7 @@ namespace Server.Controllers
             await _examService.AddExamAsync(examDto);
             try
             {
-                await _storageService.UploadFileAsync(filePath, objectName);
+                await _storageService.UploadFileAsync(filePath, uniqueFileName);
             }
             catch (Exception ex)
             {
@@ -85,6 +86,31 @@ namespace Server.Controllers
             
 
             return Ok($"File {objectName} uploaded and exam details saved successfully.");
+        }
+
+
+        [HttpDelete("{fileName}")]
+        public async Task<IActionResult> DeleteFile(string fileName)
+        {
+            if (string.IsNullOrEmpty(fileName))
+            {
+                return BadRequest("File name cannot be null or empty.");
+            }
+
+            try
+            {
+                bool result = await _storageService.DeleteFileAsync(fileName);
+                if (!result)
+                {
+                    return NotFound("File not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error deleting file: {ex.Message}");
+            }
+
+            return NoContent(); // מחזיר 204 No Content אם המחיקה הצליחה
         }
 
     }

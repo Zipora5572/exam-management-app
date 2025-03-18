@@ -4,7 +4,8 @@
     {
         public int Id { get; set; } 
         public int UserId { get; set; } 
-        public string ExamName { get; set; } 
+        public string ExamName { get; set; }
+        public string UniqueFileName { get; set; }
         public string ExamType { get; set; }
         public string ExamExtension { get; set; } 
         public long Size { get; set; } 

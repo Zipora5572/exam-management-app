@@ -18,6 +18,7 @@ namespace Server.Core.Entities
 
 
         public string ExamName { get; set; }
+        public string UniqueFileName { get; set; }
 
         public string ExamType { get; set; }
         public string ExamExtension { get; set; }
