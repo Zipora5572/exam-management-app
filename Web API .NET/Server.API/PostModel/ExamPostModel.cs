@@ -1,23 +1,14 @@
 ﻿using Server.Core.Entities;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Server.API.PostModel
 {
     public class ExamPostModel
     {
 
-        public string examName { get; set; }
-
-        public string examPath { get; set; }
-
-        public int UsertId { get; set; }
-        
-        public int TopicId { get; set; }
-
-        //public int GradeId { get; set; }
-
-        public int? TeacherId { get; set; }
-
-        public List<Tag> Tags { get; set; }
+        public IFormFile File { get; set; }
+        public int UserId { get; set; }
+        public TopicPostModel Topic { get; set; }
+        public int? FolderId { get; set; }
+        //public List<int> TagIds { get; set; }
     }
 }

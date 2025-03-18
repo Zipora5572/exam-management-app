@@ -1,23 +1,19 @@
-﻿using Server.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Server.Core.DTOs
+﻿namespace Server.Core.DTOs
 {
     public class ExamDto
     {
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        public string examName { get; set; } 
-        public int TopicId { get; set; }
-        public int GradeId { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public int? TeacherId { get; set; }
-        public string examPath { get; set; }
-        public List<Tag> Tags { get; set; }
+        public int Id { get; set; } 
+        public int UserId { get; set; } 
+        public string ExamName { get; set; } 
+        public string ExamType { get; set; }
+        public string ExamExtension { get; set; } 
+        public long Size { get; set; } 
+        public int TopicId { get; set; } 
+        public int? FolderId { get; set; } 
+        public DateTime CreatedAt { get; set; } 
+        public DateTime UpdatedAt { get; set; } 
+        public bool IsDeleted { get; set; } 
+        public string ExamPath { get; set; } 
+        public List<string> Tags { get; set; } 
     }
 }

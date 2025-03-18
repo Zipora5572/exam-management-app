@@ -1,7 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Server.API.PostModel;
+using Server.Core.DTOs;
 using Server.Core.IServices;
 using Server.Service;
+using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Server.Controllers
@@ -10,35 +15,77 @@ namespace Server.Controllers
     [ApiController]
     public class StorageController : ControllerBase
     {
-        private readonly IGoogleStorageService _googleStorageService;
+        private readonly IStorageService _storageService;
+        private readonly IExamService _examService;
+        private readonly ITopicService _topicService;
+        private readonly IMapper _mapper;
 
-        public StorageController(IGoogleStorageService googleStorageService)
+        public StorageController(
+            IStorageService storageService,
+            IExamService examService,
+            ITopicService topicService,
+            IMapper mapper)
         {
-            _googleStorageService = googleStorageService;
+            _storageService = storageService;
+            _examService = examService;
+            _topicService = topicService;
+            _mapper = mapper;
         }
 
+     
         [HttpPost("upload")]
-        public async Task<IActionResult> UploadFile(IFormFile file)
+        public async Task<IActionResult> UploadFile([FromForm] ExamPostModel examPostModel)
         {
-            if (file == null || file.Length == 0)
+            if (examPostModel.File == null || examPostModel.File.Length == 0)
             {
                 return BadRequest("No file uploaded.");
             }
 
-            var objectName = file.FileName;
-            var filePath = Path.Combine(Path.GetTempPath(), objectName);
+            var objectName = examPostModel.File.FileName;
+            var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(examPostModel.File.FileName)}";
+            var filePath = Path.Combine(Path.GetTempPath(), uniqueFileName);
 
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
-                await file.CopyToAsync(stream);
+                await examPostModel.File.CopyToAsync(stream);
             }
 
-            await _googleStorageService.UploadFileAsync(filePath, objectName);
+            var topicDto = _mapper.Map<TopicDto>(examPostModel.Topic);
+            var addedTopic = await _topicService.AddTopicAsync(topicDto);
 
-            
+
+            if (addedTopic == null)
+            {
+                return BadRequest("Failed to add topic.");
+            }
+
+            var examDto = _mapper.Map<ExamDto>(examPostModel);
+            examDto.TopicId = addedTopic.Id;
+            examDto.ExamName = Path.GetFileNameWithoutExtension(objectName);
+            examDto.ExamPath = $"https://storage.cloud.google.com/exams-bucket/{uniqueFileName}";
+            examDto.Size = examPostModel.File.Length;
+            examDto.ExamType = examPostModel.File.ContentType;
+            examDto.ExamExtension = Path.GetExtension(examPostModel.File.FileName);
+            examDto.CreatedAt = DateTime.Now;
+            examDto.UpdatedAt = DateTime.Now;
+            examDto.IsDeleted = false;
+
+            await _examService.AddExamAsync(examDto);
+            try
+            {
+                await _storageService.UploadFileAsync(filePath, objectName);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error uploading file: {ex.Message}");
+            }
+
             System.IO.File.Delete(filePath);
 
-            return Ok($"File {objectName} uploaded successfully.");
+            
+
+            return Ok($"File {objectName} uploaded and exam details saved successfully.");
         }
+
     }
 }

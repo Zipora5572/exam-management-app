@@ -87,7 +87,7 @@ builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
 builder.Services.AddScoped<IExamRepository, ExamRepository>();
 builder.Services.AddScoped<ITopicRepository, TopicRepository>();
 
-builder.Services.AddSingleton<IGoogleStorageService, GoogleStorageService>();
+builder.Services.AddSingleton<IStorageService, StorageService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
@@ -99,7 +99,7 @@ builder.Services.AddScoped<IDataContext,DataContext>();
 builder.Services.AddAutoMapper(typeof(MappingProfile), typeof(MappingPostProfile));
 
 builder.Services.AddDbContext<IDataContext, DataContext>(
-    options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ExamsCheckerDB"));
+    options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ExamsDB"));
 //builder.Services.AddDbContext<DataContext>(
 //    options => options.UseMySql(
 //        "server=bygljohvlznnah8fy7a7-mysql.services.clever-cloud.com;database=bygljohvlznnah8fy7a7;user=ueb9fmdhiqcwfkgg;password=C7H2J9SuOtXATsY8WAGx;",

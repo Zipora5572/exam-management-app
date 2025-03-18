@@ -15,6 +15,7 @@ namespace Server.Data
     public class DataContext : DbContext, IDataContext
     {
         public DbSet<Exam> Exams { get; set; }
+        public DbSet<Folder> Folders { get; set; }
         //public DbSet<Grade> Grades { get; set; }
         //public DbSet<Institution> Institutions { get; set; }
         public DbSet<Permission> Permissions { get; set; }
@@ -33,6 +34,17 @@ namespace Server.Data
         {
             return await base.SaveChangesAsync();
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Folder>()
+                .HasOne(f => f.ParentFolder)
+                .WithMany()
+                .HasForeignKey(f => f.ParentFolderId)
+                .OnDelete(DeleteBehavior.Restrict); // או DeleteBehavior.SetNull
+
+            modelBuilder.Entity<Folder>().HasQueryFilter(f => !f.IsDeleted);
+        }
+       
 
     }
 }
