@@ -1,36 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, MenuItem } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../store/store';
+import { deleteExamFile, getAllExams, renameExamFile } from '../store/examSlice';
+import ExamService from '../services/ExamService';
 
 interface FileMenuProps {
     anchorEl: null | HTMLElement;
     selectedRow: number | null;
     handleMenuClose: () => void;
-    examPath: string;
+    id: number;
+    uniqueFileName: string;
     examName: string;
     openModal: (data: { title: string; initialName?: string; setNewName?: (name: string) => void; confirmText?: string; onConfirm?: (name: string) => void; children?: React.ReactNode; }) => void;
 }
 
-const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuClose, examPath, examName, openModal }) => {
+const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuClose, uniqueFileName, examName,id, openModal }) => {
     const [newName, setNewName] = useState<string>(examName);
+    const dispatch = useDispatch<AppDispatch>();
+
 
     useEffect(() => {
         setNewName(examName);
     }, [examName]);
 
-    const handleDownload = () => {
-        const fileId = "1yqsVCieVhfw9ibYc-U9orUIMaVhiK2YN";
-        const fileUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
-
-        const link = document.createElement('a');
-        link.href = fileUrl;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        console.log(`Downloading ${examName}`);
+    const handleDownload = async () => {
+        try {
+            await ExamService.download(uniqueFileName); 
+        } catch (error) {
+            console.error("Error downloading file:", error);
+        }
         handleMenuClose();
     };
-
+    // const handleDownload = () => {
+    //     const fileId = "1yqsVCieVhfw9ibYc-U9orUIMaVhiK2YN";
+    //     const fileUrl = `https://storage.googleapis.com/exams-bucket/fa9563ef-5a60-4cb1-b725-21c378afb60b.png`;
+    
+    //     const link = document.createElement('a');
+    //     link.href = fileUrl;
+    //     link.download = 'filename.png'; // הוסף שם לקובץ שיתקבל
+    //     document.body.appendChild(link);
+    //     link.click();
+    //     document.body.removeChild(link);
+    
+    //     console.log(`Downloading ${fileId}`);
+    //     handleMenuClose();
+    // };
+    
     const handleDelete = () => {
         openModal({
             title: 'Delete',
@@ -41,8 +57,9 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
             ),
             confirmText: 'Delete',
             onConfirm: () => {
-                console.log(`Deleting row ${selectedRow}`);
-                handleMenuClose();
+             dispatch(deleteExamFile(examName));
+             dispatch(getAllExams())
+             handleMenuClose();
             },
         });
     };
@@ -56,7 +73,8 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
             },
             confirmText: 'Rename',
             onConfirm: (updatedName: string) => {
-                console.log(`Renaming to ${updatedName}`);
+                dispatch(renameExamFile({id:id, newName:updatedName}));
+                dispatch(getAllExams())
                 handleMenuClose();
             },
         });
@@ -67,6 +85,7 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
             anchorEl={anchorEl}
             open={Boolean(anchorEl) && selectedRow !== null}
             onClose={handleMenuClose}
+            sx={{boxShadow: 0}}
         >
             <MenuItem onClick={handleDelete}>Delete Item</MenuItem>
             <MenuItem onClick={handleDownload}>Download</MenuItem>

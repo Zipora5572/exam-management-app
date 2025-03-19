@@ -36,11 +36,11 @@ const Exams = () => {
     };
 
     return (
-        <Box display="flex" height="70vh" >
-            <Drawer variant="permanent" anchor="left">
+        <Box display="flex" height="70vh" sx={{width:"80vw"}}>
+            <Drawer variant="permanent" anchor="left" sx={{ flexBasis: '16%' }}>
                 <List
                     component="nav"
-                    sx={{ marginTop: '64px' }}
+                    sx={{ marginTop: '64px' ,width: '16vw' }}
                 >
                     <ListItemButton onClick={() => {
                         handleClick('exams');
@@ -86,7 +86,7 @@ const Exams = () => {
                     <Divider />
                 </List>
             </Drawer>
-            <Box flexGrow={1}  sx={{width:"60vw"}} >
+         <Box flexGrow={1} sx={{ flexBasis: '95%', padding: 2 }}>
                  <Outlet />
             </Box>
         </Box>

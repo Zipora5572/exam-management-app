@@ -1,13 +1,11 @@
 import { TopicType } from "./Topic";
 import { UserType } from "./User"
 
- 
-
-
 export type ExamType = {
     id: number,
     userId: number |undefined,
     examName: string,
+    uniqueFileName: string,
     examType: string,
     topicName: string,
     folderId: number|null,
@@ -15,6 +13,7 @@ export type ExamType = {
     sharing: boolean,
     modified: string,
     examPath: string,
+    updatedAt:Date,
 }
 export type ExamFolderType={
     id: number,

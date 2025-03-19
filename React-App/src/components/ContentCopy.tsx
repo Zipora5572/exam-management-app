@@ -1,5 +1,5 @@
 
-import { IconButton, Tooltip } from "@mui/material";
+import { Button, IconButton, Tooltip } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 const CopyToClipboard = ({ text }: { text: string }) => {
@@ -13,11 +13,7 @@ const CopyToClipboard = ({ text }: { text: string }) => {
   };
 
   return (
-    <Tooltip title="Copy link">
-      <IconButton onClick={handleCopy} color="primary">
-        <ContentCopyIcon />
-      </IconButton>
-    </Tooltip>
+    
   );
 };
 

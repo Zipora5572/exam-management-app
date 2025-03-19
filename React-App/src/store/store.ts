@@ -1,11 +1,11 @@
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
 import userSlice from "./userSlice";
+import examSlice from "./examSlice";
 
 const store = configureStore({
     reducer: combineSlices(
-     
-    userSlice,
-        
+      userSlice,
+      examSlice
     ),
 })
 
