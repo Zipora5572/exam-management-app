@@ -99,6 +99,22 @@
   },
   {
     "ContainingType": "Server.API.Controllers.ExamController",
+    "Method": "Delete",
+    "RelativePath": "api/Exam/{filename}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.ExamController",
     "Method": "Get",
     "RelativePath": "api/Exam/{id}",
     "HttpMethod": "GET",
@@ -156,9 +172,25 @@
   },
   {
     "ContainingType": "Server.API.Controllers.ExamController",
-    "Method": "Delete",
-    "RelativePath": "api/Exam/{id}",
-    "HttpMethod": "DELETE",
+    "Method": "Download",
+    "RelativePath": "api/Exam/download/{filename}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filename",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.ExamController",
+    "Method": "UpdateExamName",
+    "RelativePath": "api/Exam/rename/{id}",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -166,9 +198,24 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "newName",
+        "Type": "System.String",
+        "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Server.Core.DTOs.ExamDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Server.API.Controllers.PermissionController",

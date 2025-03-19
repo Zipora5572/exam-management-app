@@ -68,5 +68,29 @@ namespace Server.Service
                 return false; 
             }
         }
+        public async Task<Stream> DownloadFileAsync(string fileName)
+        {
+            try
+            {
+                var memoryStream = new MemoryStream();
+                await _storageClient.DownloadObjectAsync(_bucketName, fileName, memoryStream);
+                memoryStream.Position = 0; // מחזירים את המצביע להתחלה
+                return memoryStream;
+            }
+            catch (Google.GoogleApiException ex)
+            {
+                if (ex.HttpStatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    return null; // אם הקובץ לא נמצא
+                }
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
     }
+
 }

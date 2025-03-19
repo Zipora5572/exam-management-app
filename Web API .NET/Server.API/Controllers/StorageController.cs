@@ -110,7 +110,7 @@ namespace Server.Controllers
                 return StatusCode(500, $"Error deleting file: {ex.Message}");
             }
 
-            return NoContent(); // מחזיר 204 No Content אם המחיקה הצליחה
+            return NoContent(); 
         }
 
     }
