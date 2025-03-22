@@ -8,6 +8,7 @@ import Exams from './pages/Exams';
 import Home from './pages/home';
 import Profile from './pages/Profile';
 import StudentsExams from './components/StudentsExams';
+import ExamFileViewer from './components/Exams/ExamFileViewer';
 
 
 export const router = createBrowserRouter([
@@ -32,6 +33,8 @@ export const router = createBrowserRouter([
                     
                 ],
             },
+           
+            { path: '/viewExam', element: <ExamFileViewer fileName={''} fileUrl={'https://storage.cloud.google.com/exams-bucket/46341d91-e28b-4779-9a7c-26ba3f88e8ae.png'} /> },
             { path: '/dashboard', element: <Dashboard /> },
             { path: '/profile', element: <Profile /> },
         ],

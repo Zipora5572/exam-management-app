@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { StudentExamType } from '../models/Exam';
 
 interface UseGradeExamResult {
     gradeExam: (studentExamImage: string, teacherExamImage: string,studentEmail:string) => Promise<void>;
     loading: boolean;
     error: string | null;
     grade: string | null;
-    evaluation: string | null; // הוספת הערכה
+    evaluation: string | null; 
+    studentExam:StudentExamType// הוספת הערכה
 }
 
 const useGradeExam = (): UseGradeExamResult => {
@@ -23,14 +25,15 @@ const useGradeExam = (): UseGradeExamResult => {
         
         try {
             const response = await axios.post('http://localhost:5000/grade', {
-                student_exam_url: studentExamImage,
-                teacher_exam_url: teacherExamImage,
+                student_exam_name: studentExamImage,
+                teacher_exam_name: teacherExamImage,
                 student_email: studentEmail, 
             });
-    
+            
+            
           
             setGrade(response.data.grade); 
-            setEvaluation(response.data.evaluation); // שמירת ההערכה
+            setEvaluation(response.data.evaluation); 
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 setError(error.message);

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
     Typography,
-    Paper,
 } from '@mui/material';
 import { ExamFileType, ExamFolderType } from '../../models/Exam';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,19 +8,21 @@ import { AppDispatch, StoreType } from '../../store/store';
 import useModal from '../../hooks/useModal';
 import ModalWrapper from '../ModalWrapper';
 import ActionButtons from '../ActionButtons';
-import { getAllExams } from '../../store/examSlice';
+import { getAllExams, getAllFolders } from '../../store/examSlice';
 import ExamsTable from './ExamsTable';
 
 const ExamList = () => {
     const dispatch = useDispatch<AppDispatch>();
     const exams = useSelector((state: StoreType) => state.exams.exams);
+    const folders = useSelector((state: StoreType) => state.exams.folders);
     const loading = useSelector((state: StoreType) => state.exams.loading);
     const error = useSelector((state: StoreType) => state.exams.error);
-    const [data, setData] = useState<(ExamFileType | ExamFolderType)[]>([]); 
     const { isOpen, openModal, closeModal, modalData } = useModal();
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const [currentFolderId, setCurrentFolderId] = useState<number | null>(null);
+    const [currentFolderName, setCurrentFolderName] = useState<string | null>(null);
 
     useEffect(() => {
+        dispatch(getAllFolders());
         dispatch(getAllExams());
     }, [dispatch]);
   
@@ -30,16 +31,23 @@ const ExamList = () => {
         <>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                 <Typography variant="h6" gutterBottom>
-                    Your Exams
+                Your Exams {currentFolderName ? ` > ${currentFolderName}` : ''}
                 </Typography>
-                <ActionButtons data={data} setData={setData} openModal={openModal} modalData={modalData} />
+             
+                <ActionButtons folderId={currentFolderId} folderName={"a"}  openModal={openModal} modalData={modalData} />
             </div>
             {error ? (
                 <Typography color="error">{error}</Typography> 
             ) : (
                 <ExamsTable
                     exams={exams}
-                    loading={loading} // העבר את מצב ה-loading
+                    folders={folders}
+                    loading={loading} 
+                    currentFolderId={currentFolderId} 
+                    setCurrentFolderId={setCurrentFolderId} 
+                    currentFolderName={currentFolderName}
+                    setCurrentFolderName={setCurrentFolderName}
+
                 />
             )}
             <ModalWrapper

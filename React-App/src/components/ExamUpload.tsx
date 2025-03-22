@@ -1,28 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, TextField } from '@mui/material';
 import UploadIcon from '@mui/icons-material/Upload';
 import useModal from '../hooks/useModal';
-import examService from "../services/ExamService";
-import { ExamType } from "../models/Exam";
+import { ExamFileType } from "../models/Exam";
 import { useSelector } from 'react-redux';
 import { StoreType } from '../store/store';
 import ModalWrapper from './ModalWrapper';
+import ExamService from '../services/ExamService';
+const ExamUpload = ({ folderId }: { folderId: number | undefined }) => {
+  
 
-const ExamUpload = () => {
     const user = useSelector((state: StoreType) => state.auth.user);
     const [file, setFile] = useState<File | null>(null);
-    const [examDetails, setExamDetails] = useState<Partial<ExamType>>({
-        userId:1,
+
+    const [examDetails, setExamDetails] = useState<Partial<ExamFileType>>({
+        userId: 1,
         examName: ' ',
-        topic: { Name: 'name', Description: 'desc' },
+        folderId: folderId,
+        topic: { name: 'name', description: 'desc' },
     });
+    
+   
     const { isOpen, openModal, closeModal, modalData } = useModal();
+    
+
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        
         if (event.target.files && event.target.files.length > 0) {
+
+
             const selectedFile = event.target.files[0];
             setFile(selectedFile);
             console.log('Selected file:', selectedFile.name);
+          
             openModal({
                 title: 'Enter Exam Details',
                 onConfirm: () => handleUpload(selectedFile),
@@ -31,15 +42,27 @@ const ExamUpload = () => {
                     <>
                         <TextField
                             label="Topic Name"
-                            value={examDetails.topic?.name}
-                            onChange={(e) => setExamDetails({ ...examDetails, topic: { name: e.target.value, description: examDetails.topic?.description } })}
+                            value={examDetails.topic?.name }
+                            onChange={(e) => setExamDetails(prevDetails => ({
+                                ...prevDetails,              
+                                topic: {
+                                    name: e.target.value,
+                                    description: prevDetails.topic?.description
+                                }
+                            }))}
                             fullWidth
                             margin="normal"
                         />
                         <TextField
                             label="Topic Description"
-                            value={examDetails.topic?.description}
-                            onChange={(e) => setExamDetails({ ...examDetails, topic: { name: examDetails.topic?.name, description: e.target.value } })}
+                            value={examDetails.topic?.description }
+                            onChange={(e) => setExamDetails(prevDetails => ({
+                                ...prevDetails,                    
+                                topic: {
+                                    name: prevDetails.topic?.name,
+                                    description: e.target.value
+                                }
+                            }))}
                             fullWidth
                             margin="normal"
                         />
@@ -48,15 +71,13 @@ const ExamUpload = () => {
             });
         }
     };
-
+    
     const handleUpload = async (selectedFile: File) => {
-        console.log('Uploading file:', selectedFile?.name);
 
         if (selectedFile) {
             try {
-                console.log('Uploading file:', selectedFile.name);
-
-                const result = await examService.uploadExamFile(selectedFile, examDetails);
+                examDetails.folderId = folderId;  
+                 const result = await ExamService.uploadExamFile(selectedFile, examDetails);
                 console.log(`File uploaded successfully: ${result.message}`);
             } catch (error) {
                 console.error('Error uploading file:', error);
@@ -65,6 +86,7 @@ const ExamUpload = () => {
             }
         }
     };
+  
 
     return (
         <div>

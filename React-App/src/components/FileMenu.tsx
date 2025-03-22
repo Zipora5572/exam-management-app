@@ -26,26 +26,14 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
 
     const handleDownload = async () => {
         try {
-            await ExamService.download(uniqueFileName); 
+            console.log(examName);
+            
+            await ExamService.download(`${examName}.png`); 
         } catch (error) {
             console.error("Error downloading file:", error);
         }
         handleMenuClose();
     };
-    // const handleDownload = () => {
-    //     const fileId = "1yqsVCieVhfw9ibYc-U9orUIMaVhiK2YN";
-    //     const fileUrl = `https://storage.googleapis.com/exams-bucket/fa9563ef-5a60-4cb1-b725-21c378afb60b.png`;
-    
-    //     const link = document.createElement('a');
-    //     link.href = fileUrl;
-    //     link.download = 'filename.png'; // הוסף שם לקובץ שיתקבל
-    //     document.body.appendChild(link);
-    //     link.click();
-    //     document.body.removeChild(link);
-    
-    //     console.log(`Downloading ${fileId}`);
-    //     handleMenuClose();
-    // };
     
     const handleDelete = () => {
         openModal({
@@ -85,7 +73,7 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
             anchorEl={anchorEl}
             open={Boolean(anchorEl) && selectedRow !== null}
             onClose={handleMenuClose}
-            sx={{boxShadow: 0}}
+            sx={{boxShadow: 'none'}}
         >
             <MenuItem onClick={handleDelete}>Delete Item</MenuItem>
             <MenuItem onClick={handleDownload}>Download</MenuItem>

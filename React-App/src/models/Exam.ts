@@ -7,7 +7,7 @@ export type ExamType = {
     examName: string,
     uniqueFileName: string,
     examType: string,
-    topicName: string,
+    // topicName: string,
     folderId: number|null,
     topic:TopicType,
     sharing: boolean,
@@ -17,19 +17,23 @@ export type ExamType = {
 }
 export type ExamFolderType={
     id: number,
+    userId: number,
     folderName: string,
-    type: 'folder',
-    parentId?: number;
-    children?: (ExamFileType | ExamFolderType)[]; 
+    parentFolderId: number|null,
+    modified: string,
+    type:'folder',
 }
 export type ExamFileType = ExamType & {
     parentId?: number;
-    type: 'file' | 'folder';
+    type: 'file';
 }
 
-export type StudentExamType = ExamType & {
-    studentDetails: UserType | null;
-    grade?: number | undefined;
-    evaluation?: string;
+export type StudentExamType = {
+   examId: number,
+   studentDetails: UserType,
+   teacherId: number,
+   isChecked: boolean,
+   score: number,
+   teacherComments: string | null,
+    
 };
-

@@ -1,6 +1,6 @@
 
 export type TopicType = {
   
-    Name: string|undefined,
-    Description: string|undefined,
+    name: string|undefined,
+    description: string|undefined,
 }

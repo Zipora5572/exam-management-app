@@ -5,6 +5,7 @@ interface ModalData {
     children?: React.ReactNode;
     confirmText?: string;
     onConfirm?: () => void;
+    initialName?: string;
 }
 
 const useModal = () => {

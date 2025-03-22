@@ -1,5 +1,5 @@
 import axios from "../utils/axiosConfig"
-import { ExamType } from "../models/Exam"
+import { ExamFolderType, ExamType } from "../models/Exam"
 
 export default {
     uploadExamFile: async (file: File, examDetails: Partial<ExamType>) => {
@@ -8,15 +8,21 @@ export default {
         if (examDetails.userId !== undefined) formData.append('UserId', examDetails.userId.toString());
         if (examDetails.examName !== undefined) formData.append('ExamName', examDetails.examName);
         if (examDetails.examType !== undefined) formData.append('ExamType', examDetails.examType);
+        let id=examDetails.folderId?examDetails.folderId.toString():'1'
+        console.log(examDetails.folderId, " folder");
+        
+        if (examDetails.folderId != null) formData.append('FolderId',id);
         if (examDetails.topic) {
-            formData.append('Topic.Name', examDetails.topic.Name || '');
-            formData.append('Topic.Description', examDetails.topic.Description || '');
+            console.log('topic',examDetails.topic);
+            
+            formData.append('Topic.Name', examDetails.topic.name || '');
+            formData.append('Topic.Description', examDetails.topic.description || '');
         }
-        console.log(examDetails.topic);
+      
 
         // if (examDetails.folderId !== undefined) formData.append('FolderId', examDetails.folderId.toString());
         try {
-            const response = await axios.post('storage/upload', formData, {
+            const response = await axios.post('exam/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -27,6 +33,19 @@ export default {
             throw new Error('File upload failed: ' + error.message);
         }
     },
+    createFolder: async (folderDetails: Partial<ExamFolderType>): Promise<any> => {
+        try {
+            const response = await axios.post('/folder', folderDetails, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            return response.data;
+        } catch (error) {
+            throw new Error('Folder creation failed: ' + error.message);
+        }
+    },
+
     download: async (fileName: string) => {
         try {
             const response = await axios.get(`/exam/download/${fileName}`, {
@@ -64,6 +83,17 @@ export default {
             throw new Error('Failed to fetch exams: ' + error.message);
         }
     },
+    getAllFolders: async () => {
+        try {
+
+            const response = await axios.get('/folder');
+         
+            
+            return response.data;
+        } catch (error) {
+            throw new Error('Failed to fetch exams: ' + error.message);
+        }
+    },
     renameExamFile: async (id: number, newName: string) => {
         try {
             console.log(id + ' renamed' + newName);
@@ -78,5 +108,6 @@ export default {
             throw new Error('Failed to rename exam: ' + error.message);
         }
     },
+   
 
 }

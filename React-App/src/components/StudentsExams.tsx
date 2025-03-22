@@ -7,78 +7,74 @@ import {
     TableRow,
     Paper,
     Button,
-    TextField,
 } from '@mui/material';
-import { useSelector } from 'react-redux';
-import { StoreType } from '../store/store';
-import { StudentExamType } from '../models/Exam';
-import useGradeExam from '../hooks/useGradeExam'; // הייבוא של ה-Hook
+import { useSelector, useDispatch } from 'react-redux';
+import { AppDispatch, StoreType } from '../store/store';
+
+import useGradeExam from '../hooks/useGradeExam';
 import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
-
+import { useEffect } from 'react';
+import { getStudentExamsByExamId,updateStudentExam } from '../store/studentExamSlice';
+import studentExamsService from "./../services/StudentExamService"
 const StudentsExams = () => {
-    const user = useSelector((state: StoreType) => state.auth.user);
     const location = useLocation();
-    const  examTeacherPath  = location.state || {}
+    const { examId,examFileTeacherName } = location.state || {}; 
+    const dispatch = useDispatch<AppDispatch>();
+    const user = useSelector((state: StoreType) => state.auth.user);
+    const studentExams = useSelector((state: StoreType) => state.studentExams.exams);
+ 
     const userId = user?.id;
-    const { gradeExam, loading, error, grade, evaluation } = useGradeExam(); 
-    const studentExams: StudentExamType[] = [
-        {
-            id: 1,
-            topicName: 'Math',
-            teacherId: user?.id,
-            examPath: "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\מבחנים לניסוי\\a.png",
-            examName: 'מבחן מתמטיקה',
-            sharing: false,
-            userId: userId,
-            modified: "2023-10-10",
-            studentDetails: {
-                id: userId,
-                name: 'יוסי כהן',
-                email:"z0548545572@gmail.com",
-            },
-            grade: undefined,
-        },
-        // הוסף מבחנים נוספים כאן
-    ];
+    const { gradeExam, loading, error, grade, evaluation,studentExam } = useGradeExam(); 
 
-    const handleCheckExam = async (exam) => {//יש לשים לב לטיפוסים
-        const studentExamImage = "C:\\Users\\user1\\Desktop\\ציפי לימודים שנה ב\\מבחנים לניסוי\\a.png"; 
-        const teacherExamImage = examTeacherPath;
+    useEffect(() => {
+        dispatch(getStudentExamsByExamId(examId));
+       
         
-        const studentEmail = exam.studentDetails.email; 
-        
-        await gradeExam(studentExamImage, teacherExamImage, studentEmail); 
-        exam.grade =Number(grade?.replace('%', '')) 
-        exam.evaluation = evaluation;
+    }, [dispatch, examId]);
+console.log(studentExams);
+
+    const handleCheckExam = async (studentExam) => {
+        const studentExamImage = 'w.png';
+        const teacherExamImage =`${examFileTeacherName}.png`
+        const studentEmail = studentExam.email; 
+        const response= await studentExamsService.checkExam(studentExamImage,teacherExamImage,studentEmail)
+       
+        dispatch(updateStudentExam({id:studentExam.id, studentExam:{ ...studentExam, score:Number(response.grade?.replace('%', '')), teacherComments: response.evaluation }}));
+
+        // await gradeExam(studentExamImage, teacherExamImage, studentEmail); 
+        studentExam.grade = Number(grade?.replace('%', '')); 
+        studentExam.evaluation = evaluation;
     };
-   
 
     return (
         <TableContainer component={Paper}>
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>שם תלמיד</TableCell>
-                        <TableCell>האם המבחן בדוק</TableCell>
-                        <TableCell>תאריך בדיקה</TableCell>
-                        <TableCell>פרטי בדיקה</TableCell>
+                    <TableCell>Student Name</TableCell>
+                     <TableCell>Is Checked</TableCell>
+                     <TableCell>Checked At</TableCell>
+                     <TableCell>Score</TableCell>
+                    <TableCell> </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {studentExams.map((exam) => (
-                        <TableRow key={exam.id}>
-                            <TableCell>{exam.studentDetails?.firstName}</TableCell>
-                            <TableCell>{exam.grade ? 'כן' : 'לא'}</TableCell>
-                            <TableCell>{exam.modified}</TableCell>
+                    {studentExams.map((studentExam) => (
+                        <TableRow key={studentExam.id}>
+                            <TableCell>{studentExam.student.firstName} {studentExam.student.lastName}</TableCell>
+                            <TableCell>{studentExam.isChecked ? 'V' : 'X'}</TableCell>
+                            <TableCell>{studentExam.isChecked ? studentExam.checkedAt ? new Date(studentExam.checkedAt).toLocaleDateString() : "-" : "-"}</TableCell>
+
+                            <TableCell>{studentExam.isChecked ? studentExam.score : "-"}</TableCell>
+
                             <TableCell>
                                 <Button 
                                     variant="outlined" 
-                                    onClick={() => handleCheckExam(exam)} 
+                                    onClick={() => handleCheckExam(studentExam)} 
                                     disabled={loading}
                                 >
                                     {loading ? 'Checking...' : 'Check Exam'}
-                     </Button>
+                                </Button>
                                 {error && <div style={{ color: 'red' }}>{error}</div>}
                                 {grade && <div>Grade: {grade}</div>}
                                 {evaluation && <div>Evaluation: {evaluation}</div>} 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Table,
     TableBody,
@@ -7,39 +7,76 @@ import {
     TableHead,
     TableRow,
     Paper,
-    CircularProgress, // הוסף ייבוא זה
+    CircularProgress, 
 } from '@mui/material';
 import ExamDetailsRow from './ExamDetailsRow';
 import ModalWrapper from '../ModalWrapper';
 import useModal from '../../hooks/useModal';
+import { useNavigate } from 'react-router-dom';
+import { ExamFileType, ExamFolderType } from '../../models/Exam';
+import NoDocuments from '../NoDocuments';
 
-interface Exam {
-    id: number;
-    examName: string;
-    sharing: string;
-    modified: string;
-    type: string;
-    uniqueFileName: string;
-}
 
 interface ExamTableProps {
-    exams: Exam[];
-    loading: boolean; // הוסף את פרופס ה-loading
+    exams: ExamFileType[];
+    folders:ExamFolderType[]
+    loading: boolean;
     handleMenuClick: (event: React.MouseEvent<HTMLElement>, index: number) => void;
     anchorEl: null | HTMLElement;
     selectedRow: number | null;
     handleMenuClose: () => void;
-    openFolder: (folderId: number) => void;
-}
+    currentFolderId: number | null; 
+    setCurrentFolderId: React.Dispatch<React.SetStateAction<number | null>>; 
+    currentFolderName: string | null; 
+    setCurrentFolderName: React.Dispatch<React.SetStateAction<string | null>>; 
+  }
 const ExamTable: React.FC<ExamTableProps> = ({
     exams,
+    folders,
     loading,
-    openFolder,
+    currentFolderId,
+    setCurrentFolderId,
+    currentFolderName,
+    setCurrentFolderName,
 
 }) => {
-    const [selectedRow, setSelectedRow] = React.useState<number | null>(null);
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const [selectedFile, setSelectedFile] = useState<{ name: string; url: string } | null>(null);
+    const [selectedRow, setSelectedRow] = useState<number | null>(null);
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const { isOpen, openModal, closeModal, modalData } = useModal();
+    const [viewMode, setViewMode] = useState<'all' | 'students' | 'folder'>('all');
+    const [filteredExams, setFilteredExams] = useState<(ExamFileType )[]>(exams);
+    const [filteredFolders, setFilteredFolders] = useState<(ExamFolderType )[]>(folders);
+    
+    useEffect(() => {
+        if (viewMode === 'students') {
+            // setFilteredData(exams.filter((exam) => exam.type === 'file' && exam.owner === 'student'));
+        } else if (viewMode === 'folder' && currentFolderId !== null) {
+    
+            setFilteredExams(exams.filter((exam) => exam.folderId === currentFolderId ));
+            setFilteredFolders(folders.filter((folder) => folder.parentFolderId === currentFolderId ));
+        } else {
+            setFilteredExams(exams);
+            setFilteredFolders(folders);
+        }
+    }, [viewMode, currentFolderId, exams]);
+    
+    const openFolder = (folderId: number,folderName:string) => {
+        console.log('openFolder', folderId);
+        setCurrentFolderName(folderName)
+        setCurrentFolderId(folderId);
+        setViewMode('folder');
+    };
+    const handleViewStudentsExams = () => {
+        setViewMode('students');
+    };
+    
+    const navigate=useNavigate()
+    const handleRowClick = (fileName: string, fileUrl: string) => {
+        console.log('handleRowClick', fileName, fileUrl);
+        
+        setSelectedFile({ name: fileName, url: fileUrl });
+    };
     const handleMenuClick = (event: React.MouseEvent<HTMLElement>, index: number) => {
         setAnchorEl(event.currentTarget);
         setSelectedRow(index);
@@ -49,10 +86,15 @@ const ExamTable: React.FC<ExamTableProps> = ({
         setAnchorEl(null);
         setSelectedRow(null);
     };
+    if(selectedFile) {
+        navigate('/viewExam')
+    }
 
     return (
         <>
-
+                    {!loading&&filteredFolders.length==0&&filteredExams.length==0?
+                          <NoDocuments folderId={currentFolderId} />
+                        :
             <TableContainer component={Paper} style={{ boxShadow: 'none', position: 'relative' }}>
 
                 <Table>
@@ -61,16 +103,20 @@ const ExamTable: React.FC<ExamTableProps> = ({
                             <TableCell></TableCell>
                             <TableCell>Name</TableCell>
                             <TableCell></TableCell>
+                            <TableCell>Sharing</TableCell>
                             <TableCell>Modified</TableCell>
                             <TableCell></TableCell>
                         </TableRow>
                     </TableHead>
+
+                        
                     <TableBody style={{ border: '1px solid #e0e0e0' }}>
-                      
-                        {exams.map((row, index) => (
+                     
+                    {filteredFolders.map((row, index) => (
                             <ExamDetailsRow
                                 key={index}
                                 row={row}
+                                isFolder={true}
                                 index={index}
                                 handleMenuClick={handleMenuClick}
                                 anchorEl={anchorEl}
@@ -78,13 +124,31 @@ const ExamTable: React.FC<ExamTableProps> = ({
                                 handleMenuClose={handleMenuClose}
                                 openFolder={openFolder}
                                 openModal={openModal}
+                                handleRowClick={handleRowClick}
                             />
                         ))}
+                        {filteredExams.map((row, index) => (
+                            <ExamDetailsRow
+                                key={index}
+                                row={row}
+                                isFolder={false}
+                                index={index}
+                                handleMenuClick={handleMenuClick}
+                                anchorEl={anchorEl}
+                                selectedRow={selectedRow}
+                                handleMenuClose={handleMenuClose}
+                                openFolder={openFolder}
+                                openModal={openModal}
+                                handleRowClick={handleRowClick}
+                            />
+                        ))}
+
                     </TableBody>
                     
                 </Table>
                
-            </TableContainer>
+            </TableContainer>}
+
             {loading && (
                             <div style={{ position: 'absolute', bottom: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
                                 <CircularProgress />
@@ -97,10 +161,11 @@ const ExamTable: React.FC<ExamTableProps> = ({
                 onConfirm={modalData?.onConfirm}
                 confirmText={modalData?.confirmText}
                 initialName={modalData?.initialName}
-                setNewName={modalData?.setNewName || (() => { })}
+                setNewName={modalData?.setNewName || (() => {})}
             >
                 {modalData?.children}
             </ModalWrapper>
+            
         </>
     );
 };

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import examService from "../services/ExamService";
-import { ExamType } from '../models/Exam';
+import { ExamFileType, ExamFolderType, ExamType } from '../models/Exam';
 
 export const uploadExamFile = createAsyncThunk(
     'exams/uploadExamFile',
@@ -13,6 +13,18 @@ export const uploadExamFile = createAsyncThunk(
         }
     }
 );
+export const createFolder = createAsyncThunk(
+    'exams/createFolder',
+    async (folderDetails: Partial<ExamFolderType>, thunkAPI) => {
+        try {
+            const response = await examService.createFolder(folderDetails);
+            return response; 
+        } catch (error: any) {
+            return thunkAPI.rejectWithValue(error.message || 'Folder creation failed');
+        }
+    }
+);
+
 
 export const deleteExamFile = createAsyncThunk(
     'exams/deleteExamFile',
@@ -22,6 +34,19 @@ export const deleteExamFile = createAsyncThunk(
             return response;
         } catch (error: any) {
             return thunkAPI.rejectWithValue(error.message || 'File deletion failed');
+        }
+    }
+);
+
+
+export const getAllFolders = createAsyncThunk(
+    'exams/getAllFolders',
+    async (_, thunkAPI) => {
+        try {
+            const response = await examService.getAllFolders();
+            return response;
+        } catch (error: any) {
+            return thunkAPI.rejectWithValue(error.message || 'Failed to fetch exams');
         }
     }
 );
@@ -53,7 +78,8 @@ export const renameExamFile = createAsyncThunk(
 const examSlice = createSlice({
     name: 'exams',
     initialState: {
-        exams: [] as ExamType[],
+        folders:[] as ExamFolderType[],
+        exams: [] as ExamFileType[],
         loading: false,
         error: null as string | null,
     },
@@ -72,13 +98,25 @@ const examSlice = createSlice({
                 state.loading = false;
                 state.error = action.payload as string;
             })
+            .addCase(createFolder.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(createFolder.fulfilled, (state, action) => {
+                state.loading = false;
+                state.exams.push(action.payload); 
+            })
+            .addCase(createFolder.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload as string;
+            })
             .addCase(deleteExamFile.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
             .addCase(deleteExamFile.fulfilled, (state, action) => {
                 state.loading = false;
-                state.exams = state.exams.filter(exam => exam.id !== action.payload.id); 
+                state.exam = state.exams.filter(exam => exam.id !== action.payload.id); 
             })
             .addCase(deleteExamFile.rejected, (state, action) => {
                 state.loading = false;
@@ -105,10 +143,22 @@ const examSlice = createSlice({
                 const { id, newName } = action.payload; 
                 const examToUpdate = state.exams.find(exam => exam.id === id);
                 if (examToUpdate) {
-                    examToUpdate.examName = newName;
+                   examToUpdate.examName = newName;
                 }
             })
             .addCase(renameExamFile.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload as string;
+            })
+            .addCase(getAllFolders.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(getAllFolders.fulfilled, (state, action) => {
+                state.loading = false;
+                state.folders = action.payload;
+            })
+            .addCase(getAllFolders.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload as string;
             });

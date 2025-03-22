@@ -4,13 +4,16 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import StarIcon from '@mui/icons-material/Star'; 
 import CheckIcon from '@mui/icons-material/Check'; 
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
-const ExamRowButtons = ({uniqueFileName}:{uniqueFileName:string}) => {
+const ExamRowButtons = ({fileName,examId}:{fileName:string,examId:number}) => {
     const [isCopied, setIsCopied] = useState(false); 
+
+    const navigate=useNavigate()
 
     const handleCopy = async () => {     
         try {         
-            await navigator.clipboard.writeText(`https://storage.cloud.google.com/exams-bucket/${uniqueFileName}`);
+            await navigator.clipboard.writeText(`https://storage.cloud.google.com/exams-bucket/${fileName}`);
             setIsCopied(true); 
             setTimeout(() => {
                 setIsCopied(false);
@@ -23,6 +26,10 @@ const ExamRowButtons = ({uniqueFileName}:{uniqueFileName:string}) => {
     const handleAddToStar = () => {
       
         alert("Added to Star!");
+    };
+    const handleView = () => {
+      
+        navigate("students-exams", { state: { examId:examId ,examFileTeacherName:fileName } })
     };
 
     return (
@@ -80,8 +87,11 @@ const ExamRowButtons = ({uniqueFileName}:{uniqueFileName:string}) => {
                     border: "none",
                     cursor: "pointer",
                     margin: "5px"
-                }} color="primary">
+                }} color="primary"
+                onClick={handleView}
+                >
                     <VisibilityIcon />
+                
                 </Button>
             </Tooltip>
         </>

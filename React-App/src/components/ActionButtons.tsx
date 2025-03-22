@@ -1,30 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, TextField } from '@mui/material';
 import FolderIcon from '@mui/icons-material/Folder';
 import ExamUpload from './ExamUpload';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, StoreType } from '../store/store';
+import { createFolder } from '../store/examSlice';
 
 interface ActionButtonsProps {
-    data: any[];
-    setData: React.Dispatch<React.SetStateAction<any[]>>;
-    openModal: (data: { title: string; confirmText: string; onConfirm: (name: string) => void; children: React.ReactNode }) => void;
+    folderId: number | null;
+    folderName: string
+    openModal: (data: { title: string; initialName?: string; setNewName?: (name: string) => void; confirmText?: string; onConfirm?: (name: string) => void; children?: React.ReactNode; }) => void;
+
     modalData: { setNewName?: (name: string) => void };
 }
 
-const ActionButtons: React.FC<ActionButtonsProps> = ({ data, setData, openModal, modalData }) => {
+const ActionButtons: React.FC<ActionButtonsProps> = ({ folderId, folderName, openModal, modalData }) => {
+    const dispatch = useDispatch<AppDispatch>();
+    const user = useSelector((state: StoreType) => state.auth.user)
+    const [newName, setNewName] = useState<string>("");
 
     const handleCreateFolder = () => {
         openModal({
             title: 'Create New Folder',
             confirmText: 'Create',
-            onConfirm: (name: string) => {
-                const newFolder = {
-                    id: data.length + 1, // או לוגיקה אחרת ל-ID
-                    folderName: name,
-                    type: 'folder',
-                    children: [],
-                };
-                setData([...data, newFolder]); // הוספת התיקיה החדשה למצב
-                console.log('New folder created:', name);
+            initialName: "",
+            setNewName: (name: string) => {
+                setNewName(name);
+            },
+            onConfirm: (folderName: string) => {
+
+                dispatch(createFolder({ userId: user?.id,parentFolderId: folderId,folderName: folderName}));
+                console.log('New folder created:', folderName);
             },
             children: (
                 <TextField
@@ -39,12 +45,9 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ data, setData, openModal,
         });
     };
 
-    // const handleUploadSuccess = (message: string) => {
-    //     alert(message);
-    // };
 
     return (
-        <div style={{display:"flex"}}>
+        <div style={{ display: "flex" }}>
             <Button
                 variant="contained"
                 style={{
@@ -62,7 +65,10 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ data, setData, openModal,
             >
                 Create Folder
             </Button>
-            <ExamUpload  />
+           
+            <ExamUpload folderId={folderId} />
+                
+            
         </div>
     );
 };
