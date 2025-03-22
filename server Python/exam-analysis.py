@@ -2,6 +2,7 @@ import os
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from google.cloud import storage
 from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -21,9 +22,14 @@ app = Flask(__name__)
 CORS(app)
 SERVICE_ACCOUNT_FILE = "./client_secret.json"
 SCOPES = ['https://www.googleapis.com/auth/gmail.send']
+
+
 load_dotenv()
 my_api_key = os.getenv("OPENAI_API_KEY")
 os.environ['OPENAI_API_KEY'] = my_api_key
+
+credentials_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_path
 
 client = OpenAI()
 my_model = "gpt-4o-mini"
@@ -87,6 +93,13 @@ def grade_exam(student_exam, teacher_exam):
     
     return response.choices[0].message.content
 
+def download_blob(bucket_name, blob_name):
+    storage_client = storage.Client()
+    bucket = storage_client.bucket(bucket_name)
+    blob = bucket.blob(blob_name)
+    image_data = blob.download_as_bytes()
+    return Image.open(io.BytesIO(image_data))
+
 @app.route('/grade', methods=['OPTIONS'])
 def options():
     return jsonify({'status': 'ok'}), 200
@@ -95,26 +108,27 @@ def options():
 @app.route('/grade', methods=['POST'])
 def grade():
     data = request.json
-    student_exam_url = data.get('student_exam_url')
-    teacher_exam_url = data.get('teacher_exam_url')
+    student_exam_name = data.get('student_exam_name')
+    teacher_exam_name = data.get('teacher_exam_name')
     student_email = data.get('student_email')
-    if not student_exam_url or not teacher_exam_url:
+    if not student_exam_name or not teacher_exam_name:
         return jsonify({"error": "Both student_exam_url and teacher_exam_url are required."}), 400
 
     try:
-        print(student_exam_url)
-        student_exam_image = Image.open(student_exam_url)
-        
+
+        student_exam_image = download_blob("exams-bucket", student_exam_name)
+        teacher_exam_image = download_blob("exams-bucket", teacher_exam_name)
 
         student_exam = pytesseract.image_to_string(student_exam_image)
-
-        
-        teacher_exam_image = Image.open(teacher_exam_url)
-
         teacher_exam = pytesseract.image_to_string(teacher_exam_image)
-
-
+        # student_exam_image = Image.open(student_exam_url)
         
+        # student_exam = pytesseract.image_to_string(student_exam_image)
+      
+        # teacher_exam_image = Image.open(teacher_exam_url)
+
+        # teacher_exam = pytesseract.image_to_string(teacher_exam_image)
+       
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
@@ -123,7 +137,6 @@ def grade():
     
     try:
         print("grade_result  ",grade_result)
-
         result_json = json.loads(grade_result)
         print("result  ",result_json)
         grade = result_json.get("grade")
@@ -136,8 +149,7 @@ def grade():
     except json.JSONDecodeError:
         return jsonify({"error": "Failed to decode the response from the model."}), 500
 
-
-    send_email(student_email, grade, evaluation)
+    # send_email(student_email, grade, evaluation)
 
     return response
 
