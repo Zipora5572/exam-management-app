@@ -14,17 +14,20 @@ namespace Server.API.Controllers
     {
         private readonly IStorageService _storageService;
         private readonly IExamService _examService;
+        private readonly IFolderService _folderService;
         private readonly ITopicService _topicService;
         private readonly IMapper _mapper;
 
         public ExamController(
             IStorageService storageService,
             IExamService examService,
+            IFolderService folderService,
             ITopicService topicService,
             IMapper mapper)
         {
             _storageService = storageService;
             _examService = examService;
+            _folderService = folderService;
             _topicService = topicService;
             _mapper = mapper;
         }
@@ -54,15 +57,27 @@ namespace Server.API.Controllers
         }
 
         // POST api/<ExamController>
-        [HttpPost]
-        public async Task<ActionResult<Exam>> Post([FromBody] ExamPostModel examPostModel)
+        [HttpPost("upload")]
+        public async Task<ActionResult<Exam>> Post([FromForm] ExamPostModel examPostModel)
         {
             if (examPostModel.File == null || examPostModel.File.Length == 0)
             {
                 return BadRequest("No file uploaded.");
             }
-
-            var objectName = examPostModel.File.FileName;
+            string folderName, objectName="";
+            Console.WriteLine("folder id "+examPostModel.FolderId );
+            if (examPostModel.FolderId != null)
+            {
+                int id = (int)examPostModel.FolderId; 
+                var folder = await _folderService.GetByIdAsync(id);
+                if (folder != null)
+                { 
+                    folderName = folder.FolderName;
+                    objectName = $"{folderName}/{examPostModel.File.FileName}";
+                }
+            }
+            else
+            objectName = examPostModel.File.FileName;
             var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(examPostModel.File.FileName)}";
             var filePath = Path.Combine(Path.GetTempPath(), uniqueFileName);
 
@@ -82,9 +97,9 @@ namespace Server.API.Controllers
 
             var examDto = _mapper.Map<ExamDto>(examPostModel);
             examDto.TopicId = addedTopic.Id;
-            examDto.UniqueFileName = uniqueFileName;
-            examDto.ExamName = Path.GetFileNameWithoutExtension(objectName);
-            examDto.ExamPath = $"https://storage.cloud.google.com/exams-bucket/{uniqueFileName}";
+            //examDto.UniqueFileName = uniqueFileName;
+            examDto.ExamName = Path.GetFileNameWithoutExtension(examPostModel.File.FileName);
+            examDto.ExamPath = $"https://storage.cloud.google.com/exams-bucket/{objectName}";
             examDto.Size = examPostModel.File.Length;
             examDto.ExamType = examPostModel.File.ContentType;
             examDto.ExamExtension = Path.GetExtension(examPostModel.File.FileName);
@@ -95,7 +110,7 @@ namespace Server.API.Controllers
             await _examService.AddExamAsync(examDto);
             try
             {
-                await _storageService.UploadFileAsync(filePath, uniqueFileName);
+                await _storageService.UploadFileAsync(filePath, objectName);
             }
             catch (Exception ex)
             {
@@ -186,6 +201,7 @@ namespace Server.API.Controllers
             //await _examService.DeleteExamAsync(examDto);
             // return NoContent();
         }
+
         // GET api/<ExamController>/download/{filename}
         [HttpGet("download/{filename}")]
         public async Task<IActionResult> Download(string filename)
@@ -203,7 +219,8 @@ namespace Server.API.Controllers
                     return NotFound("File not found.");
                 }
 
-                var contentType = "application/octet-stream"; // ניתן לשנות בהתאם לסוג הקובץ
+                var contentType = "image/png";
+
                 var fileName = Path.GetFileName(filename);
                 Response.Headers.Add("Content-Disposition", $"attachment; filename={fileName}");
                 return File(fileStream, contentType, fileName);

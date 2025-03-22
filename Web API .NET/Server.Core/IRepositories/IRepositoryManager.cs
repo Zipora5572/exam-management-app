@@ -9,13 +9,14 @@ namespace Server.Core.IRepositories
     public interface IRepositoryManager
     {
         IUserRepository Users { get; }
+        IStudentExamRepository StudentExams { get; }
         IExamRepository Exams { get; }
+        IFolderRepository Folders { get; }
         IRoleRepository Roles { get; }
         IPermissionRepository Permissions { get; }
-        //IGradeRepository Grades { get; }
         ITagRepository Tags { get; }
         ITopicRepository Topics { get; }
-        //IInstitutionRepository Institutions { get; }
+     
 
        Task SaveAsync();
     }

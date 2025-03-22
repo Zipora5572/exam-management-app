@@ -14,6 +14,8 @@ namespace Server.Data.Repositories
 
         public IUserRepository Users { get; }
         public IExamRepository Exams { get; }
+        public IStudentExamRepository StudentExams { get; }
+        public IFolderRepository Folders { get; }
         //public IGradeRepository Grades { get; }
         //public IInstitutionRepository Institutions { get; }
         public IPermissionRepository Permissions { get; }
@@ -27,6 +29,8 @@ namespace Server.Data.Repositories
             IDataContext context,
             IUserRepository userRepository,
             IExamRepository examRepository,
+            IStudentExamRepository studentExamRepository,
+            IFolderRepository folderRepository,
             //IGradeRepository gradeRepository,
             //IInstitutionRepository institutionRepository,
             IPermissionRepository permissionRepository,
@@ -37,6 +41,8 @@ namespace Server.Data.Repositories
             _context = context;
             Users = userRepository;
             Exams = examRepository;
+            Folders = folderRepository;
+            StudentExams = studentExamRepository;
             //Grades = gradeRepository;
             //Institutions = institutionRepository;
             Permissions = permissionRepository;

@@ -17,7 +17,6 @@ namespace Server.Core.Entities
         public string? PasswordHash { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime? UpdatedAt { get; set; }
-
         public List<Exam> Exams { get; set; }
         public List<Role> Roles { get; set; }
     }

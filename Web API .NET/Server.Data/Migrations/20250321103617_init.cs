@@ -132,8 +132,7 @@ namespace Server.Data.Migrations
                         name: "FK_Folders_Folders_ParentFolderId",
                         column: x => x.ParentFolderId,
                         principalTable: "Folders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Folders_Users_UserId",
                         column: x => x.UserId,
@@ -182,7 +181,10 @@ namespace Server.Data.Migrations
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    ExamPath = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    IsShared = table.Column<bool>(type: "bit", nullable: false),
+                    ExamPath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TopicId1 = table.Column<int>(type: "int", nullable: true),
+                    UserId1 = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -191,19 +193,30 @@ namespace Server.Data.Migrations
                         name: "FK_Exams_Folders_FolderId",
                         column: x => x.FolderId,
                         principalTable: "Folders",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_Exams_Topics_TopicId",
                         column: x => x.TopicId,
                         principalTable: "Topics",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Exams_Topics_TopicId1",
+                        column: x => x.TopicId1,
+                        principalTable: "Topics",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Exams_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Exams_Users_UserId1",
+                        column: x => x.UserId1,
+                        principalTable: "Users",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -230,6 +243,40 @@ namespace Server.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "StudentExams",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ExamId = table.Column<int>(type: "int", nullable: false),
+                    StudentId = table.Column<int>(type: "int", nullable: false),
+                    TeacherId = table.Column<int>(type: "int", nullable: false),
+                    IsChecked = table.Column<bool>(type: "bit", nullable: false),
+                    Score = table.Column<int>(type: "int", nullable: true),
+                    TeacherComments = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GradingDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_StudentExams", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_StudentExams_Exams_ExamId",
+                        column: x => x.ExamId,
+                        principalTable: "Exams",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_StudentExams_Users_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "Users",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_StudentExams_Users_TeacherId",
+                        column: x => x.TeacherId,
+                        principalTable: "Users",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Exams_FolderId",
                 table: "Exams",
@@ -241,9 +288,19 @@ namespace Server.Data.Migrations
                 column: "TopicId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Exams_TopicId1",
+                table: "Exams",
+                column: "TopicId1");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Exams_UserId",
                 table: "Exams",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Exams_UserId1",
+                table: "Exams",
+                column: "UserId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ExamTag_examsId",
@@ -269,6 +326,21 @@ namespace Server.Data.Migrations
                 name: "IX_RoleUser_usersId",
                 table: "RoleUser",
                 column: "usersId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StudentExams_ExamId",
+                table: "StudentExams",
+                column: "ExamId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StudentExams_StudentId",
+                table: "StudentExams",
+                column: "StudentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StudentExams_TeacherId",
+                table: "StudentExams",
+                column: "TeacherId");
         }
 
         /// <inheritdoc />
@@ -284,7 +356,7 @@ namespace Server.Data.Migrations
                 name: "RoleUser");
 
             migrationBuilder.DropTable(
-                name: "Exams");
+                name: "StudentExams");
 
             migrationBuilder.DropTable(
                 name: "Tags");
@@ -294,6 +366,9 @@ namespace Server.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Roles");
+
+            migrationBuilder.DropTable(
+                name: "Exams");
 
             migrationBuilder.DropTable(
                 name: "Folders");

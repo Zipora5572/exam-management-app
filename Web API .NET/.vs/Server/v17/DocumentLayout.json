@@ -3,32 +3,192 @@
   "WorkspaceRootPath": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\controllers\\studentexamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\controllers\\studentexamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.service\\storageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|solutionrelative:server.service\\storageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\postmodel\\studentexampostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\postmodel\\studentexampostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\iservices\\istorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\iservices\\istorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\dtos\\studentexamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\dtos\\studentexamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\controllers\\storagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\controllers\\storagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\postmodel\\userpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\postmodel\\userpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250322212837_changeStudentExam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Server.Data\\Migrations\\20250322212837_changeStudentExam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\entities\\studentexam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\entities\\studentexam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\repositories\\studentexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\repositories\\studentexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.service\\studentexamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|solutionrelative:server.service\\studentexamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\postmodel\\exampostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\postmodel\\exampostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\iservices\\istudentexamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\iservices\\istudentexamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\entities\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\entities\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\idatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\idatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\irepositories\\itagrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\irepositories\\itagrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\irepositories\\istudentexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\irepositories\\istudentexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\irepositories\\irepositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\irepositories\\irepositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.service\\examservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|solutionrelative:server.service\\examservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\controllers\\examcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\repositories\\examrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\repositories\\examrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\repositories\\repositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\repositories\\repositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\mappingpostprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\mappingpostprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\irepositories\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\irepositories\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\irepositories\\irolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\irepositories\\irolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|solutionrelative:server.service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.service\\storageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|solutionrelative:server.service\\storageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\controllers\\storagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\controllers\\storagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\controllers\\foldercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\controllers\\foldercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\dtos\\examdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\dtos\\examdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\postmodel\\folderpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\postmodel\\folderpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.service\\exams-management-service.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|solutionrelative:server.service\\exams-management-service.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\entities\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\entities\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.service\\folderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|solutionrelative:server.service\\folderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\entities\\folder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\entities\\folder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\dtos\\folderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\dtos\\folderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250320112903_fix-folderId.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Server.Data\\Migrations\\20250320112903_fix-folderId.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\iservices\\ifolderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\iservices\\ifolderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\repositories\\folderrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\repositories\\folderrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\irepositories\\ifolderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\irepositories\\ifolderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\iservices\\iexamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\iservices\\iexamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\iservices\\istorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\iservices\\istorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.service\\server.service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -39,20 +199,8 @@
       "RelativeMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|solutionrelative:server.service\\topicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\mappingpostprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\mappingpostprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\postmodel\\topicpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\postmodel\\topicpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\postmodel\\exampostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\postmodel\\exampostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175805_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -67,14 +215,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Server.Data\\Migrations\\20250318175235_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\entities\\folder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\entities\\folder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318174437_change-exam-model3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Server.Data\\Migrations\\20250318174437_change-exam-model3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -85,18 +225,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\entities\\topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\entities\\topic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\dtos\\examdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\dtos\\examdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\postmodel\\folderpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\postmodel\\folderpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\dtos\\folderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\dtos\\folderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\dtos\\tagdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -111,20 +239,12 @@
       "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\postmodel\\permissionpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.service\\tagservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|solutionrelative:server.service\\tagservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\controllers\\tagcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -139,28 +259,8 @@
       "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\postmodel\\userpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\postmodel\\userpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\controllers\\topiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\controllers\\topiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E54BDF29-CE17-4D1E-857D-416ACD8CA1BF}|Server.Service\\Server.Service.csproj|solutionrelative:server.service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\entities\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -175,16 +275,8 @@
       "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\irepositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.api\\postmodel\\rolepostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{677B1916-525F-4673-BA70-3813461E0920}|Server.API\\Server.API.csproj|solutionrelative:server.api\\postmodel\\rolepostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\Server\\Server.Data\\Migrations\\20250310221720_change-userModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -221,28 +313,8 @@
       "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\iservices\\iroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\iservices\\iexamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\iservices\\iexamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\iservices\\ipermissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\iservices\\ipermissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\idatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\idatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\repositories\\repositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\repositories\\repositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\irepositories\\irepositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\irepositories\\irepositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\iservices\\iinstitutionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\iservices\\iinstitutionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\irepositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -257,19 +329,11 @@
       "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\iservices\\igradeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\repositories\\examrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\repositories\\examrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.core\\dtos\\permissiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{971E0353-9148-466C-867D-D8A2DF37115F}|Server.Core\\Server.Core.csproj|solutionrelative:server.core\\dtos\\permissiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\Server\\Server.Data\\Migrations\\20250310153513_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|c:\\users\\user1\\desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\fullstack project\\web api .net\\server.data\\migrations\\20250318175956_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E38F677E-71A6-488A-A40E-FEA8F8ADB439}|Server.Data\\Server.Data.csproj|solutionrelative:server.data\\migrations\\20250318175956_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -279,7 +343,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -291,291 +355,430 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "exams-management-service.json",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\exams-management-service.json",
-              "RelativeDocumentMoniker": "Server.Service\\exams-management-service.json",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\exams-management-service.json",
-              "RelativeToolTip": "Server.Service\\exams-management-service.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-19T20:34:52.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StorageController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\StorageController.cs",
-              "RelativeDocumentMoniker": "Server.API\\Controllers\\StorageController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\StorageController.cs",
-              "RelativeToolTip": "Server.API\\Controllers\\StorageController.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAAAHAAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "20250322212837_changeStudentExam.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250322212837_changeStudentExam.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250322212837_changeStudentExam.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250322212837_changeStudentExam.cs",
+              "RelativeToolTip": "Server.Data\\Migrations\\20250322212837_changeStudentExam.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T12:21:46.748Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StorageService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\StorageService.cs",
-              "RelativeDocumentMoniker": "Server.Service\\StorageService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\StorageService.cs",
-              "RelativeToolTip": "Server.Service\\StorageService.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAiwF8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T11:33:03.656Z",
+              "WhenOpened": "2025-03-22T21:28:37.639Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ExamController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\ExamController.cs",
-              "RelativeDocumentMoniker": "Server.API\\Controllers\\ExamController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\ExamController.cs",
-              "RelativeToolTip": "Server.API\\Controllers\\ExamController.cs",
-              "ViewState": "AgIAALQAAAAAAAAAAAAiwNgAAAABAAAAAAAAAA==",
+              "Title": "StudentExamController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\StudentExamController.cs",
+              "RelativeDocumentMoniker": "Server.API\\Controllers\\StudentExamController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\StudentExamController.cs",
+              "RelativeToolTip": "Server.API\\Controllers\\StudentExamController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAYwFUAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T13:40:25.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ExamService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\ExamService.cs",
-              "RelativeDocumentMoniker": "Server.Service\\ExamService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\ExamService.cs",
-              "RelativeToolTip": "Server.Service\\ExamService.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAiwD8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T18:09:25.057Z",
+              "WhenOpened": "2025-03-21T08:09:06.327Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IStorageService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IStorageService.cs",
-              "RelativeDocumentMoniker": "Server.Core\\IServices\\IStorageService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IStorageService.cs",
-              "RelativeToolTip": "Server.Core\\IServices\\IStorageService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA1AAAAAAAAAA==",
+              "Title": "StudentExamDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\StudentExamDto.cs",
+              "RelativeDocumentMoniker": "Server.Core\\DTOs\\StudentExamDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\StudentExamDto.cs",
+              "RelativeToolTip": "Server.Core\\DTOs\\StudentExamDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T12:28:07.565Z",
+              "WhenOpened": "2025-03-21T07:57:44.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentExamPostModel.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\StudentExamPostModel.cs",
+              "RelativeDocumentMoniker": "Server.API\\PostModel\\StudentExamPostModel.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\StudentExamPostModel.cs",
+              "RelativeToolTip": "Server.API\\PostModel\\StudentExamPostModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T07:58:26.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserPostModel.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\UserPostModel.cs",
+              "RelativeDocumentMoniker": "Server.API\\PostModel\\UserPostModel.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\UserPostModel.cs",
+              "RelativeToolTip": "Server.API\\PostModel\\UserPostModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T21:33:10.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StudentExamService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\StudentExamService.cs",
+              "RelativeDocumentMoniker": "Server.Service\\StudentExamService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\StudentExamService.cs",
+              "RelativeToolTip": "Server.Service\\StudentExamService.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T08:08:38.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\UserDto.cs",
+              "RelativeDocumentMoniker": "Server.Core\\DTOs\\UserDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\UserDto.cs",
+              "RelativeToolTip": "Server.Core\\DTOs\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T21:32:48.301Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "StudentExamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\StudentExamRepository.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Repositories\\StudentExamRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\StudentExamRepository.cs",
+              "RelativeToolTip": "Server.Data\\Repositories\\StudentExamRepository.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T08:12:36.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StudentExam.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\StudentExam.cs",
+              "RelativeDocumentMoniker": "Server.Core\\Entities\\StudentExam.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\StudentExam.cs",
+              "RelativeToolTip": "Server.Core\\Entities\\StudentExam.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T07:50:04.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Server.Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\DataContext.cs",
+              "RelativeToolTip": "Server.Data\\DataContext.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwEEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T18:54:47.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ExamPostModel.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\ExamPostModel.cs",
+              "RelativeDocumentMoniker": "Server.API\\PostModel\\ExamPostModel.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\ExamPostModel.cs",
+              "RelativeToolTip": "Server.API\\PostModel\\ExamPostModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:44:10.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IStudentExamService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IStudentExamService.cs",
+              "RelativeDocumentMoniker": "Server.Core\\IServices\\IStudentExamService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IStudentExamService.cs",
+              "RelativeToolTip": "Server.Core\\IServices\\IStudentExamService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T08:08:10.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Repositories\\Repository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\Repository.cs",
+              "RelativeToolTip": "Server.Data\\Repositories\\Repository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T16:17:54.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Server.Core\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\User.cs",
+              "RelativeToolTip": "Server.Core\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T21:32:27.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Exam.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\Exam.cs",
               "RelativeDocumentMoniker": "Server.Core\\Entities\\Exam.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\Exam.cs",
               "RelativeToolTip": "Server.Core\\Entities\\Exam.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAswB8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAYwAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-13T11:07:01.678Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TopicPostModel.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\TopicPostModel.cs",
-              "RelativeDocumentMoniker": "Server.API\\PostModel\\TopicPostModel.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\TopicPostModel.cs",
-              "RelativeToolTip": "Server.API\\PostModel\\TopicPostModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T17:44:49.348Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Server.Service.csproj",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\Server.Service.csproj",
-              "RelativeDocumentMoniker": "Server.Service\\Server.Service.csproj",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\Server.Service.csproj",
-              "RelativeToolTip": "Server.Service\\Server.Service.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-18T20:28:22.615Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TopicService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\TopicService.cs",
-              "RelativeDocumentMoniker": "Server.Service\\TopicService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\TopicService.cs",
-              "RelativeToolTip": "Server.Service\\TopicService.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T18:45:27.9Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MappingPostProfile.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\MappingPostProfile.cs",
-              "RelativeDocumentMoniker": "Server.API\\MappingPostProfile.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\MappingPostProfile.cs",
-              "RelativeToolTip": "Server.API\\MappingPostProfile.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T17:52:07.078Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ExamPostModel.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\ExamPostModel.cs",
-              "RelativeDocumentMoniker": "Server.API\\PostModel\\ExamPostModel.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\ExamPostModel.cs",
-              "RelativeToolTip": "Server.API\\PostModel\\ExamPostModel.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T17:44:10.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Program.cs",
               "RelativeDocumentMoniker": "Server.API\\Program.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Program.cs",
               "RelativeToolTip": "Server.API\\Program.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAIwJMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-08T21:08:31.386Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
-              "Title": "20250318175956_init.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175956_init.cs",
-              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250318175956_init.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175956_init.cs",
-              "RelativeToolTip": "Server.Data\\Migrations\\20250318175956_init.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "IRepositoryManager.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IRepositoryManager.cs",
+              "RelativeDocumentMoniker": "Server.Core\\IRepositories\\IRepositoryManager.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IRepositoryManager.cs",
+              "RelativeToolTip": "Server.Core\\IRepositories\\IRepositoryManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T17:59:56.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "20250318175805_init.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175805_init.cs",
-              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250318175805_init.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175805_init.cs",
-              "RelativeToolTip": "Server.Data\\Migrations\\20250318175805_init.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T17:58:06.072Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "20250318175545_change-exam-model.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175545_change-exam-model.cs",
-              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250318175545_change-exam-model.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175545_change-exam-model.cs",
-              "RelativeToolTip": "Server.Data\\Migrations\\20250318175545_change-exam-model.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T17:55:45.305Z"
+              "WhenOpened": "2025-03-08T21:14:54.194Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "20250318175235_init.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175235_init.cs",
-              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250318175235_init.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175235_init.cs",
-              "RelativeToolTip": "Server.Data\\Migrations\\20250318175235_init.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IDataContext.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\IDataContext.cs",
+              "RelativeDocumentMoniker": "Server.Data\\IDataContext.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\IDataContext.cs",
+              "RelativeToolTip": "Server.Data\\IDataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T17:52:35.527Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "20250318174437_change-exam-model3.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318174437_change-exam-model3.cs",
-              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250318174437_change-exam-model3.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318174437_change-exam-model3.cs",
-              "RelativeToolTip": "Server.Data\\Migrations\\20250318174437_change-exam-model3.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T17:44:37.36Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "Server.Data\\DataContext.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\DataContext.cs",
-              "RelativeToolTip": "Server.Data\\DataContext.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAowDIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T18:54:47.68Z"
+              "WhenOpened": "2025-03-10T18:54:58.247Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "Folder.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\Folder.cs",
-              "RelativeDocumentMoniker": "Server.Core\\Entities\\Folder.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\Folder.cs",
-              "RelativeToolTip": "Server.Core\\Entities\\Folder.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAowAsAAAAFAAAAAAAAAA==",
+              "Title": "ITagRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\ITagRepository.cs",
+              "RelativeDocumentMoniker": "Server.Core\\IRepositories\\ITagRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\ITagRepository.cs",
+              "RelativeToolTip": "Server.Core\\IRepositories\\ITagRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T14:29:04.343Z"
+              "WhenOpened": "2025-03-21T09:43:36.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "20250318173516_change-exam-model2.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318173516_change-exam-model2.cs",
-              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250318173516_change-exam-model2.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318173516_change-exam-model2.cs",
-              "RelativeToolTip": "Server.Data\\Migrations\\20250318173516_change-exam-model2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "IStudentExamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IStudentExamRepository.cs",
+              "RelativeDocumentMoniker": "Server.Core\\IRepositories\\IStudentExamRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IStudentExamRepository.cs",
+              "RelativeToolTip": "Server.Core\\IRepositories\\IStudentExamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T17:35:16.839Z"
+              "WhenOpened": "2025-03-21T08:09:54.584Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "Topic.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\Topic.cs",
-              "RelativeDocumentMoniker": "Server.Core\\Entities\\Topic.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\Topic.cs",
-              "RelativeToolTip": "Server.Core\\Entities\\Topic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Server.Data\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T16:14:09.379Z"
+              "WhenOpened": "2025-03-10T21:37:43.131Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "ExamDto.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\ExamDto.cs",
-              "RelativeDocumentMoniker": "Server.Core\\DTOs\\ExamDto.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\ExamDto.cs",
-              "RelativeToolTip": "Server.Core\\DTOs\\ExamDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "ExamService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\ExamService.cs",
+              "RelativeDocumentMoniker": "Server.Service\\ExamService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\ExamService.cs",
+              "RelativeToolTip": "Server.Service\\ExamService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T19:16:16.959Z"
+              "WhenOpened": "2025-03-10T18:09:25.057Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
+              "Title": "ExamController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\ExamController.cs",
+              "RelativeDocumentMoniker": "Server.API\\Controllers\\ExamController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\ExamController.cs",
+              "RelativeToolTip": "Server.API\\Controllers\\ExamController.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAYwOkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T13:40:25.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ExamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\ExamRepository.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Repositories\\ExamRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\ExamRepository.cs",
+              "RelativeToolTip": "Server.Data\\Repositories\\ExamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T16:17:51.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "RepositoryManager.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\RepositoryManager.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Repositories\\RepositoryManager.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\RepositoryManager.cs",
+              "RelativeToolTip": "Server.Data\\Repositories\\RepositoryManager.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T08:11:47.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IExamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IExamRepository.cs",
+              "RelativeDocumentMoniker": "Server.Core\\IRepositories\\IExamRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IExamRepository.cs",
+              "RelativeToolTip": "Server.Core\\IRepositories\\IExamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T10:48:15.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IRoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IRoleRepository.cs",
+              "RelativeDocumentMoniker": "Server.Core\\IRepositories\\IRoleRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IRoleRepository.cs",
+              "RelativeToolTip": "Server.Core\\IRepositories\\IRoleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T08:09:57.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Server.Core\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\MappingProfile.cs",
+              "RelativeToolTip": "Server.Core\\MappingProfile.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T14:40:16.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MappingPostProfile.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\MappingPostProfile.cs",
+              "RelativeDocumentMoniker": "Server.API\\MappingPostProfile.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\MappingPostProfile.cs",
+              "RelativeToolTip": "Server.API\\MappingPostProfile.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:52:07.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Server.API\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Server.API\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAYwHMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T13:52:14.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\UserService.cs",
+              "RelativeDocumentMoniker": "Server.Service\\UserService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\UserService.cs",
+              "RelativeToolTip": "Server.Service\\UserService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T18:45:40.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "StorageController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\StorageController.cs",
+              "RelativeDocumentMoniker": "Server.API\\Controllers\\StorageController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\StorageController.cs",
+              "RelativeToolTip": "Server.API\\Controllers\\StorageController.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T12:21:46.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "FolderController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\FolderController.cs",
+              "RelativeDocumentMoniker": "Server.API\\Controllers\\FolderController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\FolderController.cs",
+              "RelativeToolTip": "Server.API\\Controllers\\FolderController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAYwEQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T10:54:42.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "StorageService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\StorageService.cs",
+              "RelativeDocumentMoniker": "Server.Service\\StorageService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\StorageService.cs",
+              "RelativeToolTip": "Server.Service\\StorageService.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAwDkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T11:33:03.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
               "Title": "FolderPostModel.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\FolderPostModel.cs",
               "RelativeDocumentMoniker": "Server.API\\PostModel\\FolderPostModel.cs",
@@ -587,19 +790,254 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 34,
+              "Title": "ExamDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\ExamDto.cs",
+              "RelativeDocumentMoniker": "Server.Core\\DTOs\\ExamDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\ExamDto.cs",
+              "RelativeToolTip": "Server.Core\\DTOs\\ExamDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T19:16:16.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "exams-management-service.json",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\exams-management-service.json",
+              "RelativeDocumentMoniker": "Server.Service\\exams-management-service.json",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\exams-management-service.json",
+              "RelativeToolTip": "Server.Service\\exams-management-service.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-20T12:31:00.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "FolderService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\FolderService.cs",
+              "RelativeDocumentMoniker": "Server.Service\\FolderService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\FolderService.cs",
+              "RelativeToolTip": "Server.Service\\FolderService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T10:44:13.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Server.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\appsettings.json",
+              "RelativeToolTip": "Server.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-10T22:33:30.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Folder.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\Folder.cs",
+              "RelativeDocumentMoniker": "Server.Core\\Entities\\Folder.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\Folder.cs",
+              "RelativeToolTip": "Server.Core\\Entities\\Folder.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T14:29:04.343Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
               "Title": "FolderDto.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\FolderDto.cs",
               "RelativeDocumentMoniker": "Server.Core\\DTOs\\FolderDto.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\FolderDto.cs",
               "RelativeToolTip": "Server.Core\\DTOs\\FolderDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-18T14:36:15.467Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 41,
+              "Title": "20250320112903_fix-folderId.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250320112903_fix-folderId.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250320112903_fix-folderId.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250320112903_fix-folderId.cs",
+              "RelativeToolTip": "Server.Data\\Migrations\\20250320112903_fix-folderId.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T11:29:03.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "IFolderService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IFolderService.cs",
+              "RelativeDocumentMoniker": "Server.Core\\IServices\\IFolderService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IFolderService.cs",
+              "RelativeToolTip": "Server.Core\\IServices\\IFolderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T10:28:42.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "FolderRepository .cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\FolderRepository .cs",
+              "RelativeDocumentMoniker": "Server.Data\\Repositories\\FolderRepository .cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\FolderRepository .cs",
+              "RelativeToolTip": "Server.Data\\Repositories\\FolderRepository .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T10:49:01.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "IFolderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IFolderRepository.cs",
+              "RelativeDocumentMoniker": "Server.Core\\IRepositories\\IFolderRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IFolderRepository.cs",
+              "RelativeToolTip": "Server.Core\\IRepositories\\IFolderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T10:48:17.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "IExamService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IExamService.cs",
+              "RelativeDocumentMoniker": "Server.Core\\IServices\\IExamService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IExamService.cs",
+              "RelativeToolTip": "Server.Core\\IServices\\IExamService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T18:39:29.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "TopicPostModel.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\TopicPostModel.cs",
+              "RelativeDocumentMoniker": "Server.API\\PostModel\\TopicPostModel.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\TopicPostModel.cs",
+              "RelativeToolTip": "Server.API\\PostModel\\TopicPostModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T17:44:49.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "IStorageService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IStorageService.cs",
+              "RelativeDocumentMoniker": "Server.Core\\IServices\\IStorageService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IStorageService.cs",
+              "RelativeToolTip": "Server.Core\\IServices\\IStorageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T12:28:07.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Server.Service.csproj",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\Server.Service.csproj",
+              "RelativeDocumentMoniker": "Server.Service\\Server.Service.csproj",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\Server.Service.csproj",
+              "RelativeToolTip": "Server.Service\\Server.Service.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-18T20:28:22.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "TopicService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\TopicService.cs",
+              "RelativeDocumentMoniker": "Server.Service\\TopicService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\TopicService.cs",
+              "RelativeToolTip": "Server.Service\\TopicService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAABBwDEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T18:45:27.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "20250318175805_init.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175805_init.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250318175805_init.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175805_init.cs",
+              "RelativeToolTip": "Server.Data\\Migrations\\20250318175805_init.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T17:58:06.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "20250318175545_change-exam-model.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175545_change-exam-model.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250318175545_change-exam-model.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175545_change-exam-model.cs",
+              "RelativeToolTip": "Server.Data\\Migrations\\20250318175545_change-exam-model.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T17:55:45.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "20250318175235_init.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175235_init.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250318175235_init.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318175235_init.cs",
+              "RelativeToolTip": "Server.Data\\Migrations\\20250318175235_init.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T17:52:35.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "20250318174437_change-exam-model3.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318174437_change-exam-model3.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250318174437_change-exam-model3.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318174437_change-exam-model3.cs",
+              "RelativeToolTip": "Server.Data\\Migrations\\20250318174437_change-exam-model3.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T17:44:37.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "20250318173516_change-exam-model2.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318173516_change-exam-model2.cs",
+              "RelativeDocumentMoniker": "Server.Data\\Migrations\\20250318173516_change-exam-model2.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Migrations\\20250318173516_change-exam-model2.cs",
+              "RelativeToolTip": "Server.Data\\Migrations\\20250318173516_change-exam-model2.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T17:35:16.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "Topic.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\Topic.cs",
+              "RelativeDocumentMoniker": "Server.Core\\Entities\\Topic.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\Topic.cs",
+              "RelativeToolTip": "Server.Core\\Entities\\Topic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T16:14:09.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
               "Title": "TagDto.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\TagDto.cs",
               "RelativeDocumentMoniker": "Server.Core\\DTOs\\TagDto.cs",
@@ -611,7 +1049,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 58,
               "Title": "PermissionPostModel.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\PermissionPostModel.cs",
               "RelativeDocumentMoniker": "Server.API\\PostModel\\PermissionPostModel.cs",
@@ -623,7 +1061,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 57,
               "Title": "TagPostModel.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\TagPostModel.cs",
               "RelativeDocumentMoniker": "Server.API\\PostModel\\TagPostModel.cs",
@@ -635,19 +1073,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\appsettings.json",
-              "RelativeDocumentMoniker": "Server.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\appsettings.json",
-              "RelativeToolTip": "Server.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-10T22:33:30.272Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 59,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Server.API\\Controllers\\AuthController.cs",
@@ -659,7 +1085,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 61,
               "Title": "TagController.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\TagController.cs",
               "RelativeDocumentMoniker": "Server.API\\Controllers\\TagController.cs",
@@ -671,7 +1097,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 63,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\Role.cs",
               "RelativeDocumentMoniker": "Server.Core\\Entities\\Role.cs",
@@ -683,7 +1109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 60,
               "Title": "TagService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\TagService.cs",
               "RelativeDocumentMoniker": "Server.Service\\TagService.cs",
@@ -695,7 +1121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 62,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\AuthService.cs",
               "RelativeDocumentMoniker": "Server.Service\\AuthService.cs",
@@ -707,91 +1133,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "UserPostModel.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\UserPostModel.cs",
-              "RelativeDocumentMoniker": "Server.API\\PostModel\\UserPostModel.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\UserPostModel.cs",
-              "RelativeToolTip": "Server.API\\PostModel\\UserPostModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T21:33:10.304Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\Repository.cs",
-              "RelativeDocumentMoniker": "Server.Data\\Repositories\\Repository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\Repository.cs",
-              "RelativeToolTip": "Server.Data\\Repositories\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T16:17:54.82Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 64,
               "Title": "TopicController.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\TopicController.cs",
               "RelativeDocumentMoniker": "Server.API\\Controllers\\TopicController.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\TopicController.cs",
               "RelativeToolTip": "Server.API\\Controllers\\TopicController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAIBZwFgAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAABhwFgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T13:52:09.472Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\UserService.cs",
-              "RelativeDocumentMoniker": "Server.Service\\UserService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\UserService.cs",
-              "RelativeToolTip": "Server.Service\\UserService.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAADwv0gAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T18:45:40.069Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\UserDto.cs",
-              "RelativeDocumentMoniker": "Server.Core\\DTOs\\UserDto.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\UserDto.cs",
-              "RelativeToolTip": "Server.Core\\DTOs\\UserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T21:32:48.301Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Server.API\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Server.API\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T13:52:14.3Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Server.Core\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\User.cs",
-              "RelativeToolTip": "Server.Core\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T21:32:27.691Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 65,
               "Title": "LoginModel.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\Entities\\LoginModel.cs",
               "RelativeDocumentMoniker": "Server.Core\\Entities\\LoginModel.cs",
@@ -803,7 +1157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 67,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Server.Core\\IRepositories\\IUserRepository.cs",
@@ -815,7 +1169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 66,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IUserService.cs",
               "RelativeDocumentMoniker": "Server.Core\\IServices\\IUserService.cs",
@@ -827,19 +1181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Server.Data\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "Server.Data\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAIBZwBwAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T21:37:43.131Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 68,
               "Title": "RolePostModel.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\PostModel\\RolePostModel.cs",
               "RelativeDocumentMoniker": "Server.API\\PostModel\\RolePostModel.cs",
@@ -851,19 +1193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "Server.Core\\MappingProfile.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\MappingProfile.cs",
-              "RelativeToolTip": "Server.Core\\MappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBZwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T14:40:16.652Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 69,
               "Title": "20250310221720_change-userModel.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\Server\\Server.Data\\Migrations\\20250310221720_change-userModel.cs",
               "RelativeDocumentMoniker": "..\\..\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\Server\\Server.Data\\Migrations\\20250310221720_change-userModel.cs",
@@ -874,19 +1204,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 72,
               "Title": "RoleController.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\RoleController.cs",
               "RelativeDocumentMoniker": "Server.API\\Controllers\\RoleController.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\RoleController.cs",
               "RelativeToolTip": "Server.API\\Controllers\\RoleController.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAEBlwFQAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAIBpwFQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T13:51:55.87Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 70,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05D3\\ToDoList\\TodoServer\\Program.cs",
               "RelativeDocumentMoniker": "..\\..\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05D3\\ToDoList\\TodoServer\\Program.cs",
@@ -898,19 +1228,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 71,
               "Title": "PermissionController.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\PermissionController.cs",
               "RelativeDocumentMoniker": "Server.API\\Controllers\\PermissionController.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.API\\Controllers\\PermissionController.cs",
               "RelativeToolTip": "Server.API\\Controllers\\PermissionController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAEBlwDcAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAIBpwDcAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T13:51:49.779Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 73,
               "Title": "RoleService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\RoleService.cs",
               "RelativeDocumentMoniker": "Server.Service\\RoleService.cs",
@@ -922,7 +1252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 74,
               "Title": "PermissionService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Service\\PermissionService.cs",
               "RelativeDocumentMoniker": "Server.Service\\PermissionService.cs",
@@ -934,7 +1264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 75,
               "Title": "ITopicService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\ITopicService.cs",
               "RelativeDocumentMoniker": "Server.Core\\IServices\\ITopicService.cs",
@@ -946,7 +1276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 76,
               "Title": "ITagService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\ITagService.cs",
               "RelativeDocumentMoniker": "Server.Core\\IServices\\ITagService.cs",
@@ -958,7 +1288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 77,
               "Title": "IRoleService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IRoleService.cs",
               "RelativeDocumentMoniker": "Server.Core\\IServices\\IRoleService.cs",
@@ -970,19 +1300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "IExamService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IExamService.cs",
-              "RelativeDocumentMoniker": "Server.Core\\IServices\\IExamService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IExamService.cs",
-              "RelativeToolTip": "Server.Core\\IServices\\IExamService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T18:39:29.209Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 78,
               "Title": "IPermissionService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IPermissionService.cs",
               "RelativeDocumentMoniker": "Server.Core\\IServices\\IPermissionService.cs",
@@ -994,43 +1312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "IDataContext.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\IDataContext.cs",
-              "RelativeDocumentMoniker": "Server.Data\\IDataContext.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\IDataContext.cs",
-              "RelativeToolTip": "Server.Data\\IDataContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T18:54:58.247Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
-              "Title": "IRepositoryManager.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IRepositoryManager.cs",
-              "RelativeDocumentMoniker": "Server.Core\\IRepositories\\IRepositoryManager.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IRepositoryManager.cs",
-              "RelativeToolTip": "Server.Core\\IRepositories\\IRepositoryManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBZwBIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T21:14:54.194Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 60,
-              "Title": "IInstitutionService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IInstitutionService.cs",
-              "RelativeDocumentMoniker": "Server.Core\\IServices\\IInstitutionService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IInstitutionService.cs",
-              "RelativeToolTip": "Server.Core\\IServices\\IInstitutionService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T18:53:58.405Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 79,
               "Title": "IRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IRepository.cs",
               "RelativeDocumentMoniker": "Server.Core\\IRepositories\\IRepository.cs",
@@ -1042,7 +1324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 80,
               "Title": "IPermissionRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IRepositories\\IPermissionRepository.cs",
               "RelativeDocumentMoniker": "Server.Core\\IRepositories\\IPermissionRepository.cs",
@@ -1054,19 +1336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "RepositoryManager.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\RepositoryManager.cs",
-              "RelativeDocumentMoniker": "Server.Data\\Repositories\\RepositoryManager.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\RepositoryManager.cs",
-              "RelativeToolTip": "Server.Data\\Repositories\\RepositoryManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T21:11:54.198Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 81,
               "Title": "IGradeService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\IServices\\IGradeService.cs",
               "RelativeDocumentMoniker": "Server.Core\\IServices\\IGradeService.cs",
@@ -1078,19 +1348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "ExamRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\ExamRepository.cs",
-              "RelativeDocumentMoniker": "Server.Data\\Repositories\\ExamRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Data\\Repositories\\ExamRepository.cs",
-              "RelativeToolTip": "Server.Data\\Repositories\\ExamRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBZwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T16:17:51.352Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 82,
               "Title": "PermissionDto.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\Fullstack Project\\Web API .NET\\Server.Core\\DTOs\\PermissionDto.cs",
               "RelativeDocumentMoniker": "Server.Core\\DTOs\\PermissionDto.cs",
@@ -1102,7 +1360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 83,
               "Title": "20250310153513_init.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E6\u05D9\u05E4\u05D9 \u05DC\u05D9\u05DE\u05D5\u05D3\u05D9\u05DD \u05E9\u05E0\u05D4 \u05D1\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\Server\\Server.Data\\Migrations\\20250310153513_init.cs",
               "RelativeDocumentMoniker": "..\\..\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\Server\\Server.Data\\Migrations\\20250310153513_init.cs",

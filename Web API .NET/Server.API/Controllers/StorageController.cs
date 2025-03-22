@@ -61,7 +61,7 @@ namespace Server.Controllers
 
             var examDto = _mapper.Map<ExamDto>(examPostModel);
             examDto.TopicId = addedTopic.Id;
-            examDto.UniqueFileName = uniqueFileName;
+            //examDto.UniqueFileName = uniqueFileName;
             examDto.ExamName = Path.GetFileNameWithoutExtension(objectName);
             examDto.ExamPath = $"https://storage.cloud.google.com/exams-bucket/{uniqueFileName}";
             examDto.Size = examPostModel.File.Length;

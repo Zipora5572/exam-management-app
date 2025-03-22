@@ -12,30 +12,33 @@ namespace Server.Core.Entities
     {
         public int Id { get; set; }
 
-        [ForeignKey(nameof(User))]
         public int UserId { get; set; }
+       
+
         public User User { get; set; }
 
 
         public string ExamName { get; set; }
-        public string UniqueFileName { get; set; }
+      
+        //public string UniqueFileName { get; set; }
 
         public string ExamType { get; set; }
         public string ExamExtension { get; set; }
 
         public long Size { get; set; }
 
-        [ForeignKey(nameof(Topic))]
+        //[ForeignKey(nameof(Topic))]
         public int TopicId { get; set; }
         public Topic Topic { get; set; }
 
-        [ForeignKey(nameof(Folder))]
-        public int? FolderId { get; set; }
+        //[ForeignKey(nameof(Folder))]
+        public int ?FolderId { get; set; } 
         public Folder? Folder { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
         public bool IsDeleted { get; set; }
+        public bool IsShared { get; set; }
 
 
         public string ExamPath { get; set; }

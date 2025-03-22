@@ -81,19 +81,24 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IFolderRepository, FolderRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
 builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
 builder.Services.AddScoped<IExamRepository, ExamRepository>();
+builder.Services.AddScoped<IStudentExamRepository, StudentExamRepository>();
 builder.Services.AddScoped<ITopicRepository, TopicRepository>();
+
 
 builder.Services.AddSingleton<IStorageService, StorageService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IStudentExamService, StudentExamService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<ITagService, TagService>();
 builder.Services.AddScoped<IPermissionService, PermissionService>();
 builder.Services.AddScoped<IExamService, ExamService>();
+builder.Services.AddScoped<IFolderService, FolderService>();
 builder.Services.AddScoped<ITopicService, TopicService>();
 builder.Services.AddScoped<IDataContext,DataContext>();
 builder.Services.AddAutoMapper(typeof(MappingProfile), typeof(MappingPostProfile));

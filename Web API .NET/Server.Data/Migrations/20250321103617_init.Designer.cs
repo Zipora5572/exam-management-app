@@ -12,7 +12,7 @@ using Server.Data;
 namespace Server.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250318175956_init")]
+    [Migration("20250321103617_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -103,10 +103,16 @@ namespace Server.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsShared")
+                        .HasColumnType("bit");
+
                     b.Property<long>("Size")
                         .HasColumnType("bigint");
 
                     b.Property<int>("TopicId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TopicId1")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -115,13 +121,20 @@ namespace Server.Data.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("UserId1")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("FolderId");
 
                     b.HasIndex("TopicId");
 
+                    b.HasIndex("TopicId1");
+
                     b.HasIndex("UserId");
+
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Exams");
                 });
@@ -208,6 +221,46 @@ namespace Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("Server.Core.Entities.StudentExam", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ExamId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("GradingDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsChecked")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("Score")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TeacherComments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExamId");
+
+                    b.HasIndex("StudentId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("StudentExams");
                 });
 
             modelBuilder.Entity("Server.Core.Entities.Tag", b =>
@@ -335,19 +388,28 @@ namespace Server.Data.Migrations
                 {
                     b.HasOne("Server.Core.Entities.Folder", "Folder")
                         .WithMany()
-                        .HasForeignKey("FolderId");
+                        .HasForeignKey("FolderId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("Server.Core.Entities.Topic", "Topic")
-                        .WithMany("exams")
+                        .WithMany()
                         .HasForeignKey("TopicId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Server.Core.Entities.Topic", null)
+                        .WithMany("exams")
+                        .HasForeignKey("TopicId1");
+
                     b.HasOne("Server.Core.Entities.User", "User")
-                        .WithMany("Exams")
+                        .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("Server.Core.Entities.User", null)
+                        .WithMany("Exams")
+                        .HasForeignKey("UserId1");
 
                     b.Navigation("Folder");
 
@@ -360,8 +422,7 @@ namespace Server.Data.Migrations
                 {
                     b.HasOne("Server.Core.Entities.Folder", "ParentFolder")
                         .WithMany()
-                        .HasForeignKey("ParentFolderId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("ParentFolderId");
 
                     b.HasOne("Server.Core.Entities.User", "User")
                         .WithMany()
@@ -372,6 +433,33 @@ namespace Server.Data.Migrations
                     b.Navigation("ParentFolder");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Server.Core.Entities.StudentExam", b =>
+                {
+                    b.HasOne("Server.Core.Entities.Exam", "Exam")
+                        .WithMany()
+                        .HasForeignKey("ExamId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Server.Core.Entities.User", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Server.Core.Entities.User", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Exam");
+
+                    b.Navigation("Student");
+
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("Server.Core.Entities.Topic", b =>

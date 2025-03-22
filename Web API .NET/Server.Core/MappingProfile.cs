@@ -14,11 +14,13 @@ namespace Server.Core
         public MappingProfile()
         {
             CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<Folder, FolderDto>().ReverseMap();
             CreateMap<Exam, ExamDto>().ReverseMap();
             CreateMap<Permission, PermissionDto>().ReverseMap();
             CreateMap<Role, RoleDto>().ReverseMap();
             CreateMap<Topic, TopicDto>().ReverseMap();
             CreateMap<Tag, TagDto>().ReverseMap();
+            CreateMap<StudentExam, StudentExamDto>().ReverseMap();
             
         }
     }
