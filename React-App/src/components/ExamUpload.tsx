@@ -8,32 +8,23 @@ import { StoreType } from '../store/store';
 import ModalWrapper from './ModalWrapper';
 import ExamService from '../services/ExamService';
 const ExamUpload = ({ folderId }: { folderId: number | undefined }) => {
-  
-
     const user = useSelector((state: StoreType) => state.auth.user);
     const [file, setFile] = useState<File | null>(null);
-
     const [examDetails, setExamDetails] = useState<Partial<ExamFileType>>({
         userId: 1,
         examName: ' ',
         folderId: folderId,
         topic: { name: 'name', description: 'desc' },
     });
-    
-   
-    const { isOpen, openModal, closeModal, modalData } = useModal();
-    
 
+    const { isOpen, openModal, closeModal, modalData } = useModal();
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        
         if (event.target.files && event.target.files.length > 0) {
-
-
             const selectedFile = event.target.files[0];
             setFile(selectedFile);
             console.log('Selected file:', selectedFile.name);
-          
+
             openModal({
                 title: 'Enter Exam Details',
                 onConfirm: () => handleUpload(selectedFile),
@@ -42,12 +33,12 @@ const ExamUpload = ({ folderId }: { folderId: number | undefined }) => {
                     <>
                         <TextField
                             label="Topic Name"
-                            value={examDetails.topic?.name }
+                            value={examDetails.topic?.name}
                             onChange={(e) => setExamDetails(prevDetails => ({
-                                ...prevDetails,              
+                                ...prevDetails,
                                 topic: {
                                     name: e.target.value,
-                                    description: prevDetails.topic?.description
+                                    description: prevDetails.topic?.description,
                                 }
                             }))}
                             fullWidth
@@ -55,12 +46,12 @@ const ExamUpload = ({ folderId }: { folderId: number | undefined }) => {
                         />
                         <TextField
                             label="Topic Description"
-                            value={examDetails.topic?.description }
+                            value={examDetails.topic?.description}
                             onChange={(e) => setExamDetails(prevDetails => ({
-                                ...prevDetails,                    
+                                ...prevDetails,
                                 topic: {
                                     name: prevDetails.topic?.name,
-                                    description: e.target.value
+                                    description: e.target.value,
                                 }
                             }))}
                             fullWidth
@@ -71,13 +62,12 @@ const ExamUpload = ({ folderId }: { folderId: number | undefined }) => {
             });
         }
     };
-    
-    const handleUpload = async (selectedFile: File) => {
 
+    const handleUpload = async (selectedFile: File) => {
         if (selectedFile) {
             try {
-                examDetails.folderId = folderId;  
-                 const result = await ExamService.uploadExamFile(selectedFile, examDetails);
+                examDetails.folderId = folderId;
+                const result = await ExamService.uploadExamFile(selectedFile, examDetails);
                 console.log(`File uploaded successfully: ${result.message}`);
             } catch (error) {
                 console.error('Error uploading file:', error);
@@ -86,7 +76,6 @@ const ExamUpload = ({ folderId }: { folderId: number | undefined }) => {
             }
         }
     };
-  
 
     return (
         <div>
@@ -102,10 +91,12 @@ const ExamUpload = ({ folderId }: { folderId: number | undefined }) => {
                     variant="contained"
                     component="span"
                     style={{
+                        height: '30px',
                         marginLeft: 'auto',
                         borderRadius: '20px',
                         border: '2px solid black',
                         fontWeight: 'bold',
+                        fontSize: '12px',
                         color: 'black',
                         backgroundColor: 'transparent',
                         boxShadow: 'none',
@@ -128,5 +119,4 @@ const ExamUpload = ({ folderId }: { folderId: number | undefined }) => {
         </div>
     );
 };
-
-export default ExamUpload;
+export default ExamUpload

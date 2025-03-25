@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
+    Breadcrumbs,
+    Link,
     Typography,
+    IconButton,
 } from '@mui/material';
-import { ExamFileType, ExamFolderType } from '../../models/Exam';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, StoreType } from '../../store/store';
 import useModal from '../../hooks/useModal';
@@ -10,6 +12,8 @@ import ModalWrapper from '../ModalWrapper';
 import ActionButtons from '../ActionButtons';
 import { getAllExams, getAllFolders } from '../../store/examSlice';
 import ExamsTable from './ExamsTable';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+
 
 const ExamList = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -20,48 +24,115 @@ const ExamList = () => {
     const { isOpen, openModal, closeModal, modalData } = useModal();
     const [currentFolderId, setCurrentFolderId] = useState<number | null>(null);
     const [currentFolderName, setCurrentFolderName] = useState<string | null>(null);
+    const [folderPath, setFolderPath] = useState<{ id: number | null; name: string }[]>([]);
 
     useEffect(() => {
         dispatch(getAllFolders());
         dispatch(getAllExams());
     }, [dispatch]);
-  
+
+    const handleGoBack = () => {
+        if (folderPath.length > 0) {
+            const newPath = [...folderPath];
+            newPath.pop(); // מסירים את התיקייה האחרונה
+            setFolderPath(newPath);
+            setCurrentFolderId(newPath.length > 0 ? newPath[newPath.length - 1].id : null);
+        }
+    };
 
     return (
         <>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-                <Typography variant="h6" gutterBottom>
-                Your Exams {currentFolderName ? ` > ${currentFolderName}` : ''}
-                </Typography>
-             
-                <ActionButtons folderId={currentFolderId} folderName={"a"}  openModal={openModal} modalData={modalData} />
-            </div>
-            {error ? (
-                <Typography color="error">{error}</Typography> 
-            ) : (
-                <ExamsTable
-                    exams={exams}
-                    folders={folders}
-                    loading={loading} 
-                    currentFolderId={currentFolderId} 
-                    setCurrentFolderId={setCurrentFolderId} 
-                    currentFolderName={currentFolderName}
-                    setCurrentFolderName={setCurrentFolderName}
-
-                />
-            )}
-            <ModalWrapper
-                open={isOpen}
-                handleClose={closeModal}
-                title={modalData?.title || ''}
-                onConfirm={modalData?.onConfirm}
-                confirmText={modalData?.confirmText}
-                initialName={modalData?.initialName}
-                setNewName={modalData?.setNewName || (() => {})}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+        
+           
+            <Breadcrumbs 
+                aria-label="breadcrumb"
+                sx={{
+                    '& .MuiBreadcrumbs-separator': { color: 'gray' },
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    color: 'primary.main',
+                }}
             >
-                {modalData?.children}
-            </ModalWrapper>
-        </>
+                <Link 
+                    onClick={() => { setFolderPath([]); setCurrentFolderId(null); }} 
+                    sx={{ 
+                        cursor: 'pointer', 
+                        textDecoration: 'none', 
+                        color: 'black', 
+                        '&:hover': { color: 'gray' }
+                    }}
+                >
+                    Your Exams
+                </Link>
+    
+                {folderPath.map((folder, index) => (
+                    <Link
+                        key={folder.id}
+                        onClick={() => {
+                            setFolderPath(folderPath.slice(0, index + 1));
+                            setCurrentFolderId(folder.id);
+                        }}
+                        sx={{ 
+                            cursor: 'pointer', 
+                            textDecoration: 'none', 
+                            color: 'text.secondary', 
+                            '&:hover': { color: 'gray' }
+                        }}
+                    >
+                        {folder.name}
+                    </Link>
+                ))}
+            </Breadcrumbs>
+    
+           
+            <ActionButtons 
+                folderId={currentFolderId} 
+                folderName={currentFolderName || "ראשי"} 
+                openModal={openModal} 
+                modalData={modalData} 
+            />
+    
+        </div>
+    
+        <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+          
+            {folderPath.length > 0 && (
+                <IconButton onClick={handleGoBack} sx={{ marginLeft: '0px',paddingLeft:'0px'}}>
+                    <ArrowUpwardIcon />
+                </IconButton>
+            )}
+        </div>
+    
+        {error ? (
+            <Typography color="error">{error}</Typography>
+        ) : (
+            <ExamsTable
+                exams={exams}
+                folders={folders}
+                loading={loading}
+                currentFolderId={currentFolderId}
+                setCurrentFolderId={setCurrentFolderId}
+                currentFolderName={currentFolderName}
+                setCurrentFolderName={setCurrentFolderName}
+                folderPath={folderPath}  
+                setFolderPath={setFolderPath}  
+            />
+        )}
+    
+        <ModalWrapper
+            open={isOpen}
+            handleClose={closeModal}
+            title={modalData?.title || ''}
+            onConfirm={modalData?.onConfirm}
+            confirmText={modalData?.confirmText}
+            initialName={modalData?.initialName}
+            setNewName={modalData?.setNewName || (() => { })}
+        >
+            {modalData?.children}
+        </ModalWrapper>
+    </>
+    
     );
 };
 

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Button, TextField } from '@mui/material';
-import FolderIcon from '@mui/icons-material/Folder';
+import {  IconButton, TextField } from '@mui/material';
 import ExamUpload from './ExamUpload';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, StoreType } from '../store/store';
 import { createFolder } from '../store/examSlice';
+import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
+import Tooltip from '@mui/material/Tooltip';
 
 interface ActionButtonsProps {
     folderId: number | null;
@@ -16,7 +17,7 @@ interface ActionButtonsProps {
 
 const ActionButtons: React.FC<ActionButtonsProps> = ({ folderId, folderName, openModal, modalData }) => {
     const dispatch = useDispatch<AppDispatch>();
-    const user = useSelector((state: StoreType) => state.auth.user)
+    const user = useSelector((state: StoreType) => state.auth.user);
     const [newName, setNewName] = useState<string>("");
 
     const handleCreateFolder = () => {
@@ -28,8 +29,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ folderId, folderName, ope
                 setNewName(name);
             },
             onConfirm: (folderName: string) => {
-
-                dispatch(createFolder({ userId: user?.id,parentFolderId: folderId,folderName: folderName}));
+                dispatch(createFolder({ userId: user?.id, parentFolderId: folderId, folderName: folderName }));
                 console.log('New folder created:', folderName);
             },
             children: (
@@ -45,32 +45,20 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ folderId, folderName, ope
         });
     };
 
-
     return (
-        <div style={{ display: "flex" }}>
-            <Button
-                variant="contained"
-                style={{
-                    marginLeft: 'auto',
-                    borderRadius: '20px',
-                    border: '2px solid black',
-                    fontWeight: 'bold',
-                    color: 'black',
-                    backgroundColor: 'transparent',
-                    boxShadow: 'none',
-                    marginRight: '8px',
-                }}
-                startIcon={<FolderIcon />}
-                onClick={handleCreateFolder}
-            >
-                Create Folder
-            </Button>
-           
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+            {/* אייקון יצירת תיקיה */}
+            <Tooltip title="Create Folder" arrow>
+                <IconButton onClick={handleCreateFolder}>
+                    <CreateNewFolderIcon />
+                </IconButton>
+            </Tooltip>
+
+            {/* כפתור העלאת קובץ */}
             <ExamUpload folderId={folderId} />
-                
-            
         </div>
     );
 };
+
 
 export default ActionButtons;

@@ -19,6 +19,7 @@ export type ExamFolderType={
     id: number,
     userId: number,
     folderName: string,
+    folderNamePrefix: string,
     parentFolderId: number|null,
     modified: string,
     type:'folder',

@@ -16,20 +16,18 @@ import { useNavigate } from 'react-router-dom';
 import { ExamFileType, ExamFolderType } from '../../models/Exam';
 import NoDocuments from '../NoDocuments';
 
-
 interface ExamTableProps {
     exams: ExamFileType[];
-    folders:ExamFolderType[]
+    folders: ExamFolderType[];
     loading: boolean;
-    handleMenuClick: (event: React.MouseEvent<HTMLElement>, index: number) => void;
-    anchorEl: null | HTMLElement;
-    selectedRow: number | null;
-    handleMenuClose: () => void;
     currentFolderId: number | null; 
     setCurrentFolderId: React.Dispatch<React.SetStateAction<number | null>>; 
     currentFolderName: string | null; 
     setCurrentFolderName: React.Dispatch<React.SetStateAction<string | null>>; 
-  }
+    folderPath: { id: number | null; name: string }[];  // הוספה
+    setFolderPath: React.Dispatch<React.SetStateAction<{ id: number | null; name: string }[]>>; // הוספה
+}
+
 const ExamTable: React.FC<ExamTableProps> = ({
     exams,
     folders,
@@ -38,37 +36,35 @@ const ExamTable: React.FC<ExamTableProps> = ({
     setCurrentFolderId,
     currentFolderName,
     setCurrentFolderName,
+    folderPath,
+    setFolderPath,
 
 }) => {
     const [selectedFile, setSelectedFile] = useState<{ name: string; url: string } | null>(null);
     const [selectedRow, setSelectedRow] = useState<number | null>(null);
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const { isOpen, openModal, closeModal, modalData } = useModal();
-    const [viewMode, setViewMode] = useState<'all' | 'students' | 'folder'>('all');
+    const [viewMode, setViewMode] = useState<'all'  | 'folder'>('all');
     const [filteredExams, setFilteredExams] = useState<(ExamFileType )[]>(exams);
     const [filteredFolders, setFilteredFolders] = useState<(ExamFolderType )[]>(folders);
     
     useEffect(() => {
-        if (viewMode === 'students') {
-            // setFilteredData(exams.filter((exam) => exam.type === 'file' && exam.owner === 'student'));
-        } else if (viewMode === 'folder' && currentFolderId !== null) {
+      if (viewMode === 'folder' && currentFolderId !== null) {
     
             setFilteredExams(exams.filter((exam) => exam.folderId === currentFolderId ));
-            setFilteredFolders(folders.filter((folder) => folder.parentFolderId === currentFolderId ));
+            setFilteredFolders(folders.filter((folder) => folder.parentFolderId === currentFolderId  ));
         } else {
-            setFilteredExams(exams);
-            setFilteredFolders(folders);
+            setFilteredExams(exams.filter((exam) => exam.folderId === null)); 
+            setFilteredFolders(folders.filter((folder) => folder.parentFolderId === null));
         }
     }, [viewMode, currentFolderId, exams]);
     
-    const openFolder = (folderId: number,folderName:string) => {
-        console.log('openFolder', folderId);
-        setCurrentFolderName(folderName)
+   
+    const openFolder = (folderId: number, folderName: string) => {
+        setFolderPath(prevPath => [...prevPath, { id: folderId, name: folderName }]); 
         setCurrentFolderId(folderId);
+        setCurrentFolderName(folderName)
         setViewMode('folder');
-    };
-    const handleViewStudentsExams = () => {
-        setViewMode('students');
     };
     
     const navigate=useNavigate()
