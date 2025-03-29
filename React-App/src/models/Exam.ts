@@ -22,6 +22,7 @@ export type ExamFolderType={
     folderNamePrefix: string,
     parentFolderId: number|null,
     modified: string,
+    ofTeacherExams: boolean,
     type:'folder',
 }
 export type ExamFileType = ExamType & {

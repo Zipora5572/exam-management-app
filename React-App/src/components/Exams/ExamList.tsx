@@ -98,9 +98,14 @@ const ExamList = () => {
         <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
           
             {folderPath.length > 0 && (
-                <IconButton onClick={handleGoBack} sx={{ marginLeft: '0px',paddingLeft:'0px'}}>
-                    <ArrowUpwardIcon />
-                </IconButton>
+                <ArrowUpwardIcon 
+    onClick={handleGoBack} 
+    sx={{
+        cursor: 'pointer',
+        fontSize: '24px', 
+    }} 
+/>
+
             )}
         </div>
     

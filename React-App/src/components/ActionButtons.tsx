@@ -47,11 +47,17 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ folderId, folderName, ope
 
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
-            {/* אייקון יצירת תיקיה */}
+        
             <Tooltip title="Create Folder" arrow>
-                <IconButton onClick={handleCreateFolder}>
-                    <CreateNewFolderIcon />
-                </IconButton>
+            <CreateNewFolderIcon 
+    onClick={handleCreateFolder} 
+    sx={{
+        margin:'5px',
+        cursor: 'pointer',
+        fontSize: '24px', 
+    }} 
+/>
+
             </Tooltip>
 
             {/* כפתור העלאת קובץ */}

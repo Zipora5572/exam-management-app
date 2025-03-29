@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
                 ],
             },
            
-            { path: '/viewExam', element: <ExamFileViewer fileName={''} fileUrl={'https://storage.cloud.google.com/exams-bucket/46341d91-e28b-4779-9a7c-26ba3f88e8ae.png'} /> },
+            { path: '/viewExam', element: <ExamFileViewer /> },
             { path: '/dashboard', element: <Dashboard /> },
             { path: '/profile', element: <Profile /> },
         ],

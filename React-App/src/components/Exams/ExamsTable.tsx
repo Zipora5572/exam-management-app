@@ -52,10 +52,10 @@ const ExamTable: React.FC<ExamTableProps> = ({
       if (viewMode === 'folder' && currentFolderId !== null) {
     
             setFilteredExams(exams.filter((exam) => exam.folderId === currentFolderId ));
-            setFilteredFolders(folders.filter((folder) => folder.parentFolderId === currentFolderId  ));
+            setFilteredFolders(folders.filter((folder) => folder.parentFolderId === currentFolderId&& folder.ofTeacherExams ));
         } else {
             setFilteredExams(exams.filter((exam) => exam.folderId === null)); 
-            setFilteredFolders(folders.filter((folder) => folder.parentFolderId === null));
+            setFilteredFolders(folders.filter((folder) => folder.parentFolderId === null && folder.ofTeacherExams));
         }
     }, [viewMode, currentFolderId, exams]);
     
@@ -69,8 +69,7 @@ const ExamTable: React.FC<ExamTableProps> = ({
     
     const navigate=useNavigate()
     const handleRowClick = (fileName: string, fileUrl: string) => {
-        console.log('handleRowClick', fileName, fileUrl);
-        
+    
         setSelectedFile({ name: fileName, url: fileUrl });
     };
     const handleMenuClick = (event: React.MouseEvent<HTMLElement>, index: number) => {
@@ -83,7 +82,7 @@ const ExamTable: React.FC<ExamTableProps> = ({
         setSelectedRow(null);
     };
     if(selectedFile) {
-        navigate('/viewExam')
+        navigate('/viewExam', { state: {fileName: selectedFile.name, fileUrl:selectedFile.url } });
     }
 
     return (

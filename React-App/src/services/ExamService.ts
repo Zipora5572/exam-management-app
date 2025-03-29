@@ -65,9 +65,9 @@ export default {
         }
     }
     ,
-    deleteExamFile: async (examId: string) => {
+    deleteExamFile: async (id: number) => {
         try {
-            const response = await axios.delete(`storage/${examId}`);
+            const response = await axios.delete(`exam/${id}`);
             return response.data;
         } catch (error) {
             throw new Error('File deletion failed: ' + error.message);

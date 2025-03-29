@@ -74,7 +74,7 @@ const ExamDetailsRow: React.FC<ExamDetailsRowProps> = ({
                 ) : (
                     <DescriptionIcon
                         style={{ color: 'rgb(144, 144, 144)', fontSize: '24px' }}
-                        onClick={() => handleRowClick(row.examName, `https://storage.cloud.google.com/exams-bucket/46341d91-e28b-4779-9a7c-26ba3f88e8ae.png`)}
+                        onClick={() => handleRowClick(row.examName, row.examPath)}
 
                     />
                     //         <img
@@ -98,9 +98,11 @@ const ExamDetailsRow: React.FC<ExamDetailsRowProps> = ({
                 )}
             </TableCell>
             <TableCell
+            
                 sx={{ color: 'rgb(75, 75, 75)' }}
                 onMouseEnter={() => setIsHovered(false)}
             >
+                
                 shared
             </TableCell>
 
