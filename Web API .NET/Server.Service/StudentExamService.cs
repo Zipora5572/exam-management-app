@@ -1,5 +1,7 @@
 ﻿// Source: StudentExamService.cs
 using AutoMapper;
+using Microsoft.Identity.Client;
+using Newtonsoft.Json;
 using Server.Core.DTOs;
 using Server.Core.Entities;
 using Server.Core.IRepositories;
@@ -40,6 +42,7 @@ namespace Server.Service
 
         public async Task<StudentExamDto> AddStudentExamAsync(StudentExamDto studentExamDto)
         {
+            
             StudentExam studentExam = _mapper.Map<StudentExam>(studentExamDto);
             studentExam = await _repositoryManager.StudentExams.AddAsync(studentExam);
             await _repositoryManager.SaveAsync();

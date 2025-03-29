@@ -154,7 +154,13 @@ C:\Users\user1\Desktop\ציפי לימודים שנה ב\פרויקט\server\Ser
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\פרויקט\server\Server\Server.API\obj\Debug\net8.0\ref\Server.API.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\פרויקט\server\Server\Server.API\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\פרויקט\server\Server\Server.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.csproj.AssemblyReference.cache
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.AssemblyInfoInputs.cache
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.AssemblyInfo.cs
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.csproj.CoreCompileInputs.cache
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.sourcelink.json
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\appsettings.json
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Server.API.exe
@@ -166,6 +172,7 @@ C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web A
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Google.Api.Gax.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Google.Apis.dll
@@ -174,6 +181,7 @@ C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web A
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Google.Apis.Storage.v1.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Google.Cloud.Storage.V1.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Humanizer.dll
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\MailKit.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -204,6 +212,7 @@ C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web A
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\MimeKit.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\MimeTypesMap.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\MySqlConnector.dll
@@ -229,6 +238,7 @@ C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web A
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\System.Management.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\System.Security.Permissions.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\System.Windows.Extensions.dll
@@ -285,6 +295,7 @@ C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web A
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
@@ -294,6 +305,7 @@ C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web A
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Server.Core.dll
@@ -302,14 +314,6 @@ C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web A
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Server.Core.pdb
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Server.Data.pdb
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\bin\Debug\net8.0\Server.Service.pdb
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.csproj.AssemblyReference.cache
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.AssemblyInfoInputs.cache
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.AssemblyInfo.cs
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.csproj.CoreCompileInputs.cache
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\Server.API.sourcelink.json
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.API\obj\Debug\net8.0\staticwebassets\msbuild.Server.API.Microsoft.AspNetCore.StaticWebAssets.props

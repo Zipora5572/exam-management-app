@@ -120,6 +120,7 @@ namespace Server.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     FolderName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FolderNamePrefix = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ParentFolderId = table.Column<int>(type: "int", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -251,11 +252,14 @@ namespace Server.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ExamId = table.Column<int>(type: "int", nullable: false),
                     StudentId = table.Column<int>(type: "int", nullable: false),
+                    ExamPath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StudentExamName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FolderId = table.Column<int>(type: "int", nullable: false),
                     TeacherId = table.Column<int>(type: "int", nullable: false),
                     IsChecked = table.Column<bool>(type: "bit", nullable: false),
                     Score = table.Column<int>(type: "int", nullable: true),
                     TeacherComments = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    GradingDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    CheckedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -266,10 +270,17 @@ namespace Server.Data.Migrations
                         principalTable: "Exams",
                         principalColumn: "Id");
                     table.ForeignKey(
+                        name: "FK_StudentExams_Folders_FolderId",
+                        column: x => x.FolderId,
+                        principalTable: "Folders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
                         name: "FK_StudentExams_Users_StudentId",
                         column: x => x.StudentId,
                         principalTable: "Users",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_StudentExams_Users_TeacherId",
                         column: x => x.TeacherId,
@@ -331,6 +342,11 @@ namespace Server.Data.Migrations
                 name: "IX_StudentExams_ExamId",
                 table: "StudentExams",
                 column: "ExamId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StudentExams_FolderId",
+                table: "StudentExams",
+                column: "FolderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StudentExams_StudentId",

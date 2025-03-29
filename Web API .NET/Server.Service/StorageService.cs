@@ -1,11 +1,18 @@
 ﻿using Google.Cloud.Storage.V1;
 using HeyRed.Mime;
+using Google.Apis.Storage.v1.Data;
+using Google.Cloud.Storage.V1;
 using Microsoft.Extensions.Configuration;
 using Server.Core.IServices;
 using System;
 using System.IO;
 using System.Threading.Tasks;
-
+using Microsoft.AspNetCore.Cors;
+using Google.Apis.Storage.v1.Data;
+using Google.Cloud.Storage.V1;
+using System;
+using System.Collections.Generic;
+using static Google.Apis.Storage.v1.Data.Bucket;
 namespace Server.Service
 {
     public class StorageService : IStorageService
@@ -21,6 +28,7 @@ namespace Server.Service
 
             _bucketName = configuration["GoogleCloud:BucketName"];
             _storageClient = StorageClient.Create();
+            BucketAddCorsConfiguration();
         }
 
         public async Task UploadFileAsync(string filePath, string objectName)
@@ -42,7 +50,7 @@ namespace Server.Service
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
-                throw; 
+                throw;
             }
         }
 
@@ -51,21 +59,21 @@ namespace Server.Service
             try
             {
                 await _storageClient.DeleteObjectAsync(_bucketName, fileName);
-                return true; 
+                return true;
             }
             catch (Google.GoogleApiException ex)
             {
-                
+
                 if (ex.HttpStatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    return false; 
+                    return false;
                 }
                 throw;
             }
             catch (Exception)
             {
-                
-                return false; 
+
+                return false;
             }
         }
         public async Task<Stream> DownloadFileAsync(string fileName)
@@ -89,6 +97,32 @@ namespace Server.Service
             {
                 throw;
             }
+        }
+
+        public Bucket BucketAddCorsConfiguration()
+        {
+           
+            var bucket = _storageClient.GetBucket(_bucketName);
+
+            CorsData corsData = new CorsData
+            {
+                Origin = new string[] { "*" },
+                ResponseHeader = new string[] { "Content-Type", "x-goog-resumable" },
+                Method = new string[] { "PUT", "POST" },
+                MaxAgeSeconds = 3600 // שעה אחת
+            };
+
+            if (bucket.Cors == null)
+            {
+                bucket.Cors = new List<CorsData>();
+            }
+            bucket.Cors.Add(corsData);
+
+            bucket = _storageClient.UpdateBucket(bucket);
+            Console.WriteLine($"bucketName {_bucketName} was updated with a CORS config to allow {string.Join(",", corsData.Method)} requests from" +
+                $" {string.Join(",", corsData.Origin)} sharing {string.Join(",", corsData.ResponseHeader)} responseHeader" +
+                $" responses across origins.");
+            return bucket;
         }
 
     }

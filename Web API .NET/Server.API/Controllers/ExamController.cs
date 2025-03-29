@@ -171,21 +171,17 @@ namespace Server.API.Controllers
        
 
         // DELETE api/<ExamController>/5
-        [HttpDelete("{filename}")]
-        public async Task<ActionResult> Delete(string fileName)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
         {
-            if (string.IsNullOrEmpty(fileName))
-            {
-                return BadRequest("File name cannot be null or empty.");
-            }
-
+         
+            ExamDto exam=await _examService.GetByIdAsync(id);
             try
             {
-                bool result = await _storageService.DeleteFileAsync(fileName);
-                if (!result)
-                {
-                    return NotFound("File not found.");
-                }
+               
+                await _storageService.DeleteFileAsync(exam.ExamName+".png");
+                await _examService.DeleteExamAsync(exam);
+
             }
             catch (Exception ex)
             {

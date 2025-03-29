@@ -64,8 +64,12 @@ namespace Server.API.Controllers
             {
                 int id=(int)folderDto.ParentFolderId;
                 var parentFolder = await _folderService.GetByIdAsync(id);
-                folderDto.FolderName = $"{parentFolder.FolderName}/{folderDto.FolderName}";
+                
+                folderDto.FolderNamePrefix = $"{parentFolder.FolderNamePrefix}/{folderDto.FolderName}";
             }
+            else
+                folderDto.FolderNamePrefix =folderDto.FolderName;
+
             Console.WriteLine("folder name: "+ folderDto.FolderName);
             try
             {

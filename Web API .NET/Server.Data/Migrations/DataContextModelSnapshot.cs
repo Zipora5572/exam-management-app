@@ -151,7 +151,14 @@ namespace Server.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FolderNamePrefix")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("OfTeacherExams")
                         .HasColumnType("bit");
 
                     b.Property<int?>("ParentFolderId")
@@ -234,11 +241,26 @@ namespace Server.Data.Migrations
                     b.Property<int>("ExamId")
                         .HasColumnType("int");
 
+                    b.Property<string>("ExamNamePrefix")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExamPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FolderId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsChecked")
                         .HasColumnType("bit");
 
                     b.Property<int?>("Score")
                         .HasColumnType("int");
+
+                    b.Property<string>("StudentExamName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("StudentId")
                         .HasColumnType("int");
@@ -252,6 +274,8 @@ namespace Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ExamId");
+
+                    b.HasIndex("FolderId");
 
                     b.HasIndex("StudentId");
 
@@ -440,6 +464,12 @@ namespace Server.Data.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("Server.Core.Entities.Folder", "Folder")
+                        .WithMany()
+                        .HasForeignKey("FolderId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Server.Core.Entities.User", "Student")
                         .WithMany()
                         .HasForeignKey("StudentId")
@@ -453,6 +483,8 @@ namespace Server.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Exam");
+
+                    b.Navigation("Folder");
 
                     b.Navigation("Student");
 

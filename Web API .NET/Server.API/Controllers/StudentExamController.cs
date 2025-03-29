@@ -1,9 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Server.API.PostModel;
 using Server.Core.DTOs;
 using Server.Core.IServices;
+using Server.Service;
 using System.Collections.Generic;
+using System.IO;
+using System.Security.AccessControl;
 using System.Threading.Tasks;
 
 namespace Server.API.Controllers
@@ -14,11 +18,17 @@ namespace Server.API.Controllers
     {
         private readonly IStudentExamService _studentExamService;
         private readonly IMapper _mapper;
+        private readonly IStorageService _storageService;
+        private readonly IExamService _examService;
+        private readonly IFolderService _folderService;
 
-        public StudentExamController(IStudentExamService studentExamService, IMapper mapper)
+        public StudentExamController(IStudentExamService studentExamService, IMapper mapper, IStorageService storageService, IExamService examService, IFolderService folderService)
         {
             _studentExamService = studentExamService;
             _mapper = mapper;
+            _storageService = storageService;
+            _examService = examService;
+            _folderService = folderService;
         }
 
         // GET: api/<StudentExamController>
@@ -54,6 +64,79 @@ namespace Server.API.Controllers
             return Ok(studentExams);
         }
 
+        [HttpPost("uploadStudentExam")]
+        public async Task<ActionResult> UploadStudentExam([FromForm] StudentExamPostModel studentExamPostModel)
+        {
+            if (studentExamPostModel.Files == null || studentExamPostModel.Files.Count == 0)
+            {
+                return BadRequest("No files uploaded.");
+            }
+
+            var exam = await _examService.GetByIdAsync(studentExamPostModel.ExamId);
+            if (exam == null)
+            {
+                return NotFound("Exam not found.");
+            }
+
+            var teacherExamFolder = exam.ExamName;
+            string folderName = Path.GetDirectoryName(studentExamPostModel.Files[0].FileName);
+            var studentExams = new List<StudentExamDto>();
+            FolderDto folderDto = new FolderDto();
+            folderDto.FolderName = folderName;
+            folderDto.UserId = exam.UserId;
+            folderDto.OfTeacherExams = false;
+            folderDto.FolderNamePrefix = folderName;
+          
+            FolderDto addedFolder = await _folderService.AddFolderAsync(folderDto);
+            int id = addedFolder.Id;
+          
+
+            var uploadTasks = studentExamPostModel.Files.Select(file =>
+            {
+                string fileName = Path.GetFileName(file.FileName);
+
+
+                var objectName = $"{teacherExamFolder}/{fileName}";
+                var filePath = Path.Combine(Path.GetTempPath(), fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+
+
+                return _storageService.UploadFileAsync(filePath, objectName);
+            }).ToList();
+
+            await Task.WhenAll(uploadTasks);
+         
+            foreach (var file in studentExamPostModel.Files)
+            {
+                var objectName = $"{teacherExamFolder}/{Path.GetFileName(file.FileName)}";
+                var studentExamDto = _mapper.Map<StudentExamDto>(studentExamPostModel);
+                studentExamDto.ExamPath = $"https://storage.cloud.google.com/exams-bucket/{objectName}";
+                studentExamDto.StudentExamName = Path.GetFileNameWithoutExtension(file.FileName);
+                studentExamDto.ExamNamePrefix = objectName;
+
+
+
+                studentExamDto.FolderId = id;
+                Console.WriteLine("ID"+ studentExamDto.FolderId );
+               
+
+                var savedStudentExam = await _studentExamService.AddStudentExamAsync(studentExamDto);
+                studentExams.Add(savedStudentExam);
+
+
+                var filePath = Path.Combine(Path.GetTempPath(), Path.GetFileName(file.FileName));
+                System.IO.File.Delete(filePath);
+            }
+
+            return Ok(new { message = "Files uploaded successfully.", studentExams });
+        }
+
+
+
         // POST api/<StudentExamController>
         [HttpPost]
         public async Task<ActionResult<StudentExamDto>> Post([FromBody] StudentExamPostModel studentExamPostModel)
@@ -71,6 +154,7 @@ namespace Server.API.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult<StudentExamDto>> Put(int id, [FromBody] StudentExamPostModel studentExamPostModel)
         {
+            
             if (studentExamPostModel == null)
             {
                 return BadRequest("StudentExam cannot be null");
@@ -83,7 +167,7 @@ namespace Server.API.Controllers
             }
 
             var updatedStudentExamDto = _mapper.Map<StudentExamDto>(studentExamPostModel);
-          
+
 
             updatedStudentExamDto.Id = id; // Ensure the ID is set for the update
             updatedStudentExamDto.CheckedAt = DateTime.Now;

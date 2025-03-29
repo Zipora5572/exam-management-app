@@ -17,11 +17,12 @@ namespace Server.Core.Entities
         public User User { get; set; }
 
         public string FolderName { get; set; }
+        public string FolderNamePrefix { get; set; } = "";
       
         [ForeignKey(nameof(Folder))]
         public int? ParentFolderId { get; set; }
         public Folder? ParentFolder { get; set; }
-
+        public bool OfTeacherExams { get; set; } = true;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; }
         public bool IsDeleted { get; set; }

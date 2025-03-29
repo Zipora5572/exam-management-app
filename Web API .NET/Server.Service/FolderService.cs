@@ -43,6 +43,7 @@ namespace Server.Service
             folder = await _repositoryManager.Folders.AddAsync(folder);
             await _repositoryManager.SaveAsync();
             folderDto = _mapper.Map<FolderDto>(folder);
+          
             return folderDto;
         }
 

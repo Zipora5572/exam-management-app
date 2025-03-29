@@ -73,6 +73,13 @@ namespace Server.Data
 
             modelBuilder.Entity<Folder>()
                 .HasQueryFilter(f => !f.IsDeleted);
+
+            modelBuilder.Entity<StudentExam>()
+    .HasOne(se => se.Folder)
+    .WithMany()
+    .HasForeignKey(se => se.FolderId)
+    .OnDelete(DeleteBehavior.Restrict); // או DeleteBehavior.NoAction
+
         }
 
 

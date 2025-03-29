@@ -10,19 +10,20 @@ namespace Server.Data.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "GradingDate",
+            migrationBuilder.AddColumn<string>(
+                name: "ExamNamePrefix",
                 table: "StudentExams",
-                newName: "CheckedAt");
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "CheckedAt",
-                table: "StudentExams",
-                newName: "GradingDate");
+            migrationBuilder.DropColumn(
+                name: "ExamNamePrefix",
+                table: "StudentExams");
         }
     }
 }

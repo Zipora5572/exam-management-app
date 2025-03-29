@@ -46,9 +46,16 @@ namespace Server.Service
 
         public async Task DeleteExamAsync(ExamDto examDto)
         {
-            Exam exam = _mapper.Map<Exam>(examDto);
-           await _repositoryManager.Exams.DeleteAsync(exam);
-            await _repositoryManager.SaveAsync();
+            var existingExam = await _repositoryManager.Exams.GetByIdAsync(examDto.Id);
+            if (existingExam != null)
+            {
+               await  _repositoryManager.Exams.DeleteAsync(existingExam);
+                await _repositoryManager.SaveAsync();
+            }
+            else
+            {
+                throw new InvalidOperationException("Exam not found.");
+            }
         }
 
         public async Task<ExamDto> UpdateExamAsync(int id, ExamDto examDto)

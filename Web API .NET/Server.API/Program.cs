@@ -91,6 +91,7 @@ builder.Services.AddScoped<ITopicRepository, TopicRepository>();
 
 
 builder.Services.AddSingleton<IStorageService, StorageService>();
+builder.Services.AddSingleton<IEmailService, EmailService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IStudentExamService, StudentExamService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -104,7 +105,7 @@ builder.Services.AddScoped<IDataContext,DataContext>();
 builder.Services.AddAutoMapper(typeof(MappingProfile), typeof(MappingPostProfile));
 
 builder.Services.AddDbContext<IDataContext, DataContext>(
-    options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ExamsDB"));
+    options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Exams_DB"));
 //builder.Services.AddDbContext<DataContext>(
 //    options => options.UseMySql(
 //        "server=bygljohvlznnah8fy7a7-mysql.services.clever-cloud.com;database=bygljohvlznnah8fy7a7;user=ueb9fmdhiqcwfkgg;password=C7H2J9SuOtXATsY8WAGx;",

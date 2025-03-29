@@ -18,9 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Server.Core\Server.Core.csproj" />
-    <ProjectReference Include="..\Server.Data\Server.Data.csproj" />
-    <ProjectReference Include="..\Server.Service\Server.Service.csproj" />
+    <ProjectReference Include="..\Server.Core\Server.Core.csproj"/>
+    <ProjectReference Include="..\Server.Data\Server.Data.csproj"/>
+    <ProjectReference Include="..\Server.Service\Server.Service.csproj"/>
   </ItemGroup>
 
 </Project>
