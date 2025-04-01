@@ -18,7 +18,8 @@ namespace Server.Core.Entities
 
         public string FolderName { get; set; }
         public string FolderNamePrefix { get; set; } = "";
-      
+        public string Type { get; set; } = "FOLDER";
+
         [ForeignKey(nameof(Folder))]
         public int? ParentFolderId { get; set; }
         public Folder? ParentFolder { get; set; }

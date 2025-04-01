@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { Button, TextField } from '@mui/material';
 import UploadIcon from '@mui/icons-material/Upload';
 import useModal from '../hooks/useModal';
 import { ExamFileType } from "../models/Exam";
-import { useSelector } from 'react-redux';
-import { StoreType } from '../store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, StoreType } from '../store/store';
 import ModalWrapper from './ModalWrapper';
-import ExamService from '../services/ExamService';
+import { uploadExamFile } from '../store/examSlice';
 const ExamUpload = ({ folderId }: { folderId: number | undefined }) => {
     const user = useSelector((state: StoreType) => state.auth.user);
     const [file, setFile] = useState<File | null>(null);
+    const dispatch = useDispatch<AppDispatch>();
+
     const [examDetails, setExamDetails] = useState<Partial<ExamFileType>>({
         userId: 1,
         examName: ' ',
@@ -23,37 +25,35 @@ const ExamUpload = ({ folderId }: { folderId: number | undefined }) => {
         if (event.target.files && event.target.files.length > 0) {
             const selectedFile = event.target.files[0];
             setFile(selectedFile);
-            console.log('Selected file:', selectedFile.name);
-
+            
+            let localTopic = { 
+                name: examDetails.topic?.name || '', 
+                description: examDetails.topic?.description || '' 
+            };
+    
             openModal({
                 title: 'Enter Exam Details',
-                onConfirm: () => handleUpload(selectedFile),
                 confirmText: 'Upload',
+                onConfirm: () => {
+                    setExamDetails(prevDetails => ({
+                        ...prevDetails,
+                        topic: { name: localTopic.name, description: localTopic.description }
+                    }));
+                    handleUpload(selectedFile);
+                               },
                 children: (
                     <>
                         <TextField
-                            label="Topic Name"
-                            value={examDetails.topic?.name}
-                            onChange={(e) => setExamDetails(prevDetails => ({
-                                ...prevDetails,
-                                topic: {
-                                    name: e.target.value,
-                                    description: prevDetails.topic?.description,
-                                }
-                            }))}
+                            label="Name"
+                            defaultValue={examDetails.topic?.name}
+                            onChange={(e) => { localTopic.name = e.target.value; }}
                             fullWidth
                             margin="normal"
                         />
                         <TextField
-                            label="Topic Description"
-                            value={examDetails.topic?.description}
-                            onChange={(e) => setExamDetails(prevDetails => ({
-                                ...prevDetails,
-                                topic: {
-                                    name: prevDetails.topic?.name,
-                                    description: e.target.value,
-                                }
-                            }))}
+                            label="Description"
+                            defaultValue={examDetails.topic?.description}
+                            onChange={(e) => { localTopic.description = e.target.value; }}
                             fullWidth
                             margin="normal"
                         />
@@ -62,13 +62,15 @@ const ExamUpload = ({ folderId }: { folderId: number | undefined }) => {
             });
         }
     };
-
+  
     const handleUpload = async (selectedFile: File) => {
         if (selectedFile) {
             try {
+              
+                
                 examDetails.folderId = folderId;
-                const result = await ExamService.uploadExamFile(selectedFile, examDetails);
-                console.log(`File uploaded successfully: ${result.message}`);
+                dispatch(uploadExamFile({file:selectedFile,examDetails:examDetails}))
+               
             } catch (error) {
                 console.error('Error uploading file:', error);
             } finally {

@@ -19,8 +19,10 @@ namespace Server.Core.Entities
 
 
         public string ExamName { get; set; }
+        public string ExamNamePrefix { get; set; }
+        public string Type { get; set; } = "FILE";
 
-
+        
         //public string UniqueFileName { get; set; }
 
 

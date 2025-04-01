@@ -12,6 +12,8 @@ namespace Server.Core.DTOs
         public int UserId { get; set; } 
         public string FolderName { get; set; }
         public string FolderNamePrefix { get; set; }
+        public string Type { get; set; } = "FOLDER";
+
         public int? ParentFolderId { get; set; }
         public DateTime CreatedAt { get; set; } =DateTime.Now;
         public DateTime UpdatedAt { get; set; } =DateTime.Now;

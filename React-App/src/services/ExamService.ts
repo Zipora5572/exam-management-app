@@ -9,11 +9,11 @@ export default {
         if (examDetails.examName !== undefined) formData.append('ExamName', examDetails.examName);
         if (examDetails.examType !== undefined) formData.append('ExamType', examDetails.examType);
         let id=examDetails.folderId?examDetails.folderId.toString():'1'
-        console.log(examDetails.folderId, " folder");
+        
         
         if (examDetails.folderId != null) formData.append('FolderId',id);
         if (examDetails.topic) {
-            console.log('topic',examDetails.topic);
+           
             
             formData.append('Topic.Name', examDetails.topic.name || '');
             formData.append('Topic.Description', examDetails.topic.description || '');
@@ -48,7 +48,10 @@ export default {
 
     download: async (fileName: string) => {
         try {
-            const response = await axios.get(`/exam/download/${fileName}`, {
+            const response = await axios.get(`/exam/download`, {
+                params: {
+                    fileNamePrefix: fileName 
+                },
                 responseType: 'blob', 
             });
 

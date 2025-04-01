@@ -10,7 +10,8 @@ namespace Server.Core.IServices
         Task<List<Folder>> GetAllFoldersAsync();
         Task<FolderDto> GetByIdAsync(int id);
         Task<FolderDto> AddFolderAsync(FolderDto folder);
-        //Task DeleteFolderAsync(FolderDto folder);
-        Task<FolderDto> UpdateFolderAsync(int id, FolderDto folder);
+        Task DeleteFolderAsync(FolderDto folder);
+        Task<FolderDto> UpdateFolderAsync(int id, FolderDto folder,string oldName="");
+
     }
 }

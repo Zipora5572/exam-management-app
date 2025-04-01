@@ -9,5 +9,6 @@ namespace Server.Core.IRepositories
 {
     public interface IExamRepository:IRepository<Exam>
     {
+        IQueryable<Exam> GetAllExams();
     }
 }

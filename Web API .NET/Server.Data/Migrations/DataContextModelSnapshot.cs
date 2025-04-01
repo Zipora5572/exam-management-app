@@ -86,6 +86,10 @@ namespace Server.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ExamNamePrefix")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ExamPath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -111,6 +115,10 @@ namespace Server.Data.Migrations
 
                     b.Property<int?>("TopicId1")
                         .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -163,6 +171,10 @@ namespace Server.Data.Migrations
 
                     b.Property<int?>("ParentFolderId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");

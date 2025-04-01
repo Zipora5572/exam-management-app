@@ -13,17 +13,7 @@ export const uploadExamFile = createAsyncThunk(
         }
     }
 );
-export const createFolder = createAsyncThunk(
-    'exams/createFolder',
-    async (folderDetails: Partial<ExamFolderType>, thunkAPI) => {
-        try {
-            const response = await examService.createFolder(folderDetails);
-            return response; 
-        } catch (error: any) {
-            return thunkAPI.rejectWithValue(error.message || 'Folder creation failed');
-        }
-    }
-);
+
 
 
 export const deleteExamFile = createAsyncThunk(
@@ -39,17 +29,6 @@ export const deleteExamFile = createAsyncThunk(
 );
 
 
-export const getAllFolders = createAsyncThunk(
-    'exams/getAllFolders',
-    async (_, thunkAPI) => {
-        try {
-            const response = await examService.getAllFolders();
-            return response;
-        } catch (error: any) {
-            return thunkAPI.rejectWithValue(error.message || 'Failed to fetch exams');
-        }
-    }
-);
 
 export const getAllExams = createAsyncThunk(
     'exams/getAllExams',
@@ -92,31 +71,24 @@ const examSlice = createSlice({
             })
             .addCase(uploadExamFile.fulfilled, (state, action) => {
                 state.loading = false;
-                state.exams.push(action.payload);
+                const newExam = { ...action.payload, type: 'FILE' };
+                state.exams = [...state.exams, newExam];
             })
             .addCase(uploadExamFile.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload as string;
             })
-            .addCase(createFolder.pending, (state) => {
-                state.loading = true;
-                state.error = null;
-            })
-            .addCase(createFolder.fulfilled, (state, action) => {
-                state.loading = false;
-                state.exams.push(action.payload); 
-            })
-            .addCase(createFolder.rejected, (state, action) => {
-                state.loading = false;
-                state.error = action.payload as string;
-            })
+          
             .addCase(deleteExamFile.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
             .addCase(deleteExamFile.fulfilled, (state, action) => {
+                console.log("+", action.payload);
+                
                 state.loading = false;
-                state.exam = state.exams.filter(exam => exam.id !== action.payload.id); 
+                state.exams = state.exams.filter(exam => exam.id !== action.payload); 
+                 state.folders = state.folders.filter(folder => folder.id !== action.payload); 
             })
             .addCase(deleteExamFile.rejected, (state, action) => {
                 state.loading = false;
@@ -140,28 +112,18 @@ const examSlice = createSlice({
             })
             .addCase(renameExamFile.fulfilled, (state, action) => {
                 state.loading = false;
-                const { id, newName } = action.payload; 
-                const examToUpdate = state.exams.find(exam => exam.id === id);
-                if (examToUpdate) {
-                   examToUpdate.examName = newName;
-                }
+                const { id, examName } = action.payload; 
+               console.log(examName);
+               
+                state.exams = state.exams.map(exam => 
+                    exam.id == id ? { ...exam, examName: examName } : exam
+                );
             })
             .addCase(renameExamFile.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload as string;
             })
-            .addCase(getAllFolders.pending, (state) => {
-                state.loading = true;
-                state.error = null;
-            })
-            .addCase(getAllFolders.fulfilled, (state, action) => {
-                state.loading = false;
-                state.folders = action.payload;
-            })
-            .addCase(getAllFolders.rejected, (state, action) => {
-                state.loading = false;
-                state.error = action.payload as string;
-            });
+
     },
 });
 

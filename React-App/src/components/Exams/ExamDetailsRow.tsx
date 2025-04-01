@@ -4,9 +4,8 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FolderIcon from '@mui/icons-material/Folder';
 import FileMenu from '../FileMenu';
 import DescriptionIcon from '@mui/icons-material/Description';
-import { ExamFileType, ExamFolderType, ExamType } from '../../models/Exam';
+import { ExamFileType, ExamFolderType } from '../../models/Exam';
 import ExamRowButtons from '../ExamRowButtons';
-import useModal from '../../hooks/useModal';
 
 interface ExamDetailsRowProps {
     row: ExamFileType | ExamFolderType;
@@ -16,7 +15,7 @@ interface ExamDetailsRowProps {
     anchorEl: null | HTMLElement;
     selectedRow: number | null;
     handleMenuClose: () => void;
-    openFolder: (folderId: number,folderName:string) => void;
+    openFolder: (folderId: number, folderName: string) => void;
     openModal: (data: { title: string; initialName?: string; setNewName?: (name: string) => void; confirmText?: string; onConfirm?: (name: string) => void; children?: React.ReactNode; }) => void;
     handleRowClick: (fileName: string, fileUrl: string) => void;
 }
@@ -57,6 +56,7 @@ const ExamDetailsRow: React.FC<ExamDetailsRowProps> = ({
 
     const formattedUpdatedAt = formatDate(row.updatedAt);
 
+
     return (
         <TableRow
             key={index}
@@ -69,7 +69,7 @@ const ExamDetailsRow: React.FC<ExamDetailsRowProps> = ({
                 {isFolder ? (
                     <FolderIcon
                         style={{ color: 'rgb(144, 144, 144)', fontSize: '24px', cursor: 'pointer' }}
-                        onClick={() => openFolder(row.id,row.folderName)}
+                        onClick={() => openFolder(row.id, row.folderName)}
                     />
                 ) : (
                     <DescriptionIcon
@@ -97,14 +97,34 @@ const ExamDetailsRow: React.FC<ExamDetailsRowProps> = ({
                     <ExamRowButtons examId={row.id} fileName={row.examName} />
                 )}
             </TableCell>
+
+
             <TableCell
-            
-                sx={{ color: 'rgb(75, 75, 75)' }}
-                onMouseEnter={() => setIsHovered(false)}
-            >
-                
-                shared
-            </TableCell>
+    sx={{ color: 'rgb(75, 75, 75)' }}
+    onMouseEnter={() => setIsHovered(false)}
+>
+    {row.isShared ? (
+        <>
+            <img 
+                src="./group.png" 
+                alt="Shared Icon" 
+                style={{ 
+                    width: '20px', 
+                    height: '20px', 
+                    marginRight: '5px', 
+                    display: 'inline-block', 
+                    verticalAlign: 'middle'
+                }} 
+            />
+            <span style={{ verticalAlign: 'middle' }}>Shared</span> 
+        </>
+    ) : (
+        <span style={{ verticalAlign: 'middle' }}>Only you</span>
+    )}
+</TableCell>
+
+
+
 
             <TableCell
                 sx={{ color: 'rgb(75, 75, 75)' }}
@@ -119,17 +139,17 @@ const ExamDetailsRow: React.FC<ExamDetailsRowProps> = ({
                 onMouseEnter={() => setIsHovered(false)}
             >
                 <Button
-                    onClick={(event) => handleMenuClick(event, index)}
-                    sx={{ marginLeft: 1 }}
+                    onClick={(event) => handleMenuClick(event, row.id)}
+                    sx={{ marginLeft: 1, color: 'grey.500' }} // שינוי צבע לאפור
                 >
                     <MoreVertIcon />
                 </Button>
                 <FileMenu
                     anchorEl={anchorEl}
                     selectedRow={selectedRow}
+                    row={row}
                     handleMenuClose={handleMenuClose}
-                    uniqueFileName={row.uniqueFileName}
-                    examName={row.examName}
+                    
                     id={row.id}
                     openModal={openModal}
                 />

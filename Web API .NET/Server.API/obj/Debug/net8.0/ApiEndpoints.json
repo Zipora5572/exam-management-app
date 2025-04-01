@@ -158,20 +158,30 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Server.API.Controllers.ExamController",
     "Method": "Download",
-    "RelativePath": "api/Exam/download/{filename}",
+    "RelativePath": "api/Exam/download",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "filename",
+        "Name": "fileNamePrefix",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -243,7 +253,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Server.Core.Entities.Exam",
+        "Type": "Server.Core.DTOs.ExamDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -289,7 +299,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Server.Core.Entities.Folder",
+        "Type": "Server.Core.DTOs.FolderDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -347,6 +357,32 @@
     "ReturnTypes": [
       {
         "Type": "Server.Core.Entities.Folder",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Server.API.Controllers.FolderController",
+    "Method": "Delete",
+    "RelativePath": "api/Folder/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
         "MediaTypes": [
           "text/plain",
           "application/json",

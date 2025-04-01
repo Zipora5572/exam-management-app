@@ -4,6 +4,7 @@ using Server.API.PostModel;
 using Server.Core.DTOs;
 using Server.Core.Entities;
 using Server.Core.IServices;
+using Server.Service;
 using System.Collections.Generic;
 
 namespace Server.API.Controllers
@@ -53,7 +54,7 @@ namespace Server.API.Controllers
 
         // POST api/<FolderController>
         [HttpPost]
-        public async Task<ActionResult<Folder>> Post([FromBody] FolderPostModel folderPostModel)
+        public async Task<ActionResult<FolderDto>> Post([FromBody] FolderPostModel folderPostModel)
         {
             if (folderPostModel == null)
             {
@@ -70,11 +71,10 @@ namespace Server.API.Controllers
             else
                 folderDto.FolderNamePrefix =folderDto.FolderName;
 
-            Console.WriteLine("folder name: "+ folderDto.FolderName);
             try
             {
                 await _folderService.AddFolderAsync(folderDto);
-                return Ok();
+                return Ok(folderDto);
             }
             catch (Exception ex)
             {
@@ -99,7 +99,8 @@ namespace Server.API.Controllers
             }
             return Ok(folderDto);
         }
-        // PATCH api/<ExamController>/update-name/5
+        
+        // PATCH api/<FolderController>/rename/5
         [HttpPatch("rename/{id}")]
         public async Task<ActionResult<ExamDto>> UpdateFolderName(int id, [FromBody] string newName)
         {
@@ -108,20 +109,35 @@ namespace Server.API.Controllers
                 return BadRequest("New name cannot be null or empty.");
             }
 
-            var folderDto = await _folderService.GetByIdAsync(id);
-            if (folderDto == null)
+            var examDto = await _folderService.GetByIdAsync(id);
+            if (examDto == null)
             {
                 return NotFound();
             }
-
-            folderDto.FolderName = newName; 
-            var updatedExam = await _folderService.UpdateFolderAsync(id, folderDto);
+            string oldName = examDto.FolderName;
+            examDto.FolderName = newName;
+            var updatedExam = await _folderService.UpdateFolderAsync(id, examDto, oldName);
 
             return Ok(updatedExam);
         }
-       
+        // DELETE api/<FolderController>/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<int>> Delete(int id)
+        {
+            var folder = await _folderService.GetByIdAsync(id);
+            try
+            {
+                await _folderService.DeleteFolderAsync(folder);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error deleting folder: {ex.Message}");
+            }
 
-        
-      
+            return Ok(id);
+        }
+
+
+
     }
 }

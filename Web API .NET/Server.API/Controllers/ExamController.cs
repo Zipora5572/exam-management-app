@@ -58,14 +58,14 @@ namespace Server.API.Controllers
 
         // POST api/<ExamController>
         [HttpPost("upload")]
-        public async Task<ActionResult<Exam>> Post([FromForm] ExamPostModel examPostModel)
+        public async Task<ActionResult<ExamDto>> Post([FromForm] ExamPostModel examPostModel)
         {
             if (examPostModel.File == null || examPostModel.File.Length == 0)
             {
                 return BadRequest("No file uploaded.");
             }
             string folderName, objectName="";
-            Console.WriteLine("folder id "+examPostModel.FolderId );
+
             if (examPostModel.FolderId != null)
             {
                 int id = (int)examPostModel.FolderId; 
@@ -97,6 +97,7 @@ namespace Server.API.Controllers
 
             var examDto = _mapper.Map<ExamDto>(examPostModel);
             examDto.TopicId = addedTopic.Id;
+            examDto.ExamNamePrefix = objectName;
             //examDto.UniqueFileName = uniqueFileName;
             examDto.ExamName = Path.GetFileNameWithoutExtension(examPostModel.File.FileName);
             examDto.ExamPath = $"https://storage.cloud.google.com/exams-bucket/{objectName}";
@@ -107,7 +108,7 @@ namespace Server.API.Controllers
             examDto.UpdatedAt = DateTime.Now;
             examDto.IsDeleted = false;
 
-            await _examService.AddExamAsync(examDto);
+            var newExam=await _examService.AddExamAsync(examDto);
             try
             {
                 await _storageService.UploadFileAsync(filePath, objectName);
@@ -121,14 +122,7 @@ namespace Server.API.Controllers
 
 
 
-            return Ok($"File {objectName} uploaded and exam details saved successfully.");
-            //ExamDto examDto = _mapper.Map<ExamDto>(examPostModel);
-            //examDto =await  _examService.AddExamAsync(examDto);
-            //if (examDto == null)
-            //{
-            //    return BadRequest("Added failed");
-            //}
-            //return CreatedAtAction(nameof(Get), new { id = examDto.Id }, examDto);
+            return Ok(newExam);
         }
 
         // PUT api/<ExamController>/5
@@ -162,9 +156,17 @@ namespace Server.API.Controllers
             {
                 return NotFound();
             }
+            string oldName = examDto.ExamNamePrefix;
+            examDto.ExamName = newName;
+            var parts = oldName.Split("\\").ToList();
 
-            examDto.ExamName = newName; 
-            var updatedExam = await _examService.UpdateExamAsync(id, examDto);
+            if (parts.Any())
+            {
+                parts[parts.Count - 1] = newName;
+                examDto.ExamNamePrefix = string.Join("\\", parts);
+                examDto.ExamNamePrefix += examDto.ExamExtension;
+            }
+            var updatedExam = await _examService.UpdateExamAsync(id, examDto,oldName);
 
             return Ok(updatedExam);
         }
@@ -172,44 +174,37 @@ namespace Server.API.Controllers
 
         // DELETE api/<ExamController>/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int id)
+        public async Task<ActionResult<int>> Delete(int id)
         {
          
             ExamDto exam=await _examService.GetByIdAsync(id);
             try
-            {
-               
-                await _storageService.DeleteFileAsync(exam.ExamName+".png");
+            {           
+             
                 await _examService.DeleteExamAsync(exam);
-
             }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Error deleting file: {ex.Message}");
             }
 
-            return NoContent();
-            // ExamDto examDto = await _examService.GetByIdAsync(id);
-            // if (examDto == null)
-            // {
-            //     return NotFound();
-            // }
-            //await _examService.DeleteExamAsync(examDto);
-            // return NoContent();
+            return Ok(id);
         }
 
         // GET api/<ExamController>/download/{filename}
-        [HttpGet("download/{filename}")]
-        public async Task<IActionResult> Download(string filename)
+        [HttpGet("download")]
+        public async Task<IActionResult> Download(string fileNamePrefix)
         {
-            if (string.IsNullOrEmpty(filename))
+            
+            if (string.IsNullOrEmpty(fileNamePrefix))
             {
                 return BadRequest("File name cannot be null or empty.");
             }
 
             try
             {
-                var fileStream = await _storageService.DownloadFileAsync(filename);
+              
+                var fileStream = await _storageService.DownloadFileAsync(fileNamePrefix);
                 if (fileStream == null)
                 {
                     return NotFound("File not found.");
@@ -217,7 +212,7 @@ namespace Server.API.Controllers
 
                 var contentType = "image/png";
 
-                var fileName = Path.GetFileName(filename);
+                var fileName = Path.GetFileName(fileNamePrefix);
                 Response.Headers.Add("Content-Disposition", $"attachment; filename={fileName}");
                 return File(fileStream, contentType, fileName);
             }

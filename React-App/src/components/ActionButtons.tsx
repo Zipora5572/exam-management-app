@@ -3,7 +3,7 @@ import {  IconButton, TextField } from '@mui/material';
 import ExamUpload from './ExamUpload';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, StoreType } from '../store/store';
-import { createFolder } from '../store/examSlice';
+import { createFolder } from '../store/folderSlice';
 import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
 import Tooltip from '@mui/material/Tooltip';
 
@@ -44,6 +44,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ folderId, folderName, ope
             ),
         });
     };
+
 
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>

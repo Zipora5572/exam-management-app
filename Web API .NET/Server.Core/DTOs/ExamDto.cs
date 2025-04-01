@@ -5,7 +5,9 @@
         public int Id { get; set; } 
         public int UserId { get; set; } 
         public string ExamName { get; set; }
-      
+
+        public string ExamNamePrefix { get; set; }
+        public string Type { get; set; } = "FILE";
 
         //public string UniqueFileName { get; set; }
         public string ExamType { get; set; }

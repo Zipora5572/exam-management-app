@@ -28,7 +28,7 @@ const ExamFileViewer = () => {
     const [evaluation, setEvaluation] = useState(exam.teacherComments || '');
    
     const [imageBlob, setImageBlob] = useState(null);
-    image.src = exam.examPath;
+    image.src = './a.png';
    
    
 

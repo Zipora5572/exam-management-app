@@ -15,12 +15,6 @@ C:\Users\user1\Desktop\ציפי לימודים שנה ב\פרויקט\server\Ser
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\פרויקט\server\Server\Server.Service\obj\Debug\net8.0\refint\Server.Service.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\פרויקט\server\Server\Server.Service\obj\Debug\net8.0\Server.Service.pdb
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\פרויקט\server\Server\Server.Service\obj\Debug\net8.0\ref\Server.Service.dll
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.csproj.AssemblyReference.cache
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.AssemblyInfoInputs.cache
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.AssemblyInfo.cs
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.csproj.CoreCompileInputs.cache
-C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.sourcelink.json
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\bin\Debug\net8.0\Server.Service.deps.json
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\bin\Debug\net8.0\Server.Service.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\bin\Debug\net8.0\Server.Service.pdb
@@ -28,6 +22,12 @@ C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web A
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\bin\Debug\net8.0\Server.Data.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\bin\Debug\net8.0\Server.Core.pdb
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\bin\Debug\net8.0\Server.Data.pdb
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.csproj.AssemblyReference.cache
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.AssemblyInfoInputs.cache
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.AssemblyInfo.cs
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.csproj.CoreCompileInputs.cache
+C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.sourcelink.json
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.S.63FA4F48.Up2Date
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\Server.Service.dll
 C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.Service\obj\Debug\net8.0\refint\Server.Service.dll

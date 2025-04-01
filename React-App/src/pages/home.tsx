@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Typography, Container } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 
 const Home = () => {
   return (
@@ -7,86 +7,55 @@ const Home = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          backgroundColor: "#ffffff", // רקע לבן
+          marginTop: "64px",
+          display: "flex", // שימוש ב-flex לסידור התוכן
           height: "80vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          color: "#000000", // טקסט שחור
-          position: "relative",
+          alignItems: "stretch", // מתיחה של התוכן לגובה המלא
         }}
       >
-        <Container sx={{ position: "relative", zIndex: 2 }}>
-          <Typography variant="h2" fontWeight="bold">
+        <Box
+          sx={{
+            flex: 1,
+            padding: 4,
+            backgroundColor: "#f5f5f5", // צבע רקע אפור חלש מאוד
+            boxShadow: "none", // הסרת הצל
+            display: "flex", // שימוש ב-flex לסידור הכיתוב
+            flexDirection: "column", // סידור הכיתוב בעמודה
+            justifyContent: "center", // ממרכז את הכיתוב
+            alignItems: "center", // ממרכז את הכפתור
+          }}
+        >
+          <Typography variant="h2" fontWeight="bold" align="center">
             Your Ultimate Exam Management Platform
           </Typography>
-          <Typography variant="h5" sx={{ mt: 2 }}>
+          <Typography variant="h5" sx={{ mt: 2 }} align="center">
             Store, share, and analyze exam files effortlessly.
           </Typography>
           <Button
             variant="contained"
             color="primary"
-            sx={{ mt: 4, px: 5, py: 1.5, fontSize: "1.2rem", backgroundColor: "#000000", color: "#ffffff" }} // כפתור שחור עם טקסט לבן
+            sx={{
+              mt: 4,
+              px: 5,
+              py: 1.5,
+              fontSize: "1.2rem",
+              backgroundColor: "#000000",
+              color: "#ffffff",
+              // הכפתור ממוקם במרכז
+            }}
           >
             Get Started
           </Button>
-        </Container>
-      </Box>
-
-      {/* Features Section */}
-      <Container sx={{ py: 8 }}>
-        <Typography variant="h4" textAlign="center" fontWeight="bold" mb={4} color="#000000">
-          Why Choose Our Platform?
-        </Typography>
+        </Box>
         <Box
           sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
-            gap: 4,
-            textAlign: "center",
+            flex: 1,
+            backgroundImage: 'url("./exam.png")', // ודא שהנתיב לתמונה נכון
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "100%", // קובע גובה של 100% כדי למלא את הקטע
           }}
-        >
-          {[
-            { title: "Cloud Storage", desc: "Securely store and manage exam files in the cloud." },
-            { title: "Easy Sharing", desc: "Share exams with teachers and students effortlessly." },
-            { title: "Automated Grading", desc: "Analyze exam results with AI-powered grading." },
-          ].map((feature, index) => (
-            <Box key={index} sx={{ p: 3, backgroundColor: "#ffffff", borderRadius: 2, boxShadow: 1 }}>
-              <Typography variant="h5" fontWeight="bold" color="#000000">
-                {feature.title}
-              </Typography>
-              <Typography sx={{ mt: 1, color: "gray" }}>{feature.desc}</Typography>
-            </Box>
-          ))}
-        </Box>
-      </Container>
-
-      {/* Call to Action */}
-      <Box
-        sx={{
-          backgroundColor: "#ffffff", // רקע לבן
-          color: "#000000", // טקסט שחור
-          textAlign: "center",
-          py: 6,
-          mt: 8,
-          borderRadius: 2,
-          boxShadow: 1,
-        }}
-      >
-        <Typography variant="h4" fontWeight="bold">
-          Ready to Simplify Your Exam Management?
-        </Typography>
-        <Typography variant="h6" sx={{ mt: 2 }}>
-          Join thousands of teachers and students using our platform.
-        </Typography>
-        <Button
-          variant="contained"
-          color="secondary"
-          sx={{ mt: 3, px: 5, py: 1.5, fontSize: "1.2rem", backgroundColor: "#000000", color: "#ffffff" }} // כפתור שחור עם טקסט לבן
-        >
-          Sign Up Now
-        </Button>
+        />
       </Box>
     </Box>
   );

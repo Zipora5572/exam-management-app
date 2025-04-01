@@ -11,6 +11,6 @@ namespace Server.Core.IServices
         Task<ExamDto> GetByIdAsync(int id);
         Task<ExamDto> AddExamAsync(ExamDto exam);
         Task DeleteExamAsync(ExamDto exam);
-        Task<ExamDto> UpdateExamAsync(int id, ExamDto exam);
+        Task<ExamDto> UpdateExamAsync(int id, ExamDto exam,string oldName="");
     }
 }

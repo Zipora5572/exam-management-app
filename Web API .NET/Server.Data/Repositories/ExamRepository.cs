@@ -17,6 +17,7 @@ namespace Server.Data.Repositories
             _context = context;
         }
 
-      
+
+        public IQueryable<Exam> GetAllExams() => _context.Exams;
     }
 }

@@ -13,6 +13,7 @@ using Google.Cloud.Storage.V1;
 using System;
 using System.Collections.Generic;
 using static Google.Apis.Storage.v1.Data.Bucket;
+using Microsoft.Identity.Client.Extensions.Msal;
 namespace Server.Service
 {
     public class StorageService : IStorageService
@@ -56,6 +57,7 @@ namespace Server.Service
 
         public async Task<bool> DeleteFileAsync(string fileName)
         {
+            Console.WriteLine("del file"+fileName);
             try
             {
                 await _storageClient.DeleteObjectAsync(_bucketName, fileName);
@@ -76,6 +78,36 @@ namespace Server.Service
                 return false;
             }
         }
+
+        public  async Task RenameFileAsync(string oldName,string newName)
+        {
+         
+            await _storageClient.CopyObjectAsync(_bucketName, oldName, _bucketName, newName);
+           
+            await _storageClient.DeleteObjectAsync(_bucketName, oldName);
+           
+        }
+
+        public async Task RenameFolderAsync(string oldPrefix, string newPrefix)
+        {
+
+
+            var objects = _storageClient.ListObjects(_bucketName, oldPrefix);
+
+            
+            foreach (var obj in objects)
+            {
+               
+                string newObjectName = obj.Name.Replace(oldPrefix, newPrefix);
+
+              
+                await _storageClient.CopyObjectAsync(_bucketName, obj.Name, _bucketName, newObjectName);
+                await _storageClient.DeleteObjectAsync(_bucketName, obj.Name); 
+            }
+ 
+
+        }
+
         public async Task<Stream> DownloadFileAsync(string fileName)
         {
             try

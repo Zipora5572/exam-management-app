@@ -57,7 +57,7 @@ const ExamTable: React.FC<ExamTableProps> = ({
             setFilteredExams(exams.filter((exam) => exam.folderId === null)); 
             setFilteredFolders(folders.filter((folder) => folder.parentFolderId === null && folder.ofTeacherExams));
         }
-    }, [viewMode, currentFolderId, exams]);
+    }, [viewMode, currentFolderId, exams,folders]);
     
    
     const openFolder = (folderId: number, folderName: string) => {
@@ -72,10 +72,11 @@ const ExamTable: React.FC<ExamTableProps> = ({
     
         setSelectedFile({ name: fileName, url: fileUrl });
     };
-    const handleMenuClick = (event: React.MouseEvent<HTMLElement>, index: number) => {
+    const handleMenuClick = (event: React.MouseEvent<HTMLElement>, id: number) => {
         setAnchorEl(event.currentTarget);
-        setSelectedRow(index);
+        setSelectedRow(id);
     };
+    
 
     const handleMenuClose = () => {
         setAnchorEl(null);
@@ -92,7 +93,7 @@ const ExamTable: React.FC<ExamTableProps> = ({
                         :
             <TableContainer component={Paper} style={{ boxShadow: 'none', position: 'relative' }}>
 
-                <Table>
+                       {!loading&&   <Table>
                     <TableHead>
                         <TableRow>
                             <TableCell></TableCell>
@@ -112,7 +113,7 @@ const ExamTable: React.FC<ExamTableProps> = ({
                                 key={index}
                                 row={row}
                                 isFolder={true}
-                                index={index}
+                                index={row.id}
                                 handleMenuClick={handleMenuClick}
                                 anchorEl={anchorEl}
                                 selectedRow={selectedRow}
@@ -127,7 +128,7 @@ const ExamTable: React.FC<ExamTableProps> = ({
                                 key={index}
                                 row={row}
                                 isFolder={false}
-                                index={index}
+                                index={row.id}
                                 handleMenuClick={handleMenuClick}
                                 anchorEl={anchorEl}
                                 selectedRow={selectedRow}
@@ -140,7 +141,7 @@ const ExamTable: React.FC<ExamTableProps> = ({
 
                     </TableBody>
                     
-                </Table>
+                </Table>}
                
             </TableContainer>}
 
@@ -151,7 +152,7 @@ const ExamTable: React.FC<ExamTableProps> = ({
                         )}
             <ModalWrapper
                 open={isOpen}
-                handleClose={closeModal}
+                handleClose={()=>{closeModal();handleMenuClose()}}
                 title={modalData?.title || ''}
                 onConfirm={modalData?.onConfirm}
                 confirmText={modalData?.confirmText}

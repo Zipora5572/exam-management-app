@@ -52,7 +52,7 @@ const StudentsExams = () => {
 
     const handleCheckExam = async (studentExam: StudentExamType) => {
         try {
-            const response = await studentExamsService.checkExam(studentExam.examNamePrefix, "teacherExam.png");
+            const response = await studentExamsService.checkExam(studentExam.examNamePrefix, studentExam.examNamePrefix);
             dispatch(updateStudentExam({
                 id: studentExam.id,
                 studentExam: {

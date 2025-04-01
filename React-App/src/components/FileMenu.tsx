@@ -5,33 +5,36 @@ import { AppDispatch } from '../store/store';
 import { deleteExamFile, getAllExams, renameExamFile } from '../store/examSlice';
 import StudentExamService from '../services/StudentExamService';
 import ExamService from '../services/ExamService';
+import { ExamFileType, ExamFolderType } from '../models/Exam';
+import { deleteFolder, renameFolder } from '../store/folderSlice';
+
 
 interface FileMenuProps {
     anchorEl: null | HTMLElement;
     selectedRow: number | null;
     handleMenuClose: () => void;
     id: number;
-    uniqueFileName: string;
-    examName: string;
+    row: ExamFileType | ExamFolderType;
+   
     openModal: (data: { title: string; initialName?: string; setNewName?: (name: string) => void; confirmText?: string; onConfirm?: () => void; children?: React.ReactNode; }) => void;
 }
 
-const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuClose, examName, id, openModal }) => {
-    const [newName, setNewName] = useState<string>(examName);
-    const [selectedFiles, setSelectedFiles] = useState<FileList | null>(null); 
+const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuClose, id, openModal, row }) => {
+    const [newName, setNewName] = useState<string>(row.examName);
+    const [selectedFiles, setSelectedFiles] = useState<FileList | null>(null);
     const dispatch = useDispatch<AppDispatch>();
 
-    const selectedFilesRef = useRef<FileList | null>(null); 
+    const selectedFilesRef = useRef<FileList | null>(null);
 
     useEffect(() => {
-        setNewName(examName);
-    }, [examName]);
+        setNewName(row.examName);
+    }, [row.examName]);
 
     useEffect(() => {
         if (selectedFiles && selectedFiles.length > 0) {
             console.log('Updated selected files:', selectedFiles);
-            selectedFilesRef.current = selectedFiles; 
-        } 
+            selectedFilesRef.current = selectedFiles;
+        }
     }, [selectedFiles]);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +43,7 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
             console.log('Files selected:', event.target.files);
         }
     };
+
 
     const handleUploadStudentExams = () => {
         openModal({
@@ -56,9 +60,22 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
                         {...({ webkitdirectory: "true" } as unknown as React.InputHTMLAttributes<HTMLInputElement>)}
                         onChange={handleFileChange}
                     />
+                    <input
+                        accept="*"
+                        style={{ display: 'none' }}
+                        id="upload-folder-input"
+                        type="file"
+                        multiple
+                        {...({ webkitdirectory: "true" } as unknown as React.InputHTMLAttributes<HTMLInputElement>)}
+                        onChange={handleFileChange}
+                    />
                     <label htmlFor="upload-folder-input">
-                        <Button variant="text" sx={{ color: 'black',fontWeight:"bold" ,transition:'none'}} >                                             
-                             Folder
+                        <Button
+                            variant="text"
+                            component="span"
+                            sx={{ color: 'black', fontWeight: "bold", transition: 'none' }}
+                        >
+                            Folder
                         </Button>
                     </label>
                     <br />
@@ -70,22 +87,20 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
                         onChange={handleFileChange}
                     />
                     <label htmlFor="upload-student-file-input">
-                    <Button 
-                        variant="text" 
-                        sx={{ color: 'black',fontWeight:"bold" ,transition:'none'}} 
-                    >
-                        File
-                    </Button>
+                        <Button variant="text" sx={{ color: 'black', fontWeight: "bold", transition: 'none' }} component="span">
+                            Upload File
+                        </Button>
                     </label>
+
                 </div>
             ),
             confirmText: 'Upload',
             onConfirm: () => {
-                const filesToUpload = selectedFilesRef.current; // נשתמש ב-ref כדי לוודא שהקבצים נבחרו
-             
-                    
-                    handleFilesUpload(filesToUpload);
-            
+                const filesToUpload = selectedFilesRef.current;
+
+
+                handleFilesUpload(filesToUpload);
+
             },
         });
     };
@@ -102,14 +117,16 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
         handleMenuClose();
     };
 
+
     const handleDownload = async () => {
         try {
-            await ExamService.download(`${examName}.png`);
+            await ExamService.download(row.examNamePrefix);
         } catch (error) {
             console.error("Error downloading file:", error);
         }
         handleMenuClose();
     };
+
 
     const handleDelete = () => {
         openModal({
@@ -121,25 +138,34 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
             ),
             confirmText: 'Delete',
             onConfirm: () => {
-                dispatch(deleteExamFile(id));
-                dispatch(getAllExams());
+                if (row.type == "FILE")
+                dispatch(deleteExamFile(id.toString()));
+            else
+                dispatch(deleteFolder(id.toString()));
+
+               
                 handleMenuClose();
             },
         });
     };
-
+    
+    
     const handleRename = () => {
         openModal({
             title: 'Rename',
-            initialName: examName,
+            initialName: row.type == "FILE" ? row.examName : row.folderName,
             setNewName: (name: string) => {
                 setNewName(name);
             },
             confirmText: 'Rename',
             onConfirm: (updatedName: string) => {
-                dispatch(renameExamFile({ id: id, newName: updatedName }));
-                dispatch(getAllExams());
+                if (row.type == "FILE")
+                    dispatch(renameExamFile({ id: id, newName: updatedName }));
+                else
+                     dispatch(renameFolder({ id: id, newName: updatedName }));
+                // dispatch(getAllExams());
                 handleMenuClose();
+                
             },
         });
     };
@@ -147,7 +173,7 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
     return (
         <Menu
             anchorEl={anchorEl}
-            open={Boolean(anchorEl) && selectedRow !== null}
+            open={Boolean(anchorEl) && selectedRow == row.id}
             onClose={handleMenuClose}
             sx={{ boxShadow: 'none' }}
         >

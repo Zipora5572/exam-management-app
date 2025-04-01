@@ -10,15 +10,16 @@ import { AppDispatch, StoreType } from '../../store/store';
 import useModal from '../../hooks/useModal';
 import ModalWrapper from '../ModalWrapper';
 import ActionButtons from '../ActionButtons';
-import { getAllExams, getAllFolders } from '../../store/examSlice';
+import { getAllExams } from '../../store/examSlice';
 import ExamsTable from './ExamsTable';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import { getAllFolders } from '../../store/folderSlice';
 
 
 const ExamList = () => {
     const dispatch = useDispatch<AppDispatch>();
     const exams = useSelector((state: StoreType) => state.exams.exams);
-    const folders = useSelector((state: StoreType) => state.exams.folders);
+    const folders = useSelector((state: StoreType) => state.folders.folders);
     const loading = useSelector((state: StoreType) => state.exams.loading);
     const error = useSelector((state: StoreType) => state.exams.error);
     const { isOpen, openModal, closeModal, modalData } = useModal();
@@ -29,12 +30,12 @@ const ExamList = () => {
     useEffect(() => {
         dispatch(getAllFolders());
         dispatch(getAllExams());
-    }, [dispatch]);
+    }, [ dispatch]);
 
     const handleGoBack = () => {
         if (folderPath.length > 0) {
             const newPath = [...folderPath];
-            newPath.pop(); // מסירים את התיקייה האחרונה
+            newPath.pop(); 
             setFolderPath(newPath);
             setCurrentFolderId(newPath.length > 0 ? newPath[newPath.length - 1].id : null);
         }
