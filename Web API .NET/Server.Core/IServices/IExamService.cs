@@ -15,6 +15,7 @@ namespace Server.Core.IServices
         Task<ExamDto> UpdateExamAsync(int id, ExamDto exam, string oldName = "");
         Task<ExamDto> UploadExamAsync(ExamDto examDto, TopicDto topicDto, IFormFile file, int? folderId);
         Task<ExamDto> RenameExamAsync(int examId, string newName);
+        string GetSignedUrl(string objectName, TimeSpan duration);
 
     }
 }

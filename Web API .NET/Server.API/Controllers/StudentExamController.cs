@@ -189,5 +189,19 @@ namespace Server.API.Controllers
             await _studentExamService.DeleteStudentExamAsync(studentExam);
             return NoContent();
         }
+        [HttpPost("{id}/upload-corrected")]
+        public async Task<IActionResult> UploadCorrectedImage(int id, IFormFile correctedImage)
+        {
+            if (correctedImage == null || correctedImage.Length == 0)
+                return BadRequest("No file uploaded.");
+
+            using var stream = correctedImage.OpenReadStream();
+            
+            string contentType = correctedImage.ContentType;
+
+            await _studentExamService.ReplaceCorrectedImageAsync(id, stream);
+            return Ok("Corrected image uploaded successfully.");
+        }
+
     }
 }

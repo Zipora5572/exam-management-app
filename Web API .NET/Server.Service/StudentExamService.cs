@@ -1,5 +1,6 @@
 ﻿// Source: StudentExamService.cs
 using AutoMapper;
+using Google.Apis.Storage.v1;
 using Microsoft.Identity.Client;
 using Newtonsoft.Json;
 using Server.Core.DTOs;
@@ -16,11 +17,13 @@ namespace Server.Service
     {
         private readonly IRepositoryManager _repositoryManager;
         private readonly IMapper _mapper;
+        private readonly IStorageService _storageService;
 
-        public StudentExamService(IRepositoryManager repositoryManager, IMapper mapper)
+        public StudentExamService(IRepositoryManager repositoryManager, IMapper mapper, IStorageService storageService)
         {
             _repositoryManager = repositoryManager;
             _mapper = mapper;
+            _storageService = storageService;
         }
 
         public async Task<List<StudentExamDto>> GetAllStudentExamsAsync()
@@ -63,5 +66,16 @@ namespace Server.Service
             await _repositoryManager.StudentExams.DeleteAsync(studentExam);
             await _repositoryManager.SaveAsync();
         }
+        public async Task ReplaceCorrectedImageAsync(int studentExamId, Stream correctedImageStream)
+        {
+            var studentExam = await _repositoryManager.StudentExams.GetByIdAsync(studentExamId);
+            if (studentExam == null || string.IsNullOrEmpty(studentExam.ExamPath))
+            {
+                throw new Exception("Student exam or file URL not found.");
+            }
+
+            await _storageService.ReplaceFileAsync(studentExam.ExamNamePrefix, correctedImageStream);
+        }
+
     }
 }

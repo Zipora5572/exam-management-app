@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Google.Cloud.Storage.V1;
 using Microsoft.AspNetCore.Http;
 using Server.Core.DTOs;
 using Server.Core.Entities;
@@ -145,6 +146,18 @@ namespace Server.Service
 
             examDto.ExamName = newName;
             return await UpdateExamAsync(examId, examDto, oldName);
+        }
+        public string GetSignedUrl(string objectName, TimeSpan duration)
+        {
+            var credentialPath = @"C:\Users\user1\Desktop\ציפי לימודים שנה ב\Fullstack Project\Web API .NET\Server.service\exams-management-service.json";
+            var urlSigner = UrlSigner.FromServiceAccountPath(credentialPath);
+
+            return urlSigner.Sign(
+              "exams-bucket",
+                objectName,
+                duration,
+                HttpMethod.Get
+            );
         }
 
     }

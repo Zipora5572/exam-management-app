@@ -12,6 +12,6 @@ namespace Server.Core.IServices
         Task<StudentExamDto> UpdateStudentExamAsync(int id, StudentExamDto studentExamDto);
         Task DeleteStudentExamAsync(StudentExamDto studentExamDto);
         Task<List<StudentExamDto>> GetStudentExamsByExamIdAsync(int examId);
-
+        Task ReplaceCorrectedImageAsync(int studentExamId, Stream correctedImageStream);
     }
 }

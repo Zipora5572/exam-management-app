@@ -43,7 +43,17 @@ namespace Server.API.Controllers
             }
             return Ok(exams);
         }
+        [HttpGet("signed-url")]
+        public IActionResult GetSignedUrl([FromQuery] string objectName)
+        {
+            if (string.IsNullOrWhiteSpace(objectName))
+            {
+                return BadRequest("objectName is required.");
+            }
 
+            var url = _examService.GetSignedUrl(objectName, TimeSpan.FromMinutes(15));
+            return Ok(url);
+        }
         // GET api/<ExamController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ExamDto>> Get(int id)

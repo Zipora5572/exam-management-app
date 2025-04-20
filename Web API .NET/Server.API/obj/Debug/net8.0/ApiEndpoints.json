@@ -219,6 +219,22 @@
   },
   {
     "ContainingType": "Server.API.Controllers.ExamController",
+    "Method": "GetSignedUrl",
+    "RelativePath": "api/Exam/signed-url",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objectName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.ExamController",
     "Method": "Post",
     "RelativePath": "api/Exam/upload",
     "HttpMethod": "POST",
@@ -776,6 +792,27 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.StudentExamController",
+    "Method": "UploadCorrectedImage",
+    "RelativePath": "api/StudentExam/{id}/upload-corrected",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "correctedImage",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

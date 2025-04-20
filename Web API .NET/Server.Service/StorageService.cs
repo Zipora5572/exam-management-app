@@ -103,14 +103,14 @@ namespace Server.Service
             {
                 var memoryStream = new MemoryStream();
                 await _storageClient.DownloadObjectAsync(_bucketName, fileName, memoryStream);
-                memoryStream.Position = 0; // מחזירים את המצביע להתחלה
+                memoryStream.Position = 0; 
                 return memoryStream;
             }
             catch (Google.GoogleApiException ex)
             {
                 if (ex.HttpStatusCode == System.Net.HttpStatusCode.NotFound)
                 {
-                    return null; // אם הקובץ לא נמצא
+                    return null; 
                 }
                 throw;
             }
@@ -129,15 +129,17 @@ namespace Server.Service
             {
                 Origin = new string[] { "*" },
                 ResponseHeader = new string[] { "Content-Type", "x-goog-resumable" },
-                Method = new string[] { "PUT", "POST" },
-                MaxAgeSeconds = 3600 // שעה אחת
+                Method = new string[] { "GET", "HEAD", "OPTIONS", "POST", "PUT" },
+                MaxAgeSeconds = 3600
             };
 
             if (bucket.Cors == null)
             {
                 bucket.Cors = new List<CorsData>();
             }
+            bucket.Cors.Clear();
             bucket.Cors.Add(corsData);
+
 
             bucket = _storageClient.UpdateBucket(bucket);
             Console.WriteLine($"bucketName {_bucketName} was updated with a CORS config to allow {string.Join(",", corsData.Method)} requests from" +
@@ -145,6 +147,22 @@ namespace Server.Service
                 $" responses across origins.");
             return bucket;
         }
+        public async Task ReplaceFileAsync(string fileName, Stream newFileStream)
+        {
+           
+            try
+            {
+                await _storageClient.UploadObjectAsync(_bucketName, fileName, ".png", newFileStream);
+                Console.WriteLine($"File {fileName} was replaced in bucket {_bucketName}.");
+               
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error replacing file {fileName}: {ex.Message}");
+                throw;
+            }
+        }
+
 
     }
 

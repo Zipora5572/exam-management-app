@@ -102,10 +102,6 @@ namespace Server.API.Controllers
         [HttpPost("logout")]
         public IActionResult Logout()
         {
-            if (!Request.Cookies.ContainsKey("jwt"))
-            {
-                Console.WriteLine("**************************");
-            }
 
             Response.Cookies.Delete("jwt"); // בלי CookieOptions בכלל
             return Ok();
