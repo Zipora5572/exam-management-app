@@ -2,15 +2,15 @@ import { UserType } from "../models/User";
 import axios from "../utils/axiosConfig";
 import Cookies from "js-cookie";
 
-// פונקציה לאתחול של Authorization Header, אם יש cookie עם ה-token
+
 function setAuthorizationBearer() {
   const token = Cookies.get("jwt"); 
   if (token) {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`; // מכניסים את ה-token לכותרת ה-Authorization
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`; 
   }
 }
 
-// אתחול של Authorization Header בכל פעם שהקוד נטען
+
 setAuthorizationBearer();
 
 axios.interceptors.response.use(

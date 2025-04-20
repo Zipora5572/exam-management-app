@@ -64,7 +64,7 @@ const ExamDetailsRow: React.FC<ExamDetailsRowProps> = ({
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-
+            
             <TableCell sx={{ color: 'rgb(75, 75, 75)' }}>
                 {isFolder ? (
                     <FolderIcon
@@ -94,12 +94,11 @@ const ExamDetailsRow: React.FC<ExamDetailsRowProps> = ({
 
             <TableCell align='right' sx={{ width: '300px' }}>
                 {isHovered && (
-                    <ExamRowButtons examId={row.id} fileName={row.examName} />
+                    <ExamRowButtons examId={row.id} fileName={row.examNamePrefix} />
                 )}
             </TableCell>
-
-
             <TableCell
+               
     sx={{ color: 'rgb(75, 75, 75)' }}
     onMouseEnter={() => setIsHovered(false)}
 >

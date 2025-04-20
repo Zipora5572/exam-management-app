@@ -19,6 +19,8 @@ const StudentsExams = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { examId } = location.state || {};
+    const { examFileTeacherName } = location.state || {};
+
     const dispatch = useDispatch<AppDispatch>();
     const [checkingStatus, setCheckingStatus] = useState<{ [key: string]: 'idle' | 'pending' | 'done' }>({});
 
@@ -55,7 +57,7 @@ const StudentsExams = () => {
         const examId = studentExam.id;
         setCheckingStatus(prev => ({ ...prev, [examId]: 'pending' }));
         try {
-            const response = await studentExamsService.checkExam(studentExam.examNamePrefix, studentExam.examNamePrefix);
+            const response = await studentExamsService.checkExam(studentExam.examNamePrefix, examFileTeacherName);
             dispatch(updateStudentExam({
                 id: studentExam.id,
                 studentExam: {
