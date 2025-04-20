@@ -1,24 +1,24 @@
 import  { useEffect, useRef, useState } from 'react';
 import { Stage, Layer, Image, Line } from 'react-konva';
-import { Box, Paper, Typography, IconButton, Tooltip, Divider, TextField, Button } from '@mui/material';
-import { CheckCircleOutline, Delete, Edit, HighlightOff, LocalFireDepartment, Save } from '@mui/icons-material';
+import { Box, Paper, Typography, IconButton, Divider, TextField, Button } from '@mui/material';
+import { CheckCircleOutline, Delete, Edit, HighlightOf, HighlightOff, Save } from '@mui/icons-material';
 import { Bar } from 'react-chartjs-2';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, StoreType } from '../../store/store';
 import { getStudentExamsByExamId } from '../../store/studentExamSlice';
 import { useLocation } from 'react-router-dom';
 import studentExamsService from "../../services/StudentExamService"
-import FileSaver from 'file-saver';
-import axios from 'axios';
+import { CircularProgress } from '@mui/material';
+import Konva from 'konva';
 
 const ExamFileViewer = () => {
-    const stageRef = useRef(null); 
+    const stageRef = useRef<Konva.Stage | null>(null);
     const [dragging, setDragging] = useState(false);
     const [templatePosition, setTemplatePosition] = useState({ x: 0, y: 0 });
     const [selectedTemplate, setSelectedTemplate] = useState(null);
     const [markedAnswers, setMarkedAnswers] = useState([]);
     const [isChecking, setIsChecking] = useState(false);
-    const [image] = useState(new window.Image());
+    const [loadingImage, setLoadingImage] = useState(true);
     const location = useLocation();
     const { exam } = location.state || {};
     const [score, setScore] = useState(exam.score);
@@ -28,9 +28,51 @@ const ExamFileViewer = () => {
     const [evaluation, setEvaluation] = useState(exam.teacherComments || '');
    
     const [imageBlob, setImageBlob] = useState(null);
-    image.src = './a.png';
-   
-   
+    const [image, setImage] = useState<HTMLImageElement | null>(null);
+    // useEffect(() => {
+
+    //     const img = new window.Image();
+    //     img.src = exam.examPath;
+    //     img.onload = () => {
+    //       setImage(img);
+    //       setLoadingImage(false);
+    //     };
+    //   }, [exam.examPath]);
+    useEffect(() => {
+        const fetchImageWithSignedUrl = async () => {
+          try {
+            const signedUrl = await studentExamsService.getSignedUrl(exam.examPath);
+            const img = new window.Image();
+            img.crossOrigin = "anonymous"; 
+            img.src = signedUrl;
+            img.onload = () => {
+              setImage(img);
+              setLoadingImage(false);
+            };
+          } catch (error) {
+            console.error("Failed to load image with signed URL:", error);
+          }
+        };
+    
+        fetchImageWithSignedUrl();
+    }, [exam.examPath]);
+    
+    
+      useEffect(() => {
+        if (image) {
+            image.crossOrigin = "anonymous";
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = image.width;
+            canvas.height = image.height;
+            ctx.drawImage(image, 0, 0);
+            const dataURL = canvas.toDataURL();
+             
+            // פעולה עם ה-dataURL
+        }
+    }, [image]);
+    
+
 
     const dispatch = useDispatch<AppDispatch>();
 
@@ -40,7 +82,18 @@ const ExamFileViewer = () => {
 
 
     const studentExams = useSelector((state: StoreType) => state.studentExams.exams);
-
+    const dataURLtoBlob = (dataURL: string): Blob => {
+        const arr = dataURL.split(',');
+        const mime = arr[0].match(/:(.*?);/)![1];
+        const bstr = atob(arr[1]);
+        let n = bstr.length;
+        const u8arr = new Uint8Array(n);
+        while (n--) {
+          u8arr[n] = bstr.charCodeAt(n);
+        }
+        return new Blob([u8arr], { type: mime });
+      };
+      
     const scoreDistribution = studentExams.map(studentExam => ({
         student: studentExam.studentExamName,
         score: studentExam.score,
@@ -72,19 +125,34 @@ const ExamFileViewer = () => {
    
     const handleSaveExam = async () => {
         try {
-          
-          
-                await studentExamsService.updateStudentExam(exam.id, { 
-                    ...exam,
-                    score: score, 
-                    teacherComments: evaluation 
-                });
-            }
-     catch (error) {
+            // יצירת DataURL מתוך ה-Stage
+            const uri = stageRef.current.toDataURL({
+                pixelRatio: 3,  // אם ברצונך לשמור רזולוציה גבוהה יותר
+                includeImage: true  // הכניס את התמונה יחד עם הסימונים
+            });
+            const blob = dataURLtoBlob(uri);
+    
+            // העלאה ל-Google Cloud Storage
+            const formData = new FormData();
+            formData.append('correctedImage', blob, exam.examNamePrefix);
+    
+            await studentExamsService.uploadCorrectedImage(exam.id, formData);
+    
+            // שמירת הנתונים
+            await studentExamsService.updateStudentExam(exam.id, {
+                ...exam,
+                score: score,
+                teacherComments: evaluation,
+            });
+    
+            alert('Saved successfully!');
+        } catch (error) {
             console.error("Error saving exam data:", error);
             alert("Failed to save exam data.");
         }
     };
+    
+      
  
     
     
@@ -195,10 +263,6 @@ const ExamFileViewer = () => {
                     )}
                 </Typography>
                 <Divider sx={{ marginY: 5 }} />
-
-
-
-
                 <Typography variant="body2" sx={{ fontWeight: 'bold', textAlign: 'left' }}>Score Comparison:</Typography>
                 <Bar data={chartData} options={{ responsive: true }} />
                 <Divider sx={{ marginY: 3 }} />
@@ -213,17 +277,31 @@ const ExamFileViewer = () => {
                     
                 )}
                    
-            </Paper>
+            </Paper>  
+            <Box
+  sx={{
+    display: 'flex',
+    justifyContent: 'center',
+    paddingRight: '20px',
+    marginLeft: isChecking ? '200px' : '200px',
+    transition: 'margin-left 0.3s ease',
+    position: 'relative'
+  }}
+>
+  {loadingImage && (
+    <Box
+      sx={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 10,
+      }}
+    >
+      <CircularProgress color="primary" />
+    </Box>
+  )}
 
-
-            {/* תצוגת מבחן */}
-            <Box sx={{
-                display: 'flex',
-                justifyContent: 'center', // מרכז את התוכן
-                paddingRight: '20px', // הוסף רווח פנימי מימין
-                marginLeft: isChecking ? '200px' : '200px',
-                transition: 'margin-left 0.3s ease'
-            }}>
                 <Stage
                   ref={stageRef} 
                     width={window.innerWidth - (isChecking ? 650 : 650) - 60}
@@ -233,17 +311,23 @@ const ExamFileViewer = () => {
                     onMouseUp={handleDragEnd}
 
                 >
-                    <Layer>
+                    {/* <Layer>
                         <Image image={image} width={window.innerWidth - (isChecking ? 650 : 650) - 60} height={window.innerHeight} />
                         {markedAnswers.map((answer, index) => (
                             <Line key={index} points={answer.points} stroke="red" strokeWidth={3} />
                         ))}
-                    </Layer>
+                    </Layer> */}
+                    <Layer>
+  {image && (
+    <Image image={image} width={window.innerWidth - (isChecking ? 650 : 650) - 60} height={window.innerHeight} />
+  )}
+  {markedAnswers.map((answer, index) => (
+    <Line key={index} points={answer.points} stroke="red" strokeWidth={3} />
+  ))}
+</Layer>
+
                 </Stage>
             </Box>
-
-
-
             {isChecking && (
                 <Box sx={{
                     width: '170px', padding: 3, backgroundColor: '#ffffff', position: 'fixed',

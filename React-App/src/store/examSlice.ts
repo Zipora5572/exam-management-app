@@ -84,8 +84,7 @@ const examSlice = createSlice({
                 state.error = null;
             })
             .addCase(deleteExamFile.fulfilled, (state, action) => {
-                console.log("+", action.payload);
-                
+
                 state.loading = false;
                 state.exams = state.exams.filter(exam => exam.id !== action.payload); 
                  state.folders = state.folders.filter(folder => folder.id !== action.payload); 

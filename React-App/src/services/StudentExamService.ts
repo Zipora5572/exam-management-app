@@ -41,6 +41,19 @@ const StudentExamService = {
         throw new Error('Error uploading student exams: ' + error.message);
     }
 },
+uploadCorrectedImage: async (studentExamId: number, formData: FormData) => {
+    try {
+        const response = await axios.post(`/studentExam/${studentExamId}/upload-corrected`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error uploading corrected image:", error);
+        throw error;
+    }
+},
     getAllStudentExams: async () => {
         try {
             const response = await axios.get(`/studentExam`);
@@ -84,9 +97,27 @@ const StudentExamService = {
             console.error("Error adding student exam:", error);
             throw error;
         }
-    },
+    }
+  
+,    
+    getSignedUrl: async (objectName: string) => {
+        try {
+            // חילוץ ה-objectName היחסי (לא ה-URL המלא)
+            const relativeObjectName = objectName.split('/exams-bucket/')[1];
+    
+            // שליחת הבקשה עם ה-objectName היחסי
+            const response = await axios.get(`/exam/signed-url`, {
 
-
+                params: { objectName: relativeObjectName }
+            });
+            return response.data;
+        } catch (error) {
+            console.error("Error getting signed URL:", error);
+            throw error;
+        }
+    }
+    
+,      
     updateStudentExam: async (id: number, studentExam: Partial<StudentExamType>) => {
         try {
             const response = await axios.put(`studentExam/${id}`, studentExam);
