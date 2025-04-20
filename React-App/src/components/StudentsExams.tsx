@@ -9,7 +9,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import EditIcon from '@mui/icons-material/Edit';
 import FolderIcon from '@mui/icons-material/Folder';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
-
+import CircularProgress from '@mui/material/CircularProgress';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useLocation, useNavigate } from 'react-router-dom';
 import studentExamsService from './../services/StudentExamService';
@@ -20,6 +20,7 @@ const StudentsExams = () => {
     const location = useLocation();
     const { examId } = location.state || {};
     const dispatch = useDispatch<AppDispatch>();
+    const [checkingStatus, setCheckingStatus] = useState<{ [key: string]: 'idle' | 'pending' | 'done' }>({});
 
     useEffect(() => {
         dispatch(getStudentExamsByExamId(examId));
@@ -51,6 +52,8 @@ const StudentsExams = () => {
     };
 
     const handleCheckExam = async (studentExam: StudentExamType) => {
+        const examId = studentExam.id;
+        setCheckingStatus(prev => ({ ...prev, [examId]: 'pending' }));
         try {
             const response = await studentExamsService.checkExam(studentExam.examNamePrefix, studentExam.examNamePrefix);
             dispatch(updateStudentExam({
@@ -61,11 +64,13 @@ const StudentsExams = () => {
                     teacherComments: response.evaluation
                 }
             }));
+            setCheckingStatus(prev => ({ ...prev, [examId]: 'done' }));
         } catch (error) {
             console.error("Error checking exam:", error);
+            setCheckingStatus(prev => ({ ...prev, [examId]: 'idle' }));
         }
     };
-   
+    
     return (
         <Box sx={{ display: 'flex', height: '100vh' }}>
             <TableContainer component={Paper} sx={{ flex: selectedExams.length > 0 ? 0.83 : 1, transition: 'flex 0.3s ease' }}>
@@ -111,7 +116,16 @@ const StudentsExams = () => {
                                         onClose={() => handleCloseMenu(exam.id)}
                                     >
                                         <MenuItem onClick={() => handleViewExamDetails(exam)}>View Details</MenuItem>
-                                        <MenuItem onClick={() => handleCheckExam(exam)}>Check Exam</MenuItem>
+                                        <MenuItem onClick={() => handleCheckExam(exam)} disabled={checkingStatus[exam.id] === 'pending'}>
+    {checkingStatus[exam.id] === 'pending' ? (
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <CircularProgress size={16} /> Checking...
+        </Box>
+    ) : (
+        "Check Exam"
+    )}
+</MenuItem>
+
                                     </Menu>
                                 </TableCell>
                             </TableRow>

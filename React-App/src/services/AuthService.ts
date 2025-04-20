@@ -28,7 +28,7 @@ axios.interceptors.response.use(
 
 export default {
   logout:async () => {
- await axios.post("/auth/logout", { withCredentials: true });
+ await axios.post("/auth/logout",{}, { withCredentials: true });
 },
 
   register: async (userData: Partial<UserType>) => {
