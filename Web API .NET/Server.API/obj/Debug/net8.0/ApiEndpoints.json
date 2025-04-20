@@ -662,58 +662,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.StorageController",
-    "Method": "DeleteFile",
-    "RelativePath": "api/Storage/{fileName}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "fileName",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Server.Controllers.StorageController",
-    "Method": "UploadFile",
-    "RelativePath": "api/Storage/upload",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "File",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "UserId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Topic.Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Topic.Description",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "FolderId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Server.API.Controllers.StudentExamController",
     "Method": "Get",
     "RelativePath": "api/StudentExam",

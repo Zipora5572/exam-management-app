@@ -1,19 +1,8 @@
 ﻿using Google.Cloud.Storage.V1;
 using HeyRed.Mime;
 using Google.Apis.Storage.v1.Data;
-using Google.Cloud.Storage.V1;
 using Microsoft.Extensions.Configuration;
-using Server.Core.IServices;
-using System;
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Cors;
-using Google.Apis.Storage.v1.Data;
-using Google.Cloud.Storage.V1;
-using System;
-using System.Collections.Generic;
 using static Google.Apis.Storage.v1.Data.Bucket;
-using Microsoft.Identity.Client.Extensions.Msal;
 namespace Server.Service
 {
     public class StorageService : IStorageService

@@ -64,68 +64,20 @@ namespace Server.API.Controllers
             {
                 return BadRequest("No file uploaded.");
             }
-            string folderName, objectName="";
-
-            if (examPostModel.FolderId != null)
-            {
-                int id = (int)examPostModel.FolderId; 
-                var folder = await _folderService.GetByIdAsync(id);
-                if (folder != null)
-                { 
-                    folderName = folder.FolderName;
-                    objectName = $"{folderName}/{examPostModel.File.FileName}";
-                }
-            }
-            else
-            objectName = examPostModel.File.FileName;
-            var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(examPostModel.File.FileName)}";
-            var filePath = Path.Combine(Path.GetTempPath(), uniqueFileName);
-
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await examPostModel.File.CopyToAsync(stream);
-            }
-
             var topicDto = _mapper.Map<TopicDto>(examPostModel.Topic);
-            var addedTopic = await _topicService.AddTopicAsync(topicDto);
-
-
-            if (addedTopic == null)
-            {
-                return BadRequest("Failed to add topic.");
-            }
-
             var examDto = _mapper.Map<ExamDto>(examPostModel);
-            examDto.TopicId = addedTopic.Id;
-            examDto.ExamNamePrefix = objectName;
-            //examDto.UniqueFileName = uniqueFileName;
-            examDto.ExamName = Path.GetFileNameWithoutExtension(examPostModel.File.FileName);
-            examDto.ExamPath = $"https://storage.cloud.google.com/exams-bucket/{objectName}";
-            examDto.Size = examPostModel.File.Length;
-            examDto.ExamType = examPostModel.File.ContentType;
-            examDto.ExamExtension = Path.GetExtension(examPostModel.File.FileName);
-            examDto.CreatedAt = DateTime.Now;
-            examDto.UpdatedAt = DateTime.Now;
-            examDto.IsDeleted = false;
-
-            var newExam=await _examService.AddExamAsync(examDto);
             try
             {
-                await _storageService.UploadFileAsync(filePath, objectName);
+                var result = await _examService.UploadExamAsync(examDto, topicDto, examPostModel.File, examPostModel.FolderId);
+                return Ok(result);
             }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Error uploading file: {ex.Message}");
             }
-
-            System.IO.File.Delete(filePath);
-
-
-
-            return Ok(newExam);
         }
-
         // PUT api/<ExamController>/5
+
         [HttpPut("{id}")]
         public async Task<ActionResult<Exam>> Put(int id, [FromBody] ExamPostModel examPostModel)
         {
@@ -135,7 +87,7 @@ namespace Server.API.Controllers
             }
             ExamDto examDto = _mapper.Map<ExamDto>(examPostModel);
 
-            examDto =await _examService.UpdateExamAsync(id, examDto);
+            examDto = await _examService.UpdateExamAsync(id, examDto);
             if (examDto == null)
             {
                 return NotFound();
@@ -146,41 +98,33 @@ namespace Server.API.Controllers
         [HttpPatch("rename/{id}")]
         public async Task<ActionResult<ExamDto>> UpdateExamName(int id, [FromBody] string newName)
         {
-            if (string.IsNullOrEmpty(newName))
+            try
             {
-                return BadRequest("New name cannot be null or empty.");
+                var updatedExam = await _examService.RenameExamAsync(id, newName);
+                if (updatedExam == null)
+                {
+                    return NotFound();
+                }
+                return Ok(updatedExam);
             }
-
-            var examDto = await _examService.GetByIdAsync(id);
-            if (examDto == null)
+            catch (ArgumentException ex)
             {
-                return NotFound();
+                return BadRequest(ex.Message);
             }
-            string oldName = examDto.ExamNamePrefix;
-            examDto.ExamName = newName;
-            var parts = oldName.Split("\\").ToList();
-
-            if (parts.Any())
+            catch (Exception ex)
             {
-                parts[parts.Count - 1] = newName;
-                examDto.ExamNamePrefix = string.Join("\\", parts);
-                examDto.ExamNamePrefix += examDto.ExamExtension;
+                return StatusCode(500, $"Error updating exam name: {ex.Message}");
             }
-            var updatedExam = await _examService.UpdateExamAsync(id, examDto,oldName);
-
-            return Ok(updatedExam);
         }
-       
-
         // DELETE api/<ExamController>/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<int>> Delete(int id)
         {
-         
-            ExamDto exam=await _examService.GetByIdAsync(id);
+
+            ExamDto exam = await _examService.GetByIdAsync(id);
             try
-            {           
-             
+            {
+
                 await _examService.DeleteExamAsync(exam);
             }
             catch (Exception ex)
@@ -195,7 +139,7 @@ namespace Server.API.Controllers
         [HttpGet("download")]
         public async Task<IActionResult> Download(string fileNamePrefix)
         {
-            
+
             if (string.IsNullOrEmpty(fileNamePrefix))
             {
                 return BadRequest("File name cannot be null or empty.");
@@ -203,7 +147,7 @@ namespace Server.API.Controllers
 
             try
             {
-              
+
                 var fileStream = await _storageService.DownloadFileAsync(fileNamePrefix);
                 if (fileStream == null)
                 {

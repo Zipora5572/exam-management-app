@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Http;
 using Server.Core.DTOs;
-
 using Server.Core.Entities;
 using Server.Core.IRepositories;
 using Server.Core.IServices;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace Server.Service
 {
@@ -16,20 +13,18 @@ namespace Server.Service
         private readonly IRepositoryManager _repositoryManager;
         private readonly IStorageService _storageService;
         private readonly IMapper _mapper;
-       
-
+     
 
         public ExamService(IRepositoryManager repositoryManager, IMapper mapper, IStorageService storageService)
         {
             _repositoryManager = repositoryManager;
             _mapper = mapper;
-            _storageService = storageService;
-
+            _storageService = storageService;      
         }
 
         public async Task<List<Exam>> GetAllExamsAsync()
         {
-            
+
             var exams = await _repositoryManager.Exams.GetAllAsync();
             return exams.ToList();
         }
@@ -39,6 +34,54 @@ namespace Server.Service
             Exam exam = await _repositoryManager.Exams.GetByIdAsync(id);
             ExamDto examDto = _mapper.Map<ExamDto>(exam);
             return examDto;
+        }
+        public async Task<ExamDto> UploadExamAsync(
+            ExamDto examDto,
+            TopicDto topicDto,
+            IFormFile file,
+            int? folderId)
+        {
+          
+            string objectName;
+            if (folderId.HasValue)
+            {
+                var folder = await _repositoryManager.Folders.GetByIdAsync(folderId.Value);
+
+                string folderName = folder?.FolderName ?? "";
+                objectName = $"{folderName}/{file.FileName}";
+            }
+            else
+            {
+                objectName = file.FileName;
+            } 
+            var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+            var tempFilePath = Path.Combine(Path.GetTempPath(), uniqueFileName);
+            using (var stream = new FileStream(tempFilePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }       
+            var addedTopic = await _repositoryManager.Topics.AddAsync(_mapper.Map<Topic>(topicDto));
+            await _repositoryManager.SaveAsync();
+
+            if (addedTopic == null)
+                throw new Exception("Failed to add topic.");
+
+            examDto.TopicId = addedTopic.Id;
+            examDto.ExamNamePrefix = objectName;
+            examDto.ExamName = Path.GetFileNameWithoutExtension(file.FileName);
+            examDto.ExamExtension = Path.GetExtension(file.FileName);
+            examDto.ExamPath = $"https://storage.cloud.google.com/exams-bucket/{objectName}";
+            examDto.Size = file.Length;
+            examDto.ExamType = file.ContentType;
+            examDto.CreatedAt = DateTime.Now;
+            examDto.UpdatedAt = DateTime.Now;
+            examDto.IsDeleted = false;          
+            var exam = _mapper.Map<Exam>(examDto);
+            var addedExam = await _repositoryManager.Exams.AddAsync(exam);
+            await _repositoryManager.SaveAsync();       
+            await _storageService.UploadFileAsync(tempFilePath, objectName);       
+            File.Delete(tempFilePath);
+            return _mapper.Map<ExamDto>(addedExam);
         }
 
         public async Task<ExamDto> AddExamAsync(ExamDto examDto)
@@ -55,8 +98,8 @@ namespace Server.Service
             var existingExam = await _repositoryManager.Exams.GetByIdAsync(examDto.Id);
             if (existingExam != null)
             {
-               await  _repositoryManager.Exams.DeleteAsync(existingExam);
-                await _storageService.DeleteFileAsync(examDto.ExamNamePrefix );
+                await _repositoryManager.Exams.DeleteAsync(existingExam);
+                await _storageService.DeleteFileAsync(examDto.ExamNamePrefix);
                 await _repositoryManager.SaveAsync();
             }
             else
@@ -68,26 +111,40 @@ namespace Server.Service
         public async Task<ExamDto> UpdateExamAsync(int id, ExamDto examDto, string oldName = "")
         {
             Exam exam = _mapper.Map<Exam>(examDto);
-           
+
             exam = await _repositoryManager.Exams.UpdateAsync(id, exam);
             Console.WriteLine();
-           
+
             if (!string.IsNullOrEmpty(oldName))
             {
-
                 string folderPath = Path.GetDirectoryName(oldName);
-           
-                string newFileName = examDto.ExamName +examDto.ExamExtension;
-              
-
+                string newFileName = examDto.ExamName + examDto.ExamExtension;
                 string newFilePath = Path.Combine(folderPath, newFileName);
-
                 await _storageService.RenameFileAsync(oldName, newFilePath);
             }
-
             await _repositoryManager.SaveAsync();
             examDto = _mapper.Map<ExamDto>(exam);
             return examDto;
+        }
+        public async Task<ExamDto> RenameExamAsync(int examId, string newName)
+        {
+            if (string.IsNullOrEmpty(newName))
+                throw new ArgumentException("New name cannot be null or empty.");
+
+            var examDto = await GetByIdAsync(examId);
+            if (examDto == null)
+                return null;
+
+            string oldName = examDto.ExamNamePrefix;
+            var parts = oldName.Split("\\").ToList();
+            if (parts.Any())
+            {
+                parts[parts.Count - 1] = newName;
+                examDto.ExamNamePrefix = string.Join("\\", parts) + examDto.ExamExtension;
+            }
+
+            examDto.ExamName = newName;
+            return await UpdateExamAsync(examId, examDto, oldName);
         }
 
     }

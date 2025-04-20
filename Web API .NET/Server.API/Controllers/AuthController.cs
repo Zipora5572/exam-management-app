@@ -83,20 +83,31 @@ namespace Server.API.Controllers
             return Ok(new { User = userDto });
         }
 
+        //[HttpPost("logout")]
+        //public IActionResult Logout()
+        //{
+        //    var cookieOptions = new CookieOptions
+        //    {
+        //        HttpOnly = true,
+        //        Secure = false,
+        //        SameSite = SameSiteMode.Lax,
+        //        Expires = DateTime.UtcNow.AddDays(-1),
+        //        Path = "/",
+        //        Domain = Request.Host.Host
+        //    };
+
+        //    Response.Cookies.Delete("jwt", cookieOptions);
+        //    return Ok();
+        //}
         [HttpPost("logout")]
         public IActionResult Logout()
         {
-            var cookieOptions = new CookieOptions
+            if (!Request.Cookies.ContainsKey("jwt"))
             {
-                HttpOnly = true,
-                Secure = false,
-                SameSite = SameSiteMode.Lax,
-                Expires = DateTime.UtcNow.AddDays(-1),
-                Path = "/",
-                Domain = Request.Host.Host
-            };
+                Console.WriteLine("**************************");
+            }
 
-            Response.Cookies.Delete("jwt", cookieOptions);
+            Response.Cookies.Delete("jwt"); // בלי CookieOptions בכלל
             return Ok();
         }
 
