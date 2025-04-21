@@ -94,18 +94,27 @@ namespace Server.Service
             {
 
                 string oldPrefix = oldName + "/";
-                string newPrefix = folderDto.FolderName + "/";
+                string newPrefix = folderDto.Name + "/";
                 await _storageService.RenameFolderAsync(oldPrefix, newPrefix);
                 var examsToUpdate = _repositoryManager.Exams.GetAllExams().Where(e => e.FolderId == folderDto.Id).ToList();
                 foreach (var exam in examsToUpdate)
                 {
-                    exam.ExamNamePrefix = exam.ExamNamePrefix.Replace(oldPrefix, newPrefix);
+                    exam.NamePrefix = exam.NamePrefix.Replace(oldPrefix, newPrefix);
                     await _repositoryManager.Exams.UpdateAsync(exam.Id,exam);
                 }
                 await _repositoryManager.SaveAsync(); 
             }
             folderDto = _mapper.Map<FolderDto>(folder);
             return folderDto;
+        }
+        public async Task<FolderDto> ToggleStarAsync(int folderId)
+        {
+            var folder = await _repositoryManager.Folders.GetByIdAsync(folderId);
+            if (folder == null) return null;
+
+            folder.IsStarred = !folder.IsStarred;
+            await _repositoryManager.SaveAsync();
+             return _mapper.Map<FolderDto>(folder); 
         }
     }
 }

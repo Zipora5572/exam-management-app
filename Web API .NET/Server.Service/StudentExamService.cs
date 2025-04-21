@@ -74,7 +74,7 @@ namespace Server.Service
                 throw new Exception("Student exam or file URL not found.");
             }
 
-            await _storageService.ReplaceFileAsync(studentExam.ExamNamePrefix, correctedImageStream);
+            await _storageService.ReplaceFileAsync(studentExam.NamePrefix, correctedImageStream);
         }
 
     }

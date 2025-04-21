@@ -172,6 +172,22 @@
   },
   {
     "ContainingType": "Server.API.Controllers.ExamController",
+    "Method": "ToggleStar",
+    "RelativePath": "api/Exam/{id}/toggle-star",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.ExamController",
     "Method": "Download",
     "RelativePath": "api/Exam/download",
     "HttpMethod": "GET",
@@ -188,7 +204,7 @@
   },
   {
     "ContainingType": "Server.API.Controllers.ExamController",
-    "Method": "UpdateExamName",
+    "Method": "UpdateName",
     "RelativePath": "api/Exam/rename/{id}",
     "HttpMethod": "PATCH",
     "IsController": true,
@@ -410,7 +426,23 @@
   },
   {
     "ContainingType": "Server.API.Controllers.FolderController",
-    "Method": "UpdateFolderName",
+    "Method": "ToggleStar",
+    "RelativePath": "api/Folder/{id}/toggle-star",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.API.Controllers.FolderController",
+    "Method": "UpdateName",
     "RelativePath": "api/Folder/rename/{id}",
     "HttpMethod": "PATCH",
     "IsController": true,
@@ -867,12 +899,12 @@
         "IsRequired": false
       },
       {
-        "Name": "StudentExamName",
+        "Name": "StudentName",
         "Type": "System.String",
         "IsRequired": false
       },
       {
-        "Name": "ExamNamePrefix",
+        "Name": "NamePrefix",
         "Type": "System.String",
         "IsRequired": false
       },

@@ -4,10 +4,11 @@
     {
         public int Id { get; set; } 
         public int UserId { get; set; } 
-        public string ExamName { get; set; }
+        public string Name { get; set; }
 
-        public string ExamNamePrefix { get; set; }
+        public string NamePrefix { get; set; }
         public string Type { get; set; } = "FILE";
+        public bool IsStarred { get; set; }
 
         //public string UniqueFileName { get; set; }
         public string ExamType { get; set; }

@@ -15,9 +15,10 @@ namespace Server.Core.Entities
         [ForeignKey(nameof(User))]
         public int UserId { get; set; }
         public User User { get; set; }
+        public bool IsStarred { get; set; }=false;
 
-        public string FolderName { get; set; }
-        public string FolderNamePrefix { get; set; } = "";
+        public string Name { get; set; }
+        public string NamePrefix { get; set; } = "";
         public string Type { get; set; } = "FOLDER";
 
         [ForeignKey(nameof(Folder))]

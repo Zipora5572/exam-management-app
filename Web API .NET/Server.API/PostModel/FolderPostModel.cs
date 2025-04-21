@@ -3,7 +3,7 @@
     public class FolderPostModel
     {
         public int UserId { get; set; } 
-        public string FolderName { get; set; }
+        public string Name { get; set; }
         public int? ParentFolderId { get; set; }
     }
 }

@@ -5,6 +5,8 @@ export default {
    
     createFolder: async (folderDetails: Partial<ExamFolderType>): Promise<any> => {
         try {
+            console.log(folderDetails);
+            
             const response = await axios.post('/folder', folderDetails, {
                 headers: {
                     'Content-Type': 'application/json',
@@ -47,6 +49,14 @@ export default {
             return response.data;
         } catch (error) {
             throw new Error('Failed to rename exam: ' + error.message);
+        }
+    },
+    toggleStarFolder: async (id: number) => {
+        try {
+            const response = await axios.patch(`/folder/${id}/toggle-star`);
+            return response.data;
+        } catch (error) {
+            throw new Error('Failed to toggle star: ' + error.message);
         }
     },
 }

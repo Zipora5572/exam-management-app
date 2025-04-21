@@ -14,8 +14,8 @@ namespace Server.Core.Entities
         public int StudentId { get; set; }
         public User Student { get; set; }
         public string ExamPath { get; set; }
-        public string StudentExamName { get; set; }
-        public string ExamNamePrefix { get; set; }
+        public string StudentName { get; set; }
+        public string NamePrefix { get; set; }
         public int FolderId { get; set; }
         public Folder Folder { get; set; }
         public int TeacherId { get; set; }

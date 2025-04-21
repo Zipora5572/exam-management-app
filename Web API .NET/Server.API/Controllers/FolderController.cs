@@ -66,10 +66,10 @@ namespace Server.API.Controllers
                 int id=(int)folderDto.ParentFolderId;
                 var parentFolder = await _folderService.GetByIdAsync(id);
                 
-                folderDto.FolderNamePrefix = $"{parentFolder.FolderNamePrefix}/{folderDto.FolderName}";
+                folderDto.NamePrefix = $"{parentFolder.NamePrefix}/{folderDto.Name}";
             }
             else
-                folderDto.FolderNamePrefix =folderDto.FolderName;
+                folderDto.NamePrefix =folderDto.Name;
 
             try
             {
@@ -102,7 +102,7 @@ namespace Server.API.Controllers
         
         // PATCH api/<FolderController>/rename/5
         [HttpPatch("rename/{id}")]
-        public async Task<ActionResult<ExamDto>> UpdateFolderName(int id, [FromBody] string newName)
+        public async Task<ActionResult<ExamDto>> UpdateName(int id, [FromBody] string newName)
         {
             if (string.IsNullOrEmpty(newName))
             {
@@ -114,8 +114,8 @@ namespace Server.API.Controllers
             {
                 return NotFound();
             }
-            string oldName = examDto.FolderName;
-            examDto.FolderName = newName;
+            string oldName = examDto.Name;
+            examDto.Name = newName;
             var updatedExam = await _folderService.UpdateFolderAsync(id, examDto, oldName);
 
             return Ok(updatedExam);
@@ -135,6 +135,14 @@ namespace Server.API.Controllers
             }
 
             return Ok(id);
+        }
+        [HttpPatch("{id}/toggle-star")]
+        public async Task<IActionResult> ToggleStar(int id)
+        {
+          
+            var updatedFolder = await _folderService.ToggleStarAsync(id);
+            if (updatedFolder == null) return NotFound();
+            return Ok(updatedFolder);
         }
 
 

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Google.Cloud.Storage.V1;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Server.Core.DTOs;
 using Server.Core.Entities;
 using Server.Core.IRepositories;
@@ -48,8 +49,8 @@ namespace Server.Service
             {
                 var folder = await _repositoryManager.Folders.GetByIdAsync(folderId.Value);
 
-                string folderName = folder?.FolderName ?? "";
-                objectName = $"{folderName}/{file.FileName}";
+                string Name = folder?.Name ?? "";
+                objectName = $"{Name}/{file.FileName}";
             }
             else
             {
@@ -68,8 +69,8 @@ namespace Server.Service
                 throw new Exception("Failed to add topic.");
 
             examDto.TopicId = addedTopic.Id;
-            examDto.ExamNamePrefix = objectName;
-            examDto.ExamName = Path.GetFileNameWithoutExtension(file.FileName);
+            examDto.NamePrefix = objectName;
+            examDto.Name = Path.GetFileNameWithoutExtension(file.FileName);
             examDto.ExamExtension = Path.GetExtension(file.FileName);
             examDto.ExamPath = $"https://storage.cloud.google.com/exams-bucket/{objectName}";
             examDto.Size = file.Length;
@@ -100,7 +101,7 @@ namespace Server.Service
             if (existingExam != null)
             {
                 await _repositoryManager.Exams.DeleteAsync(existingExam);
-                await _storageService.DeleteFileAsync(examDto.ExamNamePrefix);
+                await _storageService.DeleteFileAsync(examDto.NamePrefix);
                 await _repositoryManager.SaveAsync();
             }
             else
@@ -119,7 +120,7 @@ namespace Server.Service
             if (!string.IsNullOrEmpty(oldName))
             {
                 string folderPath = Path.GetDirectoryName(oldName);
-                string newFileName = examDto.ExamName + examDto.ExamExtension;
+                string newFileName = examDto.Name + examDto.ExamExtension;
                 string newFilePath = Path.Combine(folderPath, newFileName);
                 await _storageService.RenameFileAsync(oldName, newFilePath);
             }
@@ -136,15 +137,15 @@ namespace Server.Service
             if (examDto == null)
                 return null;
 
-            string oldName = examDto.ExamNamePrefix;
+            string oldName = examDto.NamePrefix;
             var parts = oldName.Split("\\").ToList();
             if (parts.Any())
             {
                 parts[parts.Count - 1] = newName;
-                examDto.ExamNamePrefix = string.Join("\\", parts) + examDto.ExamExtension;
+                examDto.NamePrefix = string.Join("\\", parts) + examDto.ExamExtension;
             }
 
-            examDto.ExamName = newName;
+            examDto.Name = newName;
             return await UpdateExamAsync(examId, examDto, oldName);
         }
         public string GetSignedUrl(string objectName, TimeSpan duration)
@@ -159,6 +160,20 @@ namespace Server.Service
                 HttpMethod.Get
             );
         }
+       
+
+        public async Task<ExamDto> ToggleStarAsync(int fileId)
+        {
+            var file = await _repositoryManager.Exams.GetByIdAsync(fileId);
+            if (file == null) return null;
+
+            file.IsStarred = !file.IsStarred;
+            await _repositoryManager.SaveAsync();
+
+            return _mapper.Map<ExamDto>(file);
+        }
+
+
 
     }
 }

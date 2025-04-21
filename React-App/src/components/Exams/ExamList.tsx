@@ -14,7 +14,7 @@ import { getAllExams } from '../../store/examSlice';
 import ExamsTable from './ExamsTable';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import { getAllFolders } from '../../store/folderSlice';
-
+import { useLocation } from 'react-router-dom';
 
 const ExamList = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -26,7 +26,19 @@ const ExamList = () => {
     const [currentFolderId, setCurrentFolderId] = useState<number | null>(null);
     const [currentFolderName, setCurrentFolderName] = useState<string | null>(null);
     const [folderPath, setFolderPath] = useState<{ id: number | null; name: string }[]>([]);
-
+    const location = useLocation();
+    const filter = new URLSearchParams(location.search).get('filter') || 'all';
+    const filteredExams = exams.filter(exam => {
+        if (filter === 'shared') return exam.isShared;
+        if (filter === 'starred') return exam.isStarred;
+        return true; // all exams
+      });
+      const filteredFolders = folders.filter(folder => {
+        if (filter === 'shared') return folder.isShared;
+        if (filter === 'starred') return folder.isStarred;
+        return true; // all exams
+      });
+      
     useEffect(() => {
         dispatch(getAllFolders());
         dispatch(getAllExams());
@@ -114,8 +126,8 @@ const ExamList = () => {
             <Typography color="error">{error}</Typography>
         ) : (
             <ExamsTable
-                exams={exams}
-                folders={folders}
+                exams={filteredExams}
+                folders={filteredFolders}
                 loading={loading}
                 currentFolderId={currentFolderId}
                 setCurrentFolderId={setCurrentFolderId}

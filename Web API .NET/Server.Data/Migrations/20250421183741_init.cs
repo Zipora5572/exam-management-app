@@ -119,9 +119,12 @@ namespace Server.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    FolderName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FolderNamePrefix = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsStarred = table.Column<bool>(type: "bit", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NamePrefix = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ParentFolderId = table.Column<int>(type: "int", nullable: true),
+                    OfTeacherExams = table.Column<bool>(type: "bit", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
@@ -173,7 +176,9 @@ namespace Server.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    ExamName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NamePrefix = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ExamType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ExamExtension = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Size = table.Column<long>(type: "bigint", nullable: false),
@@ -183,6 +188,7 @@ namespace Server.Data.Migrations
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     IsShared = table.Column<bool>(type: "bit", nullable: false),
+                    IsStarred = table.Column<bool>(type: "bit", nullable: false),
                     ExamPath = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TopicId1 = table.Column<int>(type: "int", nullable: true),
                     UserId1 = table.Column<int>(type: "int", nullable: true)
@@ -253,7 +259,8 @@ namespace Server.Data.Migrations
                     ExamId = table.Column<int>(type: "int", nullable: false),
                     StudentId = table.Column<int>(type: "int", nullable: false),
                     ExamPath = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StudentExamName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StudentName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NamePrefix = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FolderId = table.Column<int>(type: "int", nullable: false),
                     TeacherId = table.Column<int>(type: "int", nullable: false),
                     IsChecked = table.Column<bool>(type: "bit", nullable: false),

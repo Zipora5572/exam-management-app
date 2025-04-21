@@ -29,7 +29,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ folderId, folderName, ope
                 setNewName(name);
             },
             onConfirm: (folderName: string) => {
-                dispatch(createFolder({ userId: user?.id, parentFolderId: folderId, folderName: folderName }));
+                dispatch(createFolder({ userId: user?.id, parentFolderId: folderId, name: folderName }));
                 console.log('New folder created:', folderName);
             },
             children: (

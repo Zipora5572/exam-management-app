@@ -4,12 +4,11 @@ import folderService from "../services/FolderService";
 import { ExamFolderType } from '../models/Exam';
 
 
-
 export const createFolder = createAsyncThunk(
     'exams/createFolder',
     async (folderDetails: Partial<ExamFolderType>, thunkAPI) => {
         try {
-            const response = await examService.createFolder(folderDetails);
+            const response = await folderService.createFolder(folderDetails);
             return response; 
         } catch (error: any) {
             return thunkAPI.rejectWithValue(error.message || 'Folder creation failed');
@@ -55,7 +54,17 @@ export const renameFolder = createAsyncThunk(
         }
     }
 );
-
+export const toggleStarFolder = createAsyncThunk(
+    'exams/toggleStarFolder',
+    async (examId: number, thunkAPI) => {
+        try {
+            const response = await folderService.toggleStarFolder(examId);
+            return response; 
+        } catch (error: any) {
+            return thunkAPI.rejectWithValue(error.message || 'Failed to toggle star');
+        }
+    }
+);
 const folderSlice = createSlice({
     name: 'folders',
     initialState: {
@@ -84,8 +93,7 @@ const folderSlice = createSlice({
                 state.error = null;
             })
             .addCase(deleteFolder.fulfilled, (state, action) => {
-                console.log("+", action.payload);
-                
+              
                 state.folders = state.folders.filter(folder => folder.id !== action.payload); 
             })
             .addCase(deleteFolder.rejected, (state, action) => {
@@ -121,6 +129,15 @@ const folderSlice = createSlice({
             })
             .addCase(getAllFolders.rejected, (state, action) => {
                 state.loading = false;
+                state.error = action.payload as string;
+            })
+            .addCase(toggleStarFolder.fulfilled, (state, action) => {
+                const updatedFolder = action.payload;
+                state.folders = state.folders.map(folder =>
+                    folder.id === updatedFolder.id ? { ...folder, isStarred: updatedFolder.isStarred } : folder
+                );
+            })
+            .addCase(toggleStarFolder.rejected, (state, action) => {
                 state.error = action.payload as string;
             });
     },

@@ -18,8 +18,9 @@ namespace Server.Core.Entities
         public User User { get; set; }
 
 
-        public string ExamName { get; set; }
-        public string ExamNamePrefix { get; set; }
+        public string Name { get; set; }
+       
+        public string NamePrefix { get; set; }
         public string Type { get; set; } = "FILE";
 
         
@@ -43,6 +44,7 @@ namespace Server.Core.Entities
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
         public bool IsDeleted { get; set; }
         public bool IsShared { get; set; }
+        public bool IsStarred { get; set; } = false;
 
 
         public string ExamPath { get; set; }

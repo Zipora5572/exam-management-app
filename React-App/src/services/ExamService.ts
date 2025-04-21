@@ -6,7 +6,7 @@ export default {
         const formData = new FormData();
         formData.append('file', file);
         if (examDetails.userId !== undefined) formData.append('UserId', examDetails.userId.toString());
-        if (examDetails.examName !== undefined) formData.append('ExamName', examDetails.examName);
+        if (examDetails.name !== undefined) formData.append('name', examDetails.name);
         if (examDetails.examType !== undefined) formData.append('ExamType', examDetails.examType);
         let id=examDetails.folderId?examDetails.folderId.toString():'1'
         
@@ -33,18 +33,7 @@ export default {
             throw new Error('File upload failed: ' + error.message);
         }
     },
-    createFolder: async (folderDetails: Partial<ExamFolderType>): Promise<any> => {
-        try {
-            const response = await axios.post('/folder', folderDetails, {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-            return response.data;
-        } catch (error) {
-            throw new Error('Folder creation failed: ' + error.message);
-        }
-    },
+   
 
     download: async (fileName: string) => {
         try {
@@ -112,5 +101,13 @@ export default {
         }
     },
    
-
+    toggleStarExamFile: async (id: number) => {
+        try {
+            const response = await axios.patch(`/exam/${id}/toggle-star`);
+            return response.data;
+        } catch (error) {
+            throw new Error('Failed to toggle star: ' + error.message);
+        }
+    },
+    
 }

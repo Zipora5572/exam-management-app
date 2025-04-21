@@ -78,14 +78,14 @@ namespace Server.API.Controllers
                 return NotFound("Exam not found.");
             }
 
-            var teacherExamFolder = exam.ExamName;
-            string folderName = Path.GetDirectoryName(studentExamPostModel.Files[0].FileName);
+            var teacherExamFolder = exam.Name;
+            string Name = Path.GetDirectoryName(studentExamPostModel.Files[0].FileName);
             var studentExams = new List<StudentExamDto>();
             FolderDto folderDto = new FolderDto();
-            folderDto.FolderName = folderName;
+            folderDto.Name = Name;
             folderDto.UserId = exam.UserId;
             folderDto.OfTeacherExams = false;
-            folderDto.FolderNamePrefix = folderName;
+            folderDto.NamePrefix = Name;
           
             FolderDto addedFolder = await _folderService.AddFolderAsync(folderDto);
             int id = addedFolder.Id;
@@ -115,8 +115,8 @@ namespace Server.API.Controllers
                 var objectName = $"{teacherExamFolder}/{Path.GetFileName(file.FileName)}";
                 var studentExamDto = _mapper.Map<StudentExamDto>(studentExamPostModel);
                 studentExamDto.ExamPath = $"https://storage.cloud.google.com/exams-bucket/{objectName}";
-                studentExamDto.StudentExamName = Path.GetFileNameWithoutExtension(file.FileName);
-                studentExamDto.ExamNamePrefix = objectName;
+                studentExamDto.StudentName = Path.GetFileNameWithoutExtension(file.FileName);
+                studentExamDto.NamePrefix = objectName;
 
 
 

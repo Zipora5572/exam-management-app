@@ -4,6 +4,7 @@ using Server.API.PostModel;
 using Server.Core.DTOs;
 using Server.Core.Entities;
 using Server.Core.IServices;
+using Server.Service;
 using System.Collections.Generic;
 
 namespace Server.API.Controllers
@@ -106,7 +107,7 @@ namespace Server.API.Controllers
         }
         // PATCH api/<ExamController>/update-name/5
         [HttpPatch("rename/{id}")]
-        public async Task<ActionResult<ExamDto>> UpdateExamName(int id, [FromBody] string newName)
+        public async Task<ActionResult<ExamDto>> UpdateName(int id, [FromBody] string newName)
         {
             try
             {
@@ -175,5 +176,14 @@ namespace Server.API.Controllers
                 return StatusCode(500, $"Error downloading file: {ex.Message}");
             }
         }
+        [HttpPatch("{id}/toggle-star")]
+        public async Task<IActionResult> ToggleStar(int id)
+        {
+            var updatedExam = await _examService.ToggleStarAsync(id);
+            if (updatedExam == null) return NotFound();
+            return Ok(updatedExam);
+        }
+
+
     }
 }

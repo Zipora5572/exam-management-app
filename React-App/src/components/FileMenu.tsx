@@ -13,22 +13,21 @@ interface FileMenuProps {
     anchorEl: null | HTMLElement;
     selectedRow: number | null;
     handleMenuClose: () => void;
-    id: number;
-    row: ExamFileType | ExamFolderType;
-   
+    id:number;
+    row:ExamFileType | ExamFolderType;
     openModal: (data: { title: string; initialName?: string; setNewName?: (name: string) => void; confirmText?: string; onConfirm?: () => void; children?: React.ReactNode; }) => void;
 }
 
 const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuClose, id, openModal, row }) => {
-    const [newName, setNewName] = useState<string>(row.examName);
+    const [newName, setNewName] = useState<string>(row.name);
     const [selectedFiles, setSelectedFiles] = useState<FileList | null>(null);
     const dispatch = useDispatch<AppDispatch>();
 
     const selectedFilesRef = useRef<FileList | null>(null);
 
     useEffect(() => {
-        setNewName(row.examName);
-    }, [row.examName]);
+        setNewName(row.name);
+    }, [row.name]);
 
     useEffect(() => {
         if (selectedFiles && selectedFiles.length > 0) {
@@ -120,7 +119,7 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
 
     const handleDownload = async () => {
         try {
-            await ExamService.download(row.examNamePrefix);
+            await ExamService.download(row.namePrefix);
         } catch (error) {
             console.error("Error downloading file:", error);
         }
@@ -153,7 +152,7 @@ const FileMenu: React.FC<FileMenuProps> = ({ anchorEl, selectedRow, handleMenuCl
     const handleRename = () => {
         openModal({
             title: 'Rename',
-            initialName: row.type == "FILE" ? row.examName : row.folderName,
+            initialName: row.type == "FILE" ? row.name : row.name,
             setNewName: (name: string) => {
                 setNewName(name);
             },

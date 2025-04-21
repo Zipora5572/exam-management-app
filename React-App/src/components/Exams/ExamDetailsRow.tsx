@@ -15,7 +15,7 @@ interface ExamDetailsRowProps {
     anchorEl: null | HTMLElement;
     selectedRow: number | null;
     handleMenuClose: () => void;
-    openFolder: (folderId: number, folderName: string) => void;
+    openFolder: (folderId: number, name: string) => void;
     openModal: (data: { title: string; initialName?: string; setNewName?: (name: string) => void; confirmText?: string; onConfirm?: (name: string) => void; children?: React.ReactNode; }) => void;
     handleRowClick: (fileName: string, fileUrl: string) => void;
 }
@@ -33,6 +33,7 @@ const ExamDetailsRow: React.FC<ExamDetailsRowProps> = ({
     handleRowClick
 }) => {
     const [isHovered, setIsHovered] = useState(false);
+
 
     const formatDate = (dateString: string) => {
         const date = new Date(dateString);
@@ -52,8 +53,6 @@ const ExamDetailsRow: React.FC<ExamDetailsRowProps> = ({
         }
     };
 
-
-
     const formattedUpdatedAt = formatDate(row.updatedAt);
 
 
@@ -69,32 +68,32 @@ const ExamDetailsRow: React.FC<ExamDetailsRowProps> = ({
                 {isFolder ? (
                     <FolderIcon
                         style={{ color: 'rgb(144, 144, 144)', fontSize: '24px', cursor: 'pointer' }}
-                        onClick={() => openFolder(row.id, row.folderName)}
+                        onClick={() => openFolder(row.id, row.name)}
                     />
                 ) : (
                     <DescriptionIcon
                         style={{ color: 'rgb(144, 144, 144)', fontSize: '24px' }}
-                        onClick={() => handleRowClick(row.examName, row.examPath)}
+                        onClick={() => handleRowClick(row.name, row.examPath)}
 
                     />
                     //         <img
                     //         src="https://storage.cloud.google.com/exams-bucket/46341d91-e28b-4779-9a7c-26ba3f88e8ae.png"
-                    //         alt={row.examName}
+                    //         alt={row.name}
                     //         style={{ width: '50px', height: 'auto', marginRight: '8px', cursor: 'pointer' }}
-                    // onClick={() => handleRowClick(row.examName,`https://storage.cloud.google.com/exams-bucket/46341d91-e28b-4779-9a7c-26ba3f88e8ae.png`)} 
+                    // onClick={() => handleRowClick(row.name,`https://storage.cloud.google.com/exams-bucket/46341d91-e28b-4779-9a7c-26ba3f88e8ae.png`)} 
 
                     //         // onClick={() => window.open("/a.png", "_blank")}
                     //     />
                 )}
             </TableCell>
             <TableCell sx={{ color: 'rgb(75, 75, 75)', alignItems: 'center' }}>
-                {isFolder ? row.folderName : row.examName}
+                {isFolder ? row.name : row.name}
 
             </TableCell>
 
             <TableCell align='right' sx={{ width: '300px' }}>
                 {isHovered && (
-                    <ExamRowButtons examId={row.id} fileName={row.examNamePrefix} />
+                    <ExamRowButtons row={row} starred={row.isStarred}/>
                 )}
             </TableCell>
             <TableCell

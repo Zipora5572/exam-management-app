@@ -105,7 +105,7 @@ builder.Services.AddScoped<IDataContext,DataContext>();
 builder.Services.AddAutoMapper(typeof(MappingProfile), typeof(MappingPostProfile));
 
 builder.Services.AddDbContext<IDataContext, DataContext>(
-    options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Exams_DB"));
+    options => options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ExamsDB2"));
 //builder.Services.AddDbContext<DataContext>(
 //    options => options.UseMySql(
 //        "server=bygljohvlznnah8fy7a7-mysql.services.clever-cloud.com;database=bygljohvlznnah8fy7a7;user=ueb9fmdhiqcwfkgg;password=C7H2J9SuOtXATsY8WAGx;",

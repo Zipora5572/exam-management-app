@@ -12,6 +12,7 @@ namespace Server.Core.IServices
         Task<FolderDto> AddFolderAsync(FolderDto folder);
         Task DeleteFolderAsync(FolderDto folder);
         Task<FolderDto> UpdateFolderAsync(int id, FolderDto folder,string oldName="");
+        Task<FolderDto> ToggleStarAsync(int folderId);
 
     }
 }

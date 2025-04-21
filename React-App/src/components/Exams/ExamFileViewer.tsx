@@ -1,7 +1,7 @@
 import  { useEffect, useRef, useState } from 'react';
 import { Stage, Layer, Image, Line } from 'react-konva';
 import { Box, Paper, Typography, IconButton, Divider, TextField, Button } from '@mui/material';
-import { CheckCircleOutline, Delete, Edit, HighlightOf, HighlightOff, Save } from '@mui/icons-material';
+import { CheckCircleOutline, Delete, Edit, HighlightOff, Save } from '@mui/icons-material';
 import { Bar } from 'react-chartjs-2';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, StoreType } from '../../store/store';
@@ -26,18 +26,9 @@ const ExamFileViewer = () => {
     const [isEditingScore, setIsEditingScore] = useState(false);
     const [isEditingEvaluation, setIsEditingEvaluation] = useState(false);
     const [evaluation, setEvaluation] = useState(exam.teacherComments || '');
-   
     const [imageBlob, setImageBlob] = useState(null);
     const [image, setImage] = useState<HTMLImageElement | null>(null);
-    // useEffect(() => {
-
-    //     const img = new window.Image();
-    //     img.src = exam.examPath;
-    //     img.onload = () => {
-    //       setImage(img);
-    //       setLoadingImage(false);
-    //     };
-    //   }, [exam.examPath]);
+    
     useEffect(() => {
         const fetchImageWithSignedUrl = async () => {
           try {

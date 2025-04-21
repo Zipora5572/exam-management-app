@@ -4,29 +4,35 @@ import { UserType } from "./User"
 export type ExamType = {
     id: number,
     userId: number |undefined,
-    examName: string,
+    name: string,
     uniqueFileName: string,
+    namePrefix: string,
     examType: string,
-    // topicName: string,
     folderId: number|null,
     topic:TopicType,
-    sharing: boolean,
-    modified: string,
+    isShared: boolean,
+    isStarred: boolean,
     examPath: string,
     updatedAt:Date,
+    createdAt:Date,
+
 }
+
 export type ExamFolderType={
     id: number,
     userId: number,
-    folderName: string,
-    folderNamePrefix: string,
+    name: string,
+    namePrefix: string,
     parentFolderId: number|null,
-    modified: string,
+    updatedAt:Date,
+    createdAt:Date,
+    isShared: boolean,
+    isStarred: boolean,
     ofTeacherExams: boolean,
     type:'folder',
 }
 export type ExamFileType = ExamType & {
-    parentId?: number;
+    folderId?: number;
     type: 'file';
 }
 

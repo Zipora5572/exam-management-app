@@ -53,6 +53,18 @@ export const renameExamFile = createAsyncThunk(
         }
     }
 );
+export const toggleStarExamFile = createAsyncThunk(
+    'exams/toggleStarExamFile',
+    async (examId: number, thunkAPI) => {
+        try {
+            const response = await examService.toggleStarExamFile(examId);
+            return response; 
+        } catch (error: any) {
+            return thunkAPI.rejectWithValue(error.message || 'Failed to toggle star');
+        }
+    }
+);
+
 
 const examSlice = createSlice({
     name: 'exams',
@@ -112,7 +124,7 @@ const examSlice = createSlice({
             .addCase(renameExamFile.fulfilled, (state, action) => {
                 state.loading = false;
                 const { id, examName } = action.payload; 
-               console.log(examName);
+            
                
                 state.exams = state.exams.map(exam => 
                     exam.id == id ? { ...exam, examName: examName } : exam
@@ -122,6 +134,18 @@ const examSlice = createSlice({
                 state.loading = false;
                 state.error = action.payload as string;
             })
+            .addCase(toggleStarExamFile.fulfilled, (state, action) => {
+                const updatedExam = action.payload;
+            
+                
+                state.exams = state.exams.map(exam =>
+                    exam.id === updatedExam.id ? { ...exam, isStarred: updatedExam.isStarred } : exam
+                );
+            })
+            .addCase(toggleStarExamFile.rejected, (state, action) => {
+                state.error = action.payload as string;
+            })
+            
 
     },
 });

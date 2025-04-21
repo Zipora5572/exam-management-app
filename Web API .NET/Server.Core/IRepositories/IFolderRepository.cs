@@ -9,5 +9,6 @@ namespace Server.Core.IRepositories
 {
     public interface IFolderRepository:IRepository<Folder>
     {
+
     }
 }

@@ -11,8 +11,8 @@ namespace Server.API.PostModel
 
         public int StudentId { get; set; }
         public string? ExamPath { get; set; }
-        public string? StudentExamName { get; set; }
-        public string? ExamNamePrefix { get; set; }
+        public string? StudentName { get; set; }
+        public string? NamePrefix { get; set; }
 
         public int ?FolderId { get; set; }
         public int TeacherId { get; set; }

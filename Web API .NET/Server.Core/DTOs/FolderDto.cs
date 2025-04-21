@@ -10,9 +10,10 @@ namespace Server.Core.DTOs
     {
         public int Id { get; set; } 
         public int UserId { get; set; } 
-        public string FolderName { get; set; }
-        public string FolderNamePrefix { get; set; }
+        public string Name { get; set; }
+        public string NamePrefix { get; set; }
         public string Type { get; set; } = "FOLDER";
+        public bool IsStarred { get; set; }
 
         public int? ParentFolderId { get; set; }
         public DateTime CreatedAt { get; set; } =DateTime.Now;
