@@ -19,7 +19,7 @@ export const createFolder = createAsyncThunk(
 
 export const deleteFolder= createAsyncThunk(
     'exams/deleteFolder',
-    async (id: string, thunkAPI) => {
+    async (id: number, thunkAPI) => {
         try {
             const response = await folderService.deleteFolder(+id);
             return response;
@@ -34,7 +34,11 @@ export const getAllFolders = createAsyncThunk(
     'exams/getAllFolders',
     async (_, thunkAPI) => {
         try {
+          
+            
             const response = await examService.getAllFolders();
+      
+      
             return response;
         } catch (error: any) {
             return thunkAPI.rejectWithValue(error.message || 'Failed to fetch exams');

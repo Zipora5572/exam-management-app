@@ -41,7 +41,7 @@ export type StudentExamType = {
    studentDetails: UserType,
    teacherId: number,
    isChecked: boolean,
-   score: number,
-   teacherComments: string | null,
+   grade: number,
+   evaluation: string | null,
     
 };

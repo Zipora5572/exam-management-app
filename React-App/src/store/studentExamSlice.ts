@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import StudentExamService from "../services/StudentExamService";
 import { StudentExamType } from '../models/Exam';
 
-// יצירת אסינכרון עבור קבלת כל מבחני התלמידים
 export const getAllStudentExams = createAsyncThunk(
     'studentExams/getAllStudentExams',
     async (_, thunkAPI) => {
@@ -15,20 +14,18 @@ export const getAllStudentExams = createAsyncThunk(
     }
 );
 
-// יצירת אסינכרון עבור קבלת מבחן תלמיד לפי ID
 export const getStudentExamById = createAsyncThunk(
     'studentExams/getStudentExamById',
     async (id: number, thunkAPI) => {
         try {
             const response = await StudentExamService.getStudentExamById(id);
+            console.log(response);
             return response;
         } catch (error: any) {
             return thunkAPI.rejectWithValue(error.message || 'Failed to fetch student exam');
         }
     }
 );
-
-// יצירת אסינכרון עבור הוספת מבחן תלמיד
 export const addStudentExam = createAsyncThunk(
     'studentExams/addStudentExam',
     async (studentExam: Partial<StudentExamType>, thunkAPI) => {
@@ -41,7 +38,6 @@ export const addStudentExam = createAsyncThunk(
     }
 );
 
-// יצירת אסינכרון עבור עדכון מבחן תלמיד
 export const updateStudentExam = createAsyncThunk(
     'studentExams/updateStudentExam',
     async ({ id, studentExam }: { id: number; studentExam: Partial<StudentExamType> }, thunkAPI) => {
@@ -54,13 +50,12 @@ export const updateStudentExam = createAsyncThunk(
     }
 );
 
-// יצירת אסינכרון עבור מחיקת מבחן תלמיד
 export const deleteStudentExam = createAsyncThunk(
     'studentExams/deleteStudentExam',
     async (id: number, thunkAPI) => {
         try {
             await StudentExamService.deleteStudentExam(id);
-            return { id }; // מחזירים את ה-ID למחיקה מהמצב
+            return { id }; 
         } catch (error: any) {
             return thunkAPI.rejectWithValue(error.message || 'Failed to delete student exam');
         }

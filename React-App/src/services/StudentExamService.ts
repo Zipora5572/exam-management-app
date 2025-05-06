@@ -3,22 +3,21 @@ import axios from "../utils/axiosConfig";
 
 const StudentExamService = {
 
-
     checkExam: async (studentExamImage: string, teacherExamImage: string) => {
-
         try {
-            const response = await axios.post('http://localhost:5000/grade', {
-                student_exam_name: studentExamImage,
-                teacher_exam_name: teacherExamImage,
-              
+            const response = await axios.post('studentExam/autoCheck', {
+                studentExamUrl: studentExamImage,
+                teacherExamUrl: teacherExamImage,
             });
-
-            return response.data
-
+    console.log(response);
+    
+            return response.data;
+    
         } catch (error) {
-            console.error(error);
+            console.error('Failed to check exam:', error);
         }
     }
+    
     ,
    
  uploadStudentExams : async (studentExam:Partial<StudentExamType>, files:FileList) => {
@@ -26,9 +25,10 @@ const StudentExamService = {
     Array.from(files).forEach(file => {
         formData.append('Files', file);
     });
+
     formData.append('ExamId', studentExam.examId.toString());
-    formData.append('StudentId',"1");
-    formData.append('TeacherId',"1");
+    // formData.append('StudentId',"1");
+    // formData.append('TeacherId',"1");
 
     try {
         const response = await axios.post(`studentExam/uploadStudentExam`, formData, {

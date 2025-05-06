@@ -1,71 +1,89 @@
-import React, { useState } from 'react';
-import {  IconButton, TextField } from '@mui/material';
-import ExamUpload from './ExamUpload';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, StoreType } from '../store/store';
-import { createFolder } from '../store/folderSlice';
-import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
-import Tooltip from '@mui/material/Tooltip';
 
+
+
+"use client"
+
+import type React from "react"
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import type { AppDispatch, StoreType } from "../store/store"
+import { createFolder } from "../store/folderSlice"
+import ExamUpload from "./Exams/ExamUpload"
+import { FolderPlus, Plus, Upload } from "lucide-react"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Button } from "./ui/button"
 interface ActionButtonsProps {
-    folderId: number | null;
-    folderName: string
-    openModal: (data: { title: string; initialName?: string; setNewName?: (name: string) => void; confirmText?: string; onConfirm?: (name: string) => void; children?: React.ReactNode; }) => void;
+  folderId: number | null
+  folderName: string
+  openModal: (data: {
+    title: string
+    initialName?: string
+    setNewName?: (name: string) => void
+    confirmText?: string
+    onConfirm?: (name: string) => void
+    children?: React.ReactNode
+  }) => void
 
-    modalData: { setNewName?: (name: string) => void };
+  modalData: { setNewName?: (name: string) => void }
 }
 
 const ActionButtons: React.FC<ActionButtonsProps> = ({ folderId, folderName, openModal, modalData }) => {
-    const dispatch = useDispatch<AppDispatch>();
-    const user = useSelector((state: StoreType) => state.auth.user);
-    const [newName, setNewName] = useState<string>("");
+  const dispatch = useDispatch<AppDispatch>()
+  const user = useSelector((state: StoreType) => state.auth.user)
+  const [newName, setNewName] = useState<string>("")
 
-    const handleCreateFolder = () => {
-        openModal({
-            title: 'Create New Folder',
-            confirmText: 'Create',
-            initialName: "",
-            setNewName: (name: string) => {
-                setNewName(name);
-            },
-            onConfirm: (folderName: string) => {
-                dispatch(createFolder({ userId: user?.id, parentFolderId: folderId, name: folderName }));
-                console.log('New folder created:', folderName);
-            },
-            children: (
-                <TextField
-                    label="Folder Name"
-                    fullWidth
-                    onChange={(e) => {
-                        const newName = e.target.value;
-                        modalData.setNewName && modalData.setNewName(newName);
-                    }}
-                />
-            ),
-        });
-    };
-
-
-    return (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-        
-            <Tooltip title="Create Folder" arrow>
-            <CreateNewFolderIcon 
-    onClick={handleCreateFolder} 
-    sx={{
-        margin:'5px',
-        cursor: 'pointer',
-        fontSize: '24px', 
-    }} 
-/>
-
-            </Tooltip>
-
-            {/* כפתור העלאת קובץ */}
-            <ExamUpload folderId={folderId} />
+  const handleCreateFolder = () => {
+    openModal({
+      title: "Create New Folder",
+      confirmText: "Create",
+      initialName: "",
+      setNewName: (name: string) => {
+        setNewName(name)
+      },
+      onConfirm: (folderName: string) => {
+        dispatch(createFolder({ userId: user?.id, parentFolderId: folderId, name: folderName }))
+      },
+      children: (
+        <div className="mt-2">
+          <input
+            type="text"
+            placeholder="Folder Name"
+            className="block w-full rounded-md border-gray-300 shadow-sm  sm:text-sm"
+            onChange={(e) => {
+              const newName = e.target.value
+              modalData.setNewName && modalData.setNewName(newName)
+            }}
+          />
         </div>
-    );
-};
+      ),
+    })
+  }
+
+  return (
+
+    <div className="flex items-center space-x-2">
+  <DropdownMenu>
+    
+    <DropdownMenuTrigger asChild>
+              <Button>
+                <Plus className="h-4 w-4 mr-2" />
+                New
+              </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent align="end">
+      <DropdownMenuItem asChild>
+        <ExamUpload folderId={folderId ?? undefined} />
+      </DropdownMenuItem>
+      <DropdownMenuItem onClick={handleCreateFolder} className="cursor-pointer">
+        <FolderPlus className="h-4 w-4 mr-2" />
+        New Folder
+      </DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+</div>
 
 
-export default ActionButtons;
+  )
+}
+
+export default ActionButtons

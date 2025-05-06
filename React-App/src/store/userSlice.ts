@@ -3,6 +3,7 @@ import AuthService from "../services/AuthService";
 import initialState from "../models/authUser";
 import { UserType } from "../models/User";
 import UserService from "../services/UserService";
+import { log } from "console";
 
 export const login = createAsyncThunk(
   "auth/login",

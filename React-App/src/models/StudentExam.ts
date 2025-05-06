@@ -1,14 +1,16 @@
-import { UserType } from "./User"
+import { StudenType } from "./Student"
+
 
 export type StudentExamType = {
     id: number,
-    student:UserType
     teacherId: number | null,
     examId: number | null,
     examPath: string,
+    namePrefix: string,
     isChecked: boolean,
     grade: number
-    teacherComments: string | null,
+    evaluation: string | null,
     checkedAt: Date | null,
+    student:StudenType
 }
 

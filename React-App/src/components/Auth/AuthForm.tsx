@@ -1,78 +1,96 @@
-import  { FormEvent, useState } from 'react';
-import { TextField, Button, Container, Typography } from '@mui/material';
-import { useNavigate } from "react-router-dom";
-// import  login  from "../../store/authSlice";
-import { UserType } from '../../models/User';
+"use client"
 
-import { useDispatch } from 'react-redux';
+import { type FormEvent, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import type { AppDispatch } from "../../store/store"
+import { login, register } from "../../store/userSlice"
+import type { UserType } from "../../models/User"
 
-import { AppDispatch } from '../../store/store';
-import { login, register } from '../../store/userSlice';
 function AuthForm() {
-    // const { user, userDispatch } = useContext(UserContext);
-    const [isLogin, setIsLogin] = useState(true);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const navigate = useNavigate();
-    const dispatch = useDispatch<AppDispatch>();
+  const [isLogin, setIsLogin] = useState(true)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const navigate = useNavigate()
+  const dispatch = useDispatch<AppDispatch>()
 
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>, data: Partial<UserType>) => {
-        e.preventDefault();
-        let result
-        if (!isLogin) {
-            // result = await authService.register(data);        
-            // if (result)
-            //     userDispatch({ type: 'REGISTER', data: { ...data, id: result.user.id } });
-            dispatch(register(data));
-        }
-        else {
-            // result = await authService.login(data);
-         
-            // if (result)
-            //     userDispatch({ type: 'LOGIN', data: result.user });
-            dispatch(login(data));           
-        }
-        navigate('/home');
-    };
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>, data: Partial<UserType>) => {
+    e.preventDefault()
+    if (!isLogin) {
+      dispatch(register(data))
+    } else {
+      dispatch(login(data))
+    }
+    navigate("/home")
+  }
 
-    return (
-        <Container maxWidth="sm">
-            <Typography variant="h4">{isLogin ? 'Sign in' : 'Sign Up'}</Typography>
-            <form onSubmit={(e) => handleSubmit(e, { email, password })}>
-                <TextField
-                    label="email"
-                    variant="outlined"
-                    fullWidth
-                    margin="normal"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <TextField
-                    label="Password"
-                    type="password"
-                    variant="outlined"
-                    fullWidth
-                    margin="normal"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <Button type="submit" variant="contained" color="primary" fullWidth>
-                    {isLogin ? 'Login' : 'Sign Up'}
-                </Button>
-                <Button
-                    onClick={() => setIsLogin(!isLogin)}
-                    variant="outlined"
-                    color="secondary"
-                    fullWidth
-                    style={{ marginTop: '10px' }}
-                >
-                    Switch to {isLogin ? 'Sign Up' : 'Login'}
-                </Button>
-            </form>
-        </Container>
-    );
+  return (
+    <div className="flex min-h-[80vh] items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md space-y-8">
+        <div>
+          <img src="/online.png" alt="Logo" className="mx-auto h-12 w-auto" />
+          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+            {isLogin ? "Sign in to your account" : "Create a new account"}
+          </h2>
+        </div>
+
+        <form className="mt-8 space-y-6" onSubmit={(e) => handleSubmit(e, { email, password })}>
+          <div className="space-y-4 rounded-md shadow-sm">
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Email address
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                Password
+              </label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autoComplete={isLogin ? "current-password" : "new-password"}
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              className="group relative flex w-full justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+            >
+              {isLogin ? "Sign in" : "Sign up"}
+            </button>
+          </div>
+
+          <div className="text-center">
+            <button
+              type="button"
+              onClick={() => setIsLogin(!isLogin)}
+              className="text-sm font-medium text-red-600 hover:text-red-500"
+            >
+              {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
 }
 
-export default AuthForm;
+export default AuthForm

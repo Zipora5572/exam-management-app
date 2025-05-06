@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import examService from "../services/ExamService";
 import { ExamFileType, ExamFolderType, ExamType } from '../models/Exam';
+import { log } from 'console';
 
 export const uploadExamFile = createAsyncThunk(
     'exams/uploadExamFile',
@@ -18,7 +19,7 @@ export const uploadExamFile = createAsyncThunk(
 
 export const deleteExamFile = createAsyncThunk(
     'exams/deleteExamFile',
-    async (examId: string, thunkAPI) => {
+    async (examId: number, thunkAPI) => {
         try {
             const response = await examService.deleteExamFile(examId);
             return response;
@@ -123,11 +124,11 @@ const examSlice = createSlice({
             })
             .addCase(renameExamFile.fulfilled, (state, action) => {
                 state.loading = false;
-                const { id, examName } = action.payload; 
-            
+              
+                const { id, name } = action.payload; 
                
                 state.exams = state.exams.map(exam => 
-                    exam.id == id ? { ...exam, examName: examName } : exam
+                    exam.id == id ? { ...exam, name: name } : exam
                 );
             })
             .addCase(renameExamFile.rejected, (state, action) => {
@@ -139,7 +140,7 @@ const examSlice = createSlice({
             
                 
                 state.exams = state.exams.map(exam =>
-                    exam.id === updatedExam.id ? { ...exam, isStarred: updatedExam.isStarred } : exam
+                    exam.id === updatedExam.id ? { ...exam, isStaryellow: updatedExam.isStaryellow } : exam
                 );
             })
             .addCase(toggleStarExamFile.rejected, (state, action) => {
